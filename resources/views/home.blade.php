@@ -10,5 +10,6 @@
     <x-services.services />
     <x-whychoseus.why-chose-us />
     <x-marque.marque />
+    <x-workprocess.working-process />
 
 </x-layout>
