@@ -9,5 +9,6 @@
     <x-counter.counter />
     <x-services.services />
     <x-whychoseus.why-chose-us />
+    <x-marque.marque />
 
 </x-layout>
