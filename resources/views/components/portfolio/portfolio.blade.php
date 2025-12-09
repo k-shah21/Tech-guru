@@ -148,7 +148,7 @@
 <section class="min-h-[800px] py-12 relative overflow-hidden ">
 
     <!-- Header Section -->
-    <div class="relative w-full text-center flex flex-col items-center justify-center px-4 md:px-0 mb-12">
+    <div class="relative w-full text-center flex flex-col items-center justify-center px-4 md:px-0 mb-12 z-50">
         <p class="text-[#4FA0FF] tracking-wider text-sm font-medium flex items-center justify-center gap-2">
             <span class="w-2 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#79b0f0] rounded-full"></span>
             Portfolio
@@ -173,7 +173,7 @@
 
         {{-- background images --}}
         <img src="images/shapes/portfolio-two-shape-1.png" alt=""
-            class="absolute z-[1] sca pointer-events-none float-vertical opacity-10 ">
+            class="absolute z-1 sca pointer-events-none float-vertical opacity-10 ">
     </div>
 
     <div class="absolute inset-0 flex items-center justify-end pointer-events-none">
@@ -182,7 +182,7 @@
         <div class="w-[700px] h-[700px] lg:w-[900px] lg:h-[900px]
         translate-x-20
                 rounded-full blur-[100px] opacity-100
-                bg-[radial-gradient(circle,_rgba(66,44,72,0.9),_rgba(0,0,0,0))] z-[1]">
+                bg-[radial-gradient(circle,_rgba(66,44,72,0.9),_rgba(0,0,0,0))] z-[2]">
         </div>
 
 
@@ -627,7 +627,7 @@
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         // Initialize Swiper with group sliding
         const swiper = new Swiper('.mySwiper', {
             // Show 4 cards at once
@@ -682,17 +682,17 @@
 
             // Update on slide change
             on: {
-                init: function () {
+                init: function() {
                     updateActiveCard(this.activeIndex);
                     limitPaginationBullets();
                 },
-                slideChange: function () {
+                slideChange: function() {
                     updateActiveCard(this.activeIndex);
                 },
-                slideChangeTransitionEnd: function () {
+                slideChangeTransitionEnd: function() {
                     updateActiveCard(this.activeIndex);
                 },
-                resize: function () {
+                resize: function() {
                     limitPaginationBullets();
                 }
             }
@@ -763,7 +763,7 @@
 
         slides.forEach(slide => {
             // On hover
-            slide.addEventListener('mouseenter', function (e) {
+            slide.addEventListener('mouseenter', function(e) {
                 // Only expand if not already active
                 if (this.getAttribute('data-active') === 'false') {
                     this.style.width = '500px';
@@ -787,7 +787,7 @@
             });
 
             // On mouse leave
-            slide.addEventListener('mouseleave', function (e) {
+            slide.addEventListener('mouseleave', function(e) {
                 // Only collapse if not the active slide
                 if (this.getAttribute('data-active') === 'false') {
                     this.style.width = '200px';
@@ -811,7 +811,7 @@
             });
 
             // On click - make this card active and center it
-            slide.addEventListener('click', function (e) {
+            slide.addEventListener('click', function(e) {
                 // Don't trigger if clicking on the arrow button
                 if (e.target.closest('button')) return;
 
