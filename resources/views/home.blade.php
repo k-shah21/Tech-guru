@@ -11,5 +11,6 @@
     <x-whychoseus.why-chose-us />
     <x-marque.marque />
     <x-workprocess.working-process />
+    <x-portfolio.portfolio />
 
 </x-layout>
