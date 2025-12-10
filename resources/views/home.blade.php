@@ -15,5 +15,7 @@
     <x-pricing.pricing />
     <x-getintouch.getintouch />
     <x-events.event />
+    <x-testimonials.testimonials />
+    <x-blogs.blogs />
 
 </x-layout>

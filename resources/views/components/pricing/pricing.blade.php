@@ -1,21 +1,21 @@
 @php
-$pricing = [
-'monthly' => [
-'personal' => '5.60',
-'premium' => '25.60',
-'business' => '120.60',
-],
-'yearly' => [
-'personal' => '15.00',
-'premium' => '35.00',
-'business' => '150.00',
-],
-'packages' => [
-'personal' => '55.00',
-'premium' => '125.00',
-'business' => '200.00',
-],
-];
+    $pricing = [
+        'monthly' => [
+            'personal' => '5.60',
+            'premium' => '25.60',
+            'business' => '120.60',
+        ],
+        'yearly' => [
+            'personal' => '15.00',
+            'premium' => '35.00',
+            'business' => '150.00',
+        ],
+        'packages' => [
+            'personal' => '55.00',
+            'premium' => '125.00',
+            'business' => '200.00',
+        ],
+    ];
 @endphp
 
 

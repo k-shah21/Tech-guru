@@ -345,8 +345,7 @@
 
             {{-- Heading --}}
             <p class="text-[#4FA0FF] tracking-wider  ext-sm font-medium  flex items-center justify-start gap-2 ">
-                <span class="w-2 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#79b0f0] rounded-full"></span> Working
-                Process
+                <span class="w-2 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#79b0f0] rounded-full"></span>Get In Touch
                 <span class="w-8 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#6daef8] rounded-full"></span>
             </p>
 

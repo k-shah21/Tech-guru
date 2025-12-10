@@ -627,7 +627,7 @@
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         // Initialize Swiper with group sliding
         const swiper = new Swiper('.mySwiper', {
             // Show 4 cards at once
@@ -682,17 +682,17 @@
 
             // Update on slide change
             on: {
-                init: function() {
+                init: function () {
                     updateActiveCard(this.activeIndex);
                     limitPaginationBullets();
                 },
-                slideChange: function() {
+                slideChange: function () {
                     updateActiveCard(this.activeIndex);
                 },
-                slideChangeTransitionEnd: function() {
+                slideChangeTransitionEnd: function () {
                     updateActiveCard(this.activeIndex);
                 },
-                resize: function() {
+                resize: function () {
                     limitPaginationBullets();
                 }
             }
@@ -763,7 +763,7 @@
 
         slides.forEach(slide => {
             // On hover
-            slide.addEventListener('mouseenter', function(e) {
+            slide.addEventListener('mouseenter', function (e) {
                 // Only expand if not already active
                 if (this.getAttribute('data-active') === 'false') {
                     this.style.width = '500px';
@@ -787,7 +787,7 @@
             });
 
             // On mouse leave
-            slide.addEventListener('mouseleave', function(e) {
+            slide.addEventListener('mouseleave', function (e) {
                 // Only collapse if not the active slide
                 if (this.getAttribute('data-active') === 'false') {
                     this.style.width = '200px';
@@ -811,7 +811,7 @@
             });
 
             // On click - make this card active and center it
-            slide.addEventListener('click', function(e) {
+            slide.addEventListener('click', function (e) {
                 // Don't trigger if clicking on the arrow button
                 if (e.target.closest('button')) return;
 
