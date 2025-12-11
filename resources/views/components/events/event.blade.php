@@ -53,24 +53,6 @@
         opacity: 1;
         visibility: visible;
     }
-
-    .float-horizontal {
-        animation: floatX 3s ease-in-out infinite;
-    }
-
-    @keyframes floatX {
-        0% {
-            transform: translateX(0);
-        }
-
-        50% {
-            transform: translateX(20px);
-        }
-
-        100% {
-            transform: translateX(0);
-        }
-    }
 </style>
 
 <section class="relative bg-[#172537] py-24 px-6 lg:px-0 overflow-hidden">

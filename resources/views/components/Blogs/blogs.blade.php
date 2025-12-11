@@ -206,8 +206,7 @@
                         </p>
 
                         <!-- Read More -->
-                        <button
-                            class="mt-4 px-6 py-3 rounded-full bg-gradient-to-r from-[#7b4dff] to-[#ff5686] text-white text-sm font-medium">
+                        <button class="mt-4 !px-6 !py-3 !rounded-full thm-btn">
                             Read More →
                         </button>
                     </div>

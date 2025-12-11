@@ -22,102 +22,23 @@
     {{-- Icons --}}
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 
-    {{-- Swiper js --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    {{-- slick css --}}
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 
 
+    {{-- slick js --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <script src="//unpkg.com/alpinejs" defer></script>
 
     <link rel="stylesheet" href="{{ asset("css/app.css") }}">
 
     <style>
-        .header-sticky {
-            background-color: #0b192c !important;
-            transition: background-color 0.3s ease-in-out;
-            border-color: transparent;
-        }
 
-        @keyframes floatY {
-            0% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(20px);
-            }
-
-            100% {
-                transform: translateY(0);
-            }
-        }
-
-        .float-animate {
-            animation: floatY 3s ease-in-out infinite;
-        }
-
-        @keyframes step-scroll {
-
-            0%,
-            20% {
-                transform: translateX(0);
-            }
-
-            25%,
-            45% {
-                transform: translateX(-100%);
-            }
-
-            50%,
-            70% {
-                transform: translateX(-200%);
-            }
-
-            75%,
-            95% {
-                transform: translateX(-300%);
-            }
-
-            100% {
-                transform: translateX(-400%);
-            }
-        }
-
-        .step-slider {
-            display: flex;
-            animation: step-scroll 12s infinite steps(1);
-        }
-
-
-        @keyframes floatWave {
-            0% {
-                transform: translateY(10px);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-
-            100% {
-                transform: translateY(10px);
-            }
-        }
-
-        .wave-animate {
-            animation: floatWave 5s ease-in-out infinite;
-        }
-
-        .preview-img {
-            clip-path: inset(0 100% 0 0);
-            transition: clip-path 0.6s ease-out;
-        }
-
-        .preview-img.reveal {
-            clip-path: inset(0 0 0 0);
-        }
     </style>
 
     <script>
@@ -190,6 +111,7 @@
         {{ $slot }}
     </main>
 
+    <x-footer.footer />
 
 
 </body>

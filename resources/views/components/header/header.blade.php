@@ -35,7 +35,7 @@
 
             <nav class="hidden md:flex items-center gap-8 text-gray-300">
                 <a href="#"
-                    class="hover:text-[#edc458]transition text-[#edc458] flex items-center gap-1 link-underline">
+                    class="hover:text-[#edc458] transition text-[#edc458] flex items-center gap-1 link-underline">
 
                     Home
                     <i class="ri-arrow-drop-down-line text-2xl"></i>

@@ -17,5 +17,6 @@
     <x-events.event />
     <x-testimonials.testimonials />
     <x-blogs.blogs />
+    <x-newsletter.newsletter />
 
 </x-layout>

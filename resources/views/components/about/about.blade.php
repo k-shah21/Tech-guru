@@ -83,7 +83,8 @@
                 </div>
 
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-full bg-blue-900 flex items-center justify-center text-xl">📞</div>
+                    <div class="w-12 h-12 rounded-full bg-blue-900 flex items-center justify-center text-xl"><i
+                            class="ri-customer-service-2-line"></i></div>
                     <div>
                         <p class="text-gray-400 text-sm">Call Us For Inquiry</p>
                         <p class="text-white font-semibold text-lg">+00 (123) 456767</p>
