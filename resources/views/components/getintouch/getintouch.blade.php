@@ -225,8 +225,7 @@
     }
 </style>
 
-<section
-    class="relative h-[810px] overflow-hidden flex flex-col justify-center items-center text-center py-28 gap-36 md:px-0">
+<section class="relative  overflow-hidden flex flex-col justify-center items-center text-center py-28 gap-36 md:px-0">
 
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div class="w-[600px] h-[600px] lg:w-[700px] lg:h-[700px]
@@ -243,14 +242,17 @@
         </div>
     </div>
 
-    <div class="contact-two__bg" style="background-image: url('images/backgrounds/contact-two-bg.jpg');">
+    <div class="contact-two__bg hidden 2xl:block"
+        style="background-image: url('images/backgrounds/contact-two-bg.jpg');">
     </div>
 
 
-    <div class="relative z-10 mx-auto px-6 grid md:grid-cols-2 gap-x-10 items-center max-w-5xl">
+    <div class="relative z-10 mx-auto px-6 grid xl:grid-cols-2 gap-x-10 gap-5 items-center max-w-5xl">
 
-        <!-- LEFT IMAGE BLOCK -->
-        <div class="contact-two__right order-2  h-[610px] w-[610px]">
+        <!-- RIGHT FORM BLOCK -->
+        <div class="contact-two__right order-2 w-full h-auto 
+            1440:h-[610px] 
+            1440:w-[610px]">
 
             <form action="" class="contact-one__form w-full">
 
@@ -297,19 +299,17 @@
                         <h4 class="contact-one__input-title">Subject</h4>
                         <div class="relative w-full">
                             <select class="w-full bg-transparent border border-[#2a3b59] text-gray-400 rounded-xl px-5 py-4 pr-12
-               focus:outline-none appearance-none cursor-pointer">
+                        focus:outline-none appearance-none cursor-pointer">
                                 <option class="text-black">Select a Service</option>
                                 <option class="text-black">Web Development</option>
                                 <option class="text-black">App Development</option>
                                 <option class="text-black">UI/UX Design</option>
                             </select>
 
-                            <!-- Custom Icon -->
                             <span class="absolute right-4 top-5 text-gray-400 pointer-events-none">
                                 <i class="ri-arrow-down-s-line text-xl"></i>
                             </span>
                         </div>
-
                     </div>
 
                     <!-- Message -->
@@ -334,9 +334,7 @@
                     </button>
                 </div>
 
-
             </form>
-
 
         </div>
 
@@ -361,9 +359,6 @@
                 questions, feedback, or just want to say hello,
                 feel free to reach out.
             </p>
-
-
-
 
             <ul class="contact-two__contact-list">
                 <li>
@@ -403,7 +398,6 @@
 
 
     {{-- BG RIght Images --}}
-
-
-    <img src="images/shapes/contact-two-shape-1.png" alt="" class="absolute right-0 float-vertical">
+    <img src="images/shapes/contact-two-shape-1.png" alt=""
+        class="hidden 2xl:block absolute right-0 -bottom-10 float-vertical">
 </section>

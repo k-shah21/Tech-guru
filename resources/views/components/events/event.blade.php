@@ -59,19 +59,18 @@
     <div class="max-w-7xl mx-auto  z-20 relative">
 
         <!-- TOP HEADING + BUTTON -->
-        <div class="flex justify-between items-start lg:items-center mb-16 ">
+        <div class="flex justify-between flex-col gap-4 items-start lg:items-center mb-16 ">
 
             <!-- Left Heading -->
             <div>
-                <p class="text-[#4FA0FF] tracking-wider text-sm font-medium flex items-center gap-2">
+                <p class="mb-4 text-[#4FA0FF] tracking-wider text-sm font-medium flex items-center gap-2">
                     <span class="w-2 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#79b0f0] rounded-full"></span>
                     Upcoming Events
                     <span class="w-8 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#6daef8] rounded-full"></span>
                 </p>
 
-                <h2 class="text-4xl lg:text-5xl font-medium tracking-wide mt-6">
-                    Exciting Events
-                    <span class="text-[#edc458] font-marcellus"> on the Horizon</span>
+                <h2 class="text-2xl md:text-[40px] lg:text-4xl font-medium tracking-wide mb-6">
+                    Exciting Events<span class="text-[#edc458] font-normal"> on the Horizon</span>
                 </h2>
             </div>
 
@@ -87,8 +86,8 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-28">
 
             <!-- LEFT IMAGE / VIDEO -->
-            <div class="flex justify-center col-span-5">
-                <div class="relative w-[420px] md:w-[480px] lg:w-[520px] overflow-hidden rounded-3xl shadow-xl">
+            <div class="flex justify-center col-span-4">
+                <div class="relative w-full md:w-[480px] lg:w-[520px] overflow-hidden rounded-3xl shadow-xl">
                     <img src="images/resources/event-one-img-1.jpg" class="w-full h-full object-cover rounded-3xl" />
 
                     <!-- Play Button -->
@@ -107,10 +106,10 @@
 
 
             <!-- RIGHT EVENTS LIST -->
-            <div class="flex flex-col gap-6 col-span-7">
+            <div class="flex flex-col gap-6 col-span-4 border">
 
                 <!-- EVENT CARD -->
-                <div class="bg-[#2D384E] w-[689px] rounded-3xl border border-white/10 relative overflow-hidden">
+                <div class="bg-[#2D384E] lg:!w-[689px] rounded-3xl border border-white/10 relative overflow-hidden">
 
                     <div class="flex justify-between items-center px-6 py-6 gap-10 bg-[#151C30]">
                         <div class="">
@@ -182,7 +181,7 @@
 
 
                 <!-- EVENT CARD -->
-                <div class="bg-[#2D384E] w-[689px] rounded-3xl border border-white/10 relative overflow-hidden">
+                <div class="bg-[#2D384E] lg:!w-[689px] rounded-3xl border border-white/10 relative overflow-hidden">
 
                     <div class="flex justify-between items-center px-6 py-6 gap-10 bg-[#151C30]">
                         <div class="">
@@ -253,7 +252,7 @@
                 </div>
 
                 <!-- EVENT CARD -->
-                <div class="bg-[#2D384E] w-[689px] rounded-3xl border border-white/10 relative overflow-hidden">
+                <div class="bg-[#2D384E] lg:!w-[689px] rounded-3xl border border-white/10 relative overflow-hidden">
 
                     <div class="flex justify-between items-center px-6 py-6 gap-10 bg-[#151C30]">
                         <div class="">

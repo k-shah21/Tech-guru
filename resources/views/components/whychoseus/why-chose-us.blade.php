@@ -66,7 +66,7 @@
     }
 
     .float-animate {
-        animation: floatY 5s ease-in-out infinite;
+        animation: floatY 10s ease-in-out infinite;
     }
 
 
@@ -76,7 +76,7 @@
         }
 
         50% {
-            transform: translateX(10px);
+            transform: translateX(30px);
         }
 
         /* move right */
@@ -88,10 +88,19 @@
     .float-left-right {
         animation: float-left-right 2s ease-in-out infinite;
     }
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+        .why-choose-custom {
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
 </style>
 
+{{-- py-48 --}}
 <!-- Why CHOOSE us -->
-<section class="relative bg-[#0a1a2f] py-48 overflow-hidden">
+<section class="relative bg-[#0a1a2f] py-12 overflow-hidden">
 
     <div class="absolute inset-0 flex items-center justify-start pointer-events-none">
         <div class="w-[600px] h-[600px] lg:w-[700px] lg:h-[700px]
@@ -117,86 +126,85 @@
     </div>
 
 
+    {{-- gap-y-16 --}}
 
-
-
-    <div class="relative z-10 max-w-[1300px] mx-auto  grid md:grid-cols-2 gap-x-48 grid-flow-dense items-center ">
-
+    <div class="relative z-10 max-w-[1300px] mx-auto 
+            px-4 sm:px-6 lg:px-8 
+            grid gap-y-16  xl:grid-cols-2 gap-x-20 items-center">
         <!-- LEFT IMAGE BLOCK -->
-        <div class="relative flex justify-center order-2">
+        <div class="relative flex justify-center order-2 border md:w-[670px] mx-auto">
 
-            <img src="images/resources/about-one-img-1.jpg" alt="" class="scale-125">
-            <!-- IMAGE SIDE -->
-            <div class="absolute -top-24 -left-10">
-                <div class="w-[80px] h-[80px] bg-[#43a872]/20 rounded-full backdrop-blur-sm shadow-lg 
-                        flex items-center justify-center float-animate">
-                    <div class="w-[60px] h-[60px] bg-[#43a872] rounded-full backdrop-blur-md shadow-xl 
-                            flex items-center justify-center">
+            <!-- Main Image -->
+            <img src="images/resources/about-one-img-1.jpg" alt="Why choose us" class="scale-100" width="670"
+                height="610">
+
+            <!-- Floating Badge -->
+            <div class="absolute  left-1.5 -top-12">
+                <div class="w-16 h-16 sm:w-[80px] sm:h-[80px] bg-[#43a872]/20 rounded-full backdrop-blur-sm shadow-lg 
+                    flex items-center justify-center float-animate">
+                    <div class="w-12 h-12 sm:w-[60px] sm:h-[60px] bg-[#43a872] rounded-full shadow-xl 
+                        flex items-center justify-center">
                         <img src="{{ asset('images/icon/main-slider-shield-check-icon.png') }}"
                             class="opacity-90 object-contain" />
                     </div>
-
                 </div>
-
             </div>
 
+            <!-- Floating Shape -->
             <img src="images/shapes/why-choose-one-shape-2.png" alt=""
-                class="bottom-24 absolute -left-48 float-left-right">
-
-
-
+                class="hidden xl:block absolute -left-36 bottom-36 float-left-right">
 
         </div>
 
+
         <!-- RIGHT CONTENT -->
-        <div class="text-white order-1">
-            <p class="text-[#4FA0FF] tracking-wider text-sm font-medium flex items-center justify-center gap-2">
+        <div class="text-white order-1 why-choose-custom md:mx-20">
+
+
+            <p class="text-[#4FA0FF] tracking-wider text-sm font-medium 
+                  flex items-center justify-start gap-2">
+
                 <span class="w-2 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#79b0f0] rounded-full"></span>
                 Why choose us
                 <span class="w-8 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#6daef8] rounded-full"></span>
             </p>
 
-            <h2 class="text-4xl lg:text-4xl tracking-wider my-10 font-bold ">
-
-                Elevate Growth <span class="text-[#edc458] font-marcellus font-normal tracking-tight">with Our Best
-                    Cutting-Edge IT
+            <h2 class="text-3xl sm:text-4xl tracking-wider my-8 font-bold leading-snug">
+                Elevate Growth <span class="text-[#edc458] font-marcellus font-normal tracking-tight">
+                    with Our Best Cutting-Edge IT
                 </span>
-                Solutions
-                for Success
-
+                Solutions for Success
             </h2>
 
-
-            <p class="text-gray-300 max-w-lg mb-10 text-xl">
-                Innovating and empowering businesses with tailored solutions for success and growth. Innovating and
-                empowering
+            <p class="text-gray-300 max-w-lg mb-10 text-lg sm:text-xl">
+                Innovating and empowering businesses with tailored solutions
+                for success and growth. Innovating and empowering.
             </p>
 
-            <ul class="flex gap-10 flex-col max-w-md">
+            <ul class="flex gap-8 flex-col max-w-md">
                 <li>
-                    <h4>Camping Launches</h4>
+                    <h4 class="font-semibold">Camping Launches</h4>
                     <input type="range" max="100" value="80" disabled class="range-slider second w-full">
                 </li>
 
                 <li>
-                    <h4>Innovation Design</h4>
-                    <input type="range" max="100" value="70" disabled class="range-slider  w-full">
+                    <h4 class="font-semibold">Innovation Design</h4>
+                    <input type="range" max="100" value="70" disabled class="range-slider w-full">
                 </li>
-
-
             </ul>
 
-            <div class="flex items-center gap-8 mt-10 ">
+            <div class="flex flex-col sm:flex-row items-start gap-6 mt-10">
 
-                <button
-                    class="bg-gradient-to-r from-[#3e75fc] to-[#58a8ec] text-white px-6 py-3 rounded-3xl font-medium flex items-center gap-2 hover:opacity-90 transition">
+                <button class="bg-gradient-to-r from-[#3e75fc] to-[#58a8ec] text-white px-6 py-3 
+                       rounded-3xl font-medium flex items-center gap-2 hover:opacity-90 transition">
                     About us
                     <i class="ri-arrow-right-line"></i>
                 </button>
-                <div class="flex gap-3 items-center justify-center">
-                    <img src="images/resources/main-slider-trustpilot-img-2.jpg" alt="" class="rounded-full">
 
-                    <h2>
+                <div class="flex gap-3 items-center justify-center">
+                    <img src="images/resources/why-choose-one-client-img.jpg" alt="" class="rounded-full w-12 h-12">
+
+                    <h2 class="text-left">
                         Thomas Alison
                         <span class="text-[#edc458] block font-normal text-sm">Founder and CEO</span>
                     </h2>
@@ -206,4 +214,5 @@
         </div>
 
     </div>
+
 </section>

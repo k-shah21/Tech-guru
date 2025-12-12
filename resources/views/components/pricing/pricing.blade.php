@@ -19,21 +19,19 @@
 @endphp
 
 
-<section class="min-h-[700px] py-24 relative overflow-hidden flex justify-center flex-col items-center px-5 gap-8">
+<section
+    class="min-h-[700px] lg:py-24 py-6 relative overflow-hidden md:gap-6 flex justify-center flex-col items-center px-5 lg:gap-8">
 
     <!-- Header Section -->
-    <div class="relative w-full text-center flex flex-col items-center justify-center px-4 md:px-0 mb-12">
+    <div class="relative w-full text-center flex flex-col items-center justify-center px-4 md:px-0 lg:mb-12">
         <p class="text-[#4FA0FF] tracking-wider text-sm font-medium flex items-center justify-center gap-2">
             <span class="w-2 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#79b0f0] rounded-full"></span>
             Pricing & Plan
             <span class="w-8 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#6daef8] rounded-full"></span>
         </p>
 
-        <h2 class="text-3xl md:text-4xl font-bold text-white leading-tight mt-6">
-            Select the Perfect
-            <span class="font-medium mt-2 text-[#F2C65A] font-marcellus ">
-                Plan
-                for Your <br />
+        <h2 class="text-2xl sm:text-5xl tracking-wider my-8 font-bold md:leading-32  md:w-4/5">
+            Select the Perfect <span class="text-[#edc458] font-marcellus font-normal tracking-tight">Plan for Your
                 Needs That Fits You
             </span>
         </h2>
@@ -52,7 +50,7 @@
         {{-- PLAN SWITCHER --}}
         <div class="flex justify-center mb-10 relative">
 
-            <div class="inline-flex px-2 rounded-full border border-[#7350F5]">
+            <div class="inline-flex px-2 flex-col md:flex-row rounded-full md:border md:border-[#7350F5]">
                 <button onclick="changePlan('monthly')" id="btn-monthly"
                     class="px-8 py-3 rounded-full text-white text-base font-medium bg-gradient-to-r from-[#6651ff] to-[#ff4d94]">
                     MONTHLY
@@ -70,35 +68,32 @@
         </div>
 
         {{-- PRICING CARDS --}}
-        <div class="grid grid-cols-1 md:grid-cols-3 items-center min-h-[689px] ">
+        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 
+           [@media(min-width:1440px)]:grid-cols-3 
+           gap-6 [@media(min-width:1440px)]:gap-0 
+           items-center min-h-[689px] w-full">
 
             {{-- PERSONAL --}}
-            <div
-                class="!bg-[#1D253F] rounded-2xl rounded-r-none relative p-10 text-white border border-[#1c2a5c] h-[590px] overflow-hidden">
+            <div class="!bg-[#1D253F] !w-full  rounded-2xl lg:rounded-r-none relative p-10 text-white 
+               border border-[#1c2a5c] h-[590px] overflow-hidden">
 
                 <!-- BG Images -->
-                <img src="images/shapes/pricing-two-single-shape-1.png" alt=""
-                    class="absolute top-0 -left-2 z-10 opacity-10">
-                <img src="images/shapes/pricing-two-shape-2.png" alt=""
+                <img src="images/shapes/pricing-two-single-shape-1.png" class="absolute top-0 -left-2 z-10 opacity-10">
+                <img src="images/shapes/pricing-two-shape-2.png"
                     class="absolute bottom-3 -right-10 z-10 opacity-5 -rotate-45">
-                <img src="images/shapes/pricing-two-shape-2.png" alt=""
-                    class="absolute bottom-0 -right-2 z-10 opacity-5">
-                <img src="images/shapes/pricing-two-shape-2.png" alt=""
+                <img src="images/shapes/pricing-two-shape-2.png" class="absolute bottom-0 -right-2 z-10 opacity-5">
+                <img src="images/shapes/pricing-two-shape-2.png"
                     class="absolute -bottom-10 right-4 z-10 opacity-5 rotate-[28deg]">
 
-
                 <h3 class="text-center mb-4 text-[#edc458] font-marcellus text-xl">PERSONAL</h3>
-                <h1 id="price-personal" class="text-center text-6xl font-bold">
-                    ${{ $pricing['monthly']['personal'] }}
+                <h1 id="price-personal" class="text-center text-6xl font-bold">${{ $pricing['monthly']['personal'] }}
                 </h1>
 
-                <p class="text-center mt-4 opacity-90 text-xl">
-                    Will Get Free 3 Months Solutions Support
-                </p>
+                <p class="text-center mt-4 opacity-90 text-xl">Will Get Free 3 Months Solutions Support</p>
 
                 <div class="flex justify-center mt-6">
                     <button
-                        class="hover:bg-gradient-to-r hover:from-[#7397D8] hover:to-[#7397D8] w-full z-30 px-8 py-2.5 bg-gradient-to-r from-[#6065d4] to-[#fa5674] rounded-2xl font-semibold text-white transition-all duration-300 ">
+                        class="hover:bg-gradient-to-r hover:from-[#7397D8] hover:to-[#7397D8] w-full z-30 px-8 py-2.5 bg-gradient-to-r from-[#6065d4] to-[#fa5674] rounded-2xl font-semibold text-white transition-all duration-300">
                         Choose Plan <i class="ri-add-circle-line w-6 h-6 font-medium ms-2"></i>
                     </button>
                 </div>
@@ -114,33 +109,25 @@
             </div>
 
             {{-- PREMIUM --}}
-            <div
-                class="bg-[#142258] rounded-2xl p-10 text-white border border-[#1c2a5c] relative overflow-hidden h-[689px]">
+            <div class="bg-[#142258] rounded-2xl p-10 text-white border border-[#1c2a5c] relative overflow-hidden h-[689px]
+               lg:-translate-y-6 [@media(min-width:1440px)]:-translate-y-8">
 
                 <!-- BG Images -->
-                <img src="images/shapes/pricing-two-single-shape-2.png" alt=""
-                    class="absolute top-0 -left-2 z-10 opacity-10">
-
-                <img src="images/shapes/pricing-two-shape-2.png" alt=""
+                <img src="images/shapes/pricing-two-single-shape-2.png" class="absolute top-0 -left-2 z-10 opacity-10">
+                <img src="images/shapes/pricing-two-shape-2.png"
                     class="absolute bottom-3 -right-10 z-10 opacity-5 -rotate-45">
-                <img src="images/shapes/pricing-two-shape-2.png" alt=""
-                    class="absolute bottom-0 -right-2 z-10 opacity-5">
-                <img src="images/shapes/pricing-two-shape-2.png" alt=""
+                <img src="images/shapes/pricing-two-shape-2.png" class="absolute bottom-0 -right-2 z-10 opacity-5">
+                <img src="images/shapes/pricing-two-shape-2.png"
                     class="absolute -bottom-10 right-4 z-10 opacity-5 rotate-[28deg]">
 
+                <h3 class="text-center text-lg mb-4 text-[#edc458] font-marcellus text-xl">PREMIUM</h3>
+                <h1 id="price-premium" class="text-center text-5xl font-bold">${{ $pricing['monthly']['premium'] }}</h1>
 
-                <h3 class="text-center text-lg mb-4  text-[#edc458] font-marcellus text-xl">PREMIUM</h3>
-                <h1 id="price-premium" class="text-center text-5xl font-bold">
-                    ${{ $pricing['monthly']['premium'] }}
-                </h1>
-
-                <p class="text-center mt-4 opacity-90 text-xl">
-                    Will Get Free 5 Months Solutions Support
-                </p>
+                <p class="text-center mt-4 opacity-90 text-xl">Will Get Free 5 Months Solutions Support</p>
 
                 <div class="flex justify-center mt-6">
                     <button
-                        class="hover:bg-gradient-to-r hover:from-[#7397D8] hover:to-[#7397D8] w-full z-30 px-8 py-2.5 bg-gradient-to-r from-[#6065d4] to-[#fa5674] rounded-2xl font-semibold text-white transition-all duration-300 ">
+                        class="hover:bg-gradient-to-r hover:from-[#7397D8] hover:to-[#7397D8] w-full z-30 px-8 py-2.5 bg-gradient-to-r from-[#6065d4] to-[#fa5674] rounded-2xl font-semibold text-white transition-all duration-300">
                         Choose Plan <i class="ri-add-circle-line w-6 h-6 font-medium ms-2"></i>
                     </button>
                 </div>
@@ -160,37 +147,30 @@
 
             {{-- BUSINESS --}}
             <div
-                class="bg-[#1D253F] rounded-2xl p-10 text-white relative border border-[#1c2a5c] rounded-l-none  h-[590px] overflow-hidden">
+                class="bg-[#1D253F] rounded-2xl p-10 text-white relative border border-[#1c2a5c] lg:rounded-l-none h-[590px] overflow-hidden">
 
                 <!-- BG Images -->
-                <img src="images/shapes/pricing-two-single-shape-1.png" alt=""
-                    class="absolute top-0 -left-2 z-10 opacity-10">
-                <img src="images/shapes/pricing-two-shape-2.png" alt=""
+                <img src="images/shapes/pricing-two-single-shape-1.png" class="absolute top-0 -left-2 z-10 opacity-10">
+                <img src="images/shapes/pricing-two-shape-2.png"
                     class="absolute bottom-3 -right-10 z-10 opacity-5 -rotate-45">
-                <img src="images/shapes/pricing-two-shape-2.png" alt=""
-                    class="absolute bottom-0 -right-2 z-10 opacity-5">
-                <img src="images/shapes/pricing-two-shape-2.png" alt=""
+                <img src="images/shapes/pricing-two-shape-2.png" class="absolute bottom-0 -right-2 z-10 opacity-5">
+                <img src="images/shapes/pricing-two-shape-2.png"
                     class="absolute -bottom-10 right-4 z-10 opacity-5 rotate-[28deg]">
 
-
-
-                <h3 class="text-center mb-4  text-[#edc458] font-marcellus text-xl">BUSINESS</h3>
-                <h1 id="price-business" class="text-center text-5xl font-bold">
-                    ${{ $pricing['monthly']['business'] }}
+                <h3 class="text-center mb-4 text-[#edc458] font-marcellus text-xl">BUSINESS</h3>
+                <h1 id="price-business" class="text-center text-5xl font-bold">${{ $pricing['monthly']['business'] }}
                 </h1>
 
-                <p class="text-center mt-4 opacity-90 text-xl">
-                    Will Get Free Lifetime Solutions Support
-                </p>
+                <p class="text-center mt-4 opacity-90 text-xl">Will Get Free Lifetime Solutions Support</p>
 
                 <div class="flex justify-center mt-6">
                     <button
-                        class="hover:bg-gradient-to-r hover:from-[#7397D8] hover:to-[#7397D8] w-full z-30 px-8 py-2.5 bg-gradient-to-r from-[#6065d4] to-[#fa5674] rounded-2xl font-semibold text-white transition-all duration-300 ">
+                        class="hover:bg-gradient-to-r hover:from-[#7397D8] hover:to-[#7397D8] w-full z-30 px-8 py-2.5 bg-gradient-to-r from-[#6065d4] to-[#fa5674] rounded-2xl font-semibold text-white transition-all duration-300">
                         Choose Plan <i class="ri-add-circle-line w-6 h-6 font-medium ms-2"></i>
                     </button>
                 </div>
 
-                <h4 class="my-8 font-semibold text-[#edc458] text-2xl ">Feature Description</h4>
+                <h4 class="my-8 font-semibold text-[#edc458] text-2xl">Feature Description</h4>
 
                 <ul class="mt-4 space-y-4 text-[#fff] text-lg">
                     <li><i class="ri-checkbox-circle-line text-[#6065d4]"></i> Custom Website Design</li>
@@ -198,9 +178,9 @@
                     <li><i class="ri-close-circle-line"></i> Social Media Graphics</li>
                     <li><i class="ri-close-circle-line"></i> Brand Color Palette</li>
                 </ul>
-
             </div>
         </div>
+
     </div>
 
 </section>

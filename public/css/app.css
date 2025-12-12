@@ -15,9 +15,13 @@
 .orange-color {
     color: #edc458;
 }
+html {
+    overflow-x: hidden !important;
+}
 body {
     font-family: var(--font-sans);
     color: white;
+    overflow-x: hidden !important;
 }
 /* Header or Footer  */
 .underline {
