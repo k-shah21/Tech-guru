@@ -1,8 +1,9 @@
 {{-- BOTTOM BAR --}}
-<div class="hero-bottombar py-8 w-full px-9 flex items-center gap-6 
-        border-t border-white/20 justify-between  relative  z-10">
+<div class="hero-bottombar py-4 lg:py-5 xl:py-8 w-full px-9 flex flex-col md:flex-row items-center gap-6 
+        border-t border-white/20 justify-between relative z-10">
 
-    <div class="w-1/4 flex items-center gap-4 pr-6 border-r border-white/30 justify-center">
+    <div
+        class="w-4/4 md:!w-1/3  lg:!w-1/4  flex flex-col xl:flex-row items-start gap-4 pr-6 xl:border-r border-white/30 justify-center">
 
         <div class="flex items-center -space-x-3">
             <img src="images/blog/blog-two-user-1.jpg" class="w-10 h-10 rounded-full" />
@@ -20,7 +21,7 @@
         </div>
     </div>
 
-    <div class="overflow-hidden max-w-3xl">
+    <div class="overflow-hidden max-w-3xl w-2/3 lg:!w-3/4">
         <div id="brandSlider" class="flex gap-20 transition-transform duration-500">
             <img src="images/brand/brand-1-1.png" class="w-32" />
             <img src="images/brand/brand-1-2.png" class="w-32" />

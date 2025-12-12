@@ -5,7 +5,7 @@
 
     <!-- MAIN HERO CONTENT -->
     <div class="grid grid-cols-1 lg:grid-cols-2 items-start gap-10 min-h-[70vh] 
-                px-6 sm:px-10 md:px-3 border !2xl:pl-48 w-full">
+                px-6 sm:px-10 md:px-3  !2xl:pl-48 w-full">
 
         <div class="flex justify-center items-center  gap-10 min-h-[70vh] 
             px-1 sm:px-2 md:px-12 xl:pl-24 3xl:pl-48 w-full">
