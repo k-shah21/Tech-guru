@@ -104,8 +104,9 @@
         opacity: 1;
     }
 </style>
-<section class="flex justify-center items-center bg-[#131C30] py-14 w-full overflow-hidden relative">
-    <div class="flex justify-between items-center max-w-7xl w-full mx-auto gap-10">
+<section class="flex justify-center items-center bg-[#131C30]  py-8 px-4 md:py-14 w-full overflow-hidden relative">
+    <div
+        class="flex flex-col xl:flex-row justify-center md:justify-between items-center text-center max-w-7xl w-full mx-auto gap-10">
         {{-- Left --}}
         <div class="">
             <h2 class="newsletter-two__title">Subscribe to Our Newsletter</h2>
@@ -120,7 +121,7 @@
                     <button type="submit" class="thm-btn">Subscribe Now →</button>
                 </div>
 
-                <div class="checked-box">
+                <div class="checked-box text-start">
                     <input type="checkbox" id="skipper" checked>
                     <label for="skipper" name="skipper"><span></span> By subscribing, you accept our Privacy
                         Policy</label>

@@ -161,249 +161,250 @@
 
 <footer class="text-gray-600 body-font relative overflow-hidden">
     <div
-        class="container relative z-30 max-w-7xl py-12 mx-auto flex md:items-center lg:items-center md:flex-row md:flex-nowrap flex-wrap flex-col">
-        <div class="w-1/3 flex-shrink-0 md:mx-0 mx-auto">
-            <div class=" bg-[#313C50]  h-[424px] rounded-[40px] p-12  text-center md:text-left">
+        class="container relative z-30 max-w-7xl px-3 py-12 mx-auto grid grid-cols-1 md:grid-cols-10 gap-8 items-center">
+        <!-- Contact Info Card - Takes 30% on xl (approx 3.6 columns out of 12) -->
+        <div class="md:col-span-5 xl:col-span-4">
+            <div class="bg-[#313C50] h-[424px] rounded-[40px] p-12 text-center md:text-left">
                 <img src="images/resources/footer-logo.png" alt="footer logo">
 
-                <ul class="list-unstyled site-footer-two__contact-list">
-
+                <ul class="list-unstyled site-footer-two__contact-list mt-6">
                     <!-- Contact Info -->
-                    <li class="contact-item">
+                    <li class="contact-item flex items-start gap-4 mb-6">
                         <div class="site-footer-two__contact-icon">
                             <span><i class="ri-contacts-book-2-line"></i></span>
                         </div>
-
                         <div class="site-footer-two__contact-content">
-                            <h5 class="site-footer-two__contact-title">Contact Info</h5>
-                            <p class="site-footer-two__contact-info">
-                                <a href="">info@domain.com</a>
-                                <a href="">+99 (00) 567 780</a>
+                            <h5 class="site-footer-two__contact-title text-white font-medium mb-1">Contact Info</h5>
+                            <p class="site-footer-two__contact-info text-[#c5c8cd]">
+                                <a href="" class="block hover:text-[#edc458]">info@domain.com</a>
+                                <a href="" class="block hover:text-[#edc458]">+99 (00) 567 780</a>
                             </p>
                         </div>
                     </li>
 
                     <!-- Location -->
-                    <li class="contact-item">
+                    <li class="contact-item flex items-start gap-4">
                         <div class="site-footer-two__contact-icon">
                             <span><i class="ri-map-pin-2-line"></i></span>
                         </div>
-
                         <div class="site-footer-two__contact-content">
-                            <h5 class="site-footer-two__contact-title">Location</h5>
-                            <p class="site-footer-two__contact-info">
-                                123 Main Street, Apt 4B New York ,<br> NY 10001 USA
+                            <h5 class="site-footer-two__contact-title text-white font-medium mb-1">Location</h5>
+                            <p class="site-footer-two__contact-info text-[#c5c8cd]">
+                                123 Main Street, Apt 4B New York,<br>NY 10001 USA
                             </p>
                         </div>
                     </li>
-
                 </ul>
             </div>
         </div>
 
+        <!-- Portfolio Column -->
+        <div class="footer-widget font-semibold md:col-span-5 xl:col-span-2">
+            <p class="text-[#4FA0FF] tracking-wider text-2xl font-medium mb-6">
+                Portfolio
+            </p>
+            <nav class="list-none flex flex-col gap-2">
+                <li>
+                    <a
+                        class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
+                        <i class="ri-arrow-right-double-line text-2xl font-medium"></i>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
+                        <i class="ri-arrow-right-double-line text-2xl font-medium"></i>
+                        About Us
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
+                        <i class="ri-arrow-right-double-line text-2xl font-medium"></i>
+                        Pricing
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
+                        <i class="ri-arrow-right-double-line text-2xl font-medium"></i>
+                        Portfolio
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
+                        <i class="ri-arrow-right-double-line text-2xl font-medium"></i>
+                        Blogs
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
+                        <i class="ri-arrow-right-double-line text-2xl font-medium"></i>
+                        Careers
+                    </a>
+                </li>
+            </nav>
+        </div>
 
+        <!-- Support Column -->
+        <div class="footer-widget font-semibold mt-6 xl:mt-0 md:col-span-5 xl:col-span-2">
+            <p class="text-[#4FA0FF] tracking-wider text-2xl font-medium mb-6">
+                Support
+            </p>
+            <nav class="list-none flex flex-col gap-2">
+                <li>
+                    <a
+                        class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
+                        <i class="ri-arrow-right-double-line text-2xl font-medium"></i>
+                        Terms & Condition
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
+                        <i class="ri-arrow-right-double-line text-2xl font-medium"></i>
+                        FAQs
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
+                        <i class="ri-arrow-right-double-line text-2xl font-medium"></i>
+                        404 Page
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
+                        <i class="ri-arrow-right-double-line text-2xl font-medium"></i>
+                        Live Chat
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
+                        <i class="ri-arrow-right-double-line text-2xl font-medium"></i>
+                        Our Services
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
+                        <i class="ri-arrow-right-double-line text-2xl font-medium"></i>
+                        Careers
+                    </a>
+                </li>
+            </nav>
+        </div>
 
-        <div class="flex-grow flex flex-wrap  md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
-            <div class="lg:w-1/4 md:w-1/2 w-full ">
-                <p class="text-[#4FA0FF] tracking-wider text-2xl font-medium mb-6">
-                    Portfolio
-                </p>
-                <nav class="list-none mb-10 flex justify-between flex-col gap-2">
-                    <li>
-                        <a
-                            class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
-                            <i class="ri-arrow-right-double-line text-2xl"></i>
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
-                            <i class="ri-arrow-right-double-line text-2xl"></i>
-                            About Us</a>
-                    </li>
-                    <li>
-                        <a
-                            class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
-                            <i class="ri-arrow-right-double-line text-2xl"></i>
-                            Pricing
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
-                            <i class="ri-arrow-right-double-line text-2xl"></i>
-                            Portfolio
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
-                            <i class="ri-arrow-right-double-line text-2xl"></i>
-                            Blogs
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
-                            <i class="ri-arrow-right-double-line text-2xl"></i>
-                            Careers
-                        </a>
-                    </li>
-                </nav>
-            </div>
-
-            <div class="lg:w-1/3 md:w-1/2 w-full  relative  footer-widget-two__support  !ms-[43px]">
-                <p class="text-[#4FA0FF] tracking-wider text-2xl font-medium mb-6">
-                    Support
-                </p>
-                <nav class="list-none mb-10 flex justify-between flex-col gap-2">
-                    <li>
-                        <a
-                            class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
-                            <i class="ri-arrow-right-double-line text-2xl"></i>
-                            Terms & Condition
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
-                            <i class="ri-arrow-right-double-line text-2xl"></i>
-                            FAQs
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
-                            <i class="ri-arrow-right-double-line text-2xl"></i>
-                            404 Page
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
-                            <i class="ri-arrow-right-double-line text-2xl"></i>
-                            Live Chat
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
-                            <i class="ri-arrow-right-double-line text-2xl"></i>
-                            Our Services
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
-                            <i class="ri-arrow-right-double-line text-2xl"></i>
-                            Careers
-                        </a>
-                    </li>
-                </nav>
-            </div>
-
-            <div class="lg:w-1/3 md:w-1/2 w-full  relative  footer-widget-two__support !ms-[21px]">
-                <p class="text-[#4FA0FF] tracking-wider text-2xl font-medium mb-6">
-                    Our Services
-                </p>
-                <nav class="list-none mb-10 flex justify-between flex-col gap-2">
-                    <li>
-                        <a
-                            class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
-                            <i class="ri-arrow-right-double-line text-2xl"></i>
-                            UI/UX Design
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
-                            <i class="ri-arrow-right-double-line text-2xl"></i>
-                            Website Design</a>
-                    </li>
-                    <li>
-                        <a
-                            class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
-                            <i class="ri-arrow-right-double-line text-2xl"></i>
-                            Web Developement
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
-                            <i class="ri-arrow-right-double-line text-2xl"></i>
-                            Product Design
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
-                            <i class="ri-arrow-right-double-line text-2xl"></i>
-                            Online Branding
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
-                            <i class="ri-arrow-right-double-line text-2xl"></i>
-                            Personal Branding
-                        </a>
-                    </li>
-                </nav>
-            </div>
-
+        <!-- Our Services Column -->
+        <div class="footer-widget font-semibold mt-6 md:col-span-5 xl:col-span-2">
+            <p class="text-[#4FA0FF] tracking-wider text-2xl font-medium mb-6">
+                Our Services
+            </p>
+            <nav class="list-none flex flex-col gap-2">
+                <li>
+                    <a
+                        class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
+                        <i class="ri-arrow-right-double-line text-2xl font-medium"></i>
+                        UI/UX Design
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
+                        <i class="ri-arrow-right-double-line text-2xl font-medium"></i>
+                        Website Design
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
+                        <i class="ri-arrow-right-double-line text-2xl font-medium"></i>
+                        Web Development
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
+                        <i class="ri-arrow-right-double-line text-2xl font-medium"></i>
+                        Product Design
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
+                        <i class="ri-arrow-right-double-line text-2xl font-medium"></i>
+                        Online Branding
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class="text-[#c5c8cd] text-lg flex gap-3 items-start w-fit hover:text-[#edc458] link-underline transition">
+                        <i class="ri-arrow-right-double-line text-2xl font-medium"></i>
+                        Personal Branding
+                    </a>
+                </li>
+            </nav>
         </div>
     </div>
 
+
     {{-- footer Bottom --}}
     <div class="border-t border-[#c5c8cd]/20 relative z-30 ">
-        <div class="max-w-7xl mx-auto py-8 px-5 flex flex-wrap flex-col items-center justify-between sm:flex-row">
-            <p class="text-[#c5c8cd] text-center sm:text-left text-lg ">ⓒ Copyright 2025 techguru All rights
+        <div class="max-w-7xl mx-auto py-8 px-5 flex flex-wrap flex-col items-center justify-between lg:flex-row">
+            <p class="text-[#c5c8cd] text-center sm:text-left text-lg tracking-wider">ⓒ Copyright 2025 techguru All
+                rights
                 reserved
 
             </p>
-            <span class="inline-flex gap-3 items-center">
+            <span class="inline-flex gap-3 flex-col md:flex-row items-center">
 
-                <p class="follow-us text-white">Follow Us:</p>
+                <p class="follow-us !text-2xl  text-white">Follow Us:</p>
 
-                <!-- Social Icon -->
-                <a class="relative w-12 h-12 flex justify-center items-center rounded-full border border-[#c5c8cd]/20 overflow-hidden
+                <div class="inline-flex gap-3">
+                    <!-- Social Icon -->
+                    <a class="relative w-12 h-12 flex justify-center items-center rounded-full border border-[#c5c8cd]/20 overflow-hidden
                group">
-                    <span class="absolute inset-0 rounded-full 
+                        <span class="absolute inset-0 rounded-full 
                      bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
                      scale-0 opacity-0
                      transition-all duration-500 ease-[cubic-bezier(.62,.21,.45,1.52)]
                      group-hover:scale-100 group-hover:opacity-100">
-                    </span>
+                        </span>
 
-                    <i class="ri-facebook-fill text-3xl text-white relative z-10"></i>
-                </a>
+                        <i class="ri-facebook-fill text-3xl text-white relative z-10"></i>
+                    </a>
 
-                <!-- Dribbble -->
-                <a class="relative w-12 h-12 flex justify-center items-center rounded-full border border-[#c5c8cd]/20 overflow-hidden
+                    <!-- Dribbble -->
+                    <a class="relative w-12 h-12 flex justify-center items-center rounded-full border border-[#c5c8cd]/20 overflow-hidden
                group">
-                    <span class="absolute inset-0 rounded-full 
+                        <span class="absolute inset-0 rounded-full 
                      bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
                      scale-0 opacity-0
                      transition-all duration-500 ease-[cubic-bezier(.62,.21,.45,1.52)]
                      group-hover:scale-100 group-hover:opacity-100">
-                    </span>
+                        </span>
 
-                    <i class="ri-dribbble-line text-3xl text-white relative z-10"></i>
-                </a>
+                        <i class="ri-dribbble-line text-3xl text-white relative z-10"></i>
+                    </a>
 
-                <!-- LinkedIn -->
-                <a class="relative w-12 h-12 flex justify-center items-center rounded-full border border-[#c5c8cd]/20 overflow-hidden
+                    <!-- LinkedIn -->
+                    <a class="relative w-12 h-12 flex justify-center items-center rounded-full border border-[#c5c8cd]/20 overflow-hidden
                group">
-                    <span class="absolute inset-0 rounded-full 
+                        <span class="absolute inset-0 rounded-full 
                      bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
                      scale-0 opacity-0
                      transition-all duration-500 ease-[cubic-bezier(.62,.21,.45,1.52)]
                      group-hover:scale-100 group-hover:opacity-100">
-                    </span>
+                        </span>
 
-                    <i class="ri-linkedin-fill text-3xl text-white relative z-10"></i>
-                </a>
+                        <i class="ri-linkedin-fill text-3xl text-white relative z-10"></i>
+                    </a>
+                </div>
 
             </span>
 

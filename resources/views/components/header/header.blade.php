@@ -24,7 +24,7 @@
 <div x-data="{ openMenu: false }">
 
     <!-- EVERYTHING must be inside this div -->
-    <header id="mainHeader" class="border sticky top-0 z-50 w-full py-5 px-4 md:py-6 lg:p-6 border-b border-white/20">
+    <header id="mainHeader" class="border sticky top-0 z-50 w-full py-5 px-5 md:py-6 lg:p-6 border-b border-white/20">
 
         <div class="md:px-4 px-3 flex items-center justify-between">
 
@@ -76,11 +76,10 @@
            transition-all duration-300">
                     <i class="ri-search-line"></i>
                 </button>
-
-
-                <button class="thm-btn hidden md:block">
-                    Get In Touch <span class="font-bold"> →</span>
+                <button class="thm-btn btn--header">
+                    Read More <span>→</span>
                 </button>
+
 
                 <!-- OPEN SIDEBAR BUTTON -->
                 <button @click="openMenu = true" class="md:border me-3 border-white/80 rounded-2xl p-4 

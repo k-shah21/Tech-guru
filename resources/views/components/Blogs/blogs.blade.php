@@ -87,8 +87,8 @@
         gap: 10px;
         padding: 4px 15px 4px 4px;
         position: absolute;
-        top: 50%;
-        left: 46%;
+        top: 65%;
+        left: 14%;
         transform: translate(-50%, -50%) rotate(90deg);
         z-index: 10;
         border-radius: 40px;
@@ -126,37 +126,36 @@
     }
 </style>
 
-<section class="relative w-full py-16 bg-[#06152B] overflow-hidden">
+<section class="relative w-full py-16 xl:px-8 bg-[#06152B] overflow-hidden ">
 
     <!-- Section Heading -->
-    <div class="max-w-7xl mx-auto flex justify-between items-center  gap-20">
-
-        <div class="w-1/2">
+    <div class="max-w-7xl sm:mx-8 lg:mx-36 xl:mx-auto flex flex-col xl:flex-row justify-between items-center">
+        {{-- Left --}}
+        <div class="xl:w-1/2 w-full p-4 flex flex-col gap-5 xl:pe-10">
             <div>
-                <p class="text-[#4FA0FF] tracking-wider text-md font-medium flex items-center gap-2">
+                <p class="text-[#4FA0FF] tracking-wider text-md font-medium flex items-center gap-2 mb-6">
                     <span class="w-2 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#79b0f0] rounded-full"></span>
                     Our Blogs
                     <span class="w-8 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#6daef8] rounded-full"></span>
                 </p>
 
-                <h2 class="text-4xl font-semibold text-white mt-4 mb-5 leading-snug">
-                    Explore Our Latest <span class="text-[#edc458] font-marcellus tracking-wider">Blogs</span> <br>
-                    for Expert Insights
+                <h2 class="text-2xl md:text-[40px] lg:text-4xl font-medium tracking-wide mb-4 leading-snug">
+                    Explore Our Latest<span class="text-[#edc458] font-normal !font-marcellus"> Blogs for Expert
+                        Insights</span>
                 </h2>
 
-                <p class="text-[#c5c8cd] text-lg">
+                <p class="text-[#c5c8cd] text-lg mb-5">
                     Dive into our collection of blogs where we share expert insights, helpful tips, and the latest
                     trends in the industry.
                 </p>
 
-                <button class="mt-6  mb-8 !px-8 !py-4 !rounded-xl thm-btn">
+                <button class="mb-8 !px-8 !py-4 !rounded-xl thm-btn xl:mb-16">
                     View All Blogs →
                 </button>
             </div>
 
-
-            <div
-                class="bg-[#152138] w-[580px] h-[560px] border border-white/10 rounded-[40px] p-6 relative overflow-hidden">
+            {{-- Big Card --}}
+            <div class="bg-[#152138]  border border-white/10 rounded-[40px] p-6 relative overflow-hidden">
 
                 <div class="w-full h-64 relative blog-two__img group">
                     <!-- Blog Image -->
@@ -176,17 +175,17 @@
 
 
                     <!-- Author -->
-                    <div class="blog-two__user-two !-left-12 !top-14">
+                    <div class="blog-two__user-two !left-4 md:!left-4 !top-16 tracking-widest">
                         <div class="blog-two__user-two-img">
                             <img src="images/blog/blog-two-user-1.jpg" height="32" width="32" />
                         </div>
                         <p class="blog-two__user-two-title">
-                            John Doe
+                            John Walk
                         </p>
                     </div>
 
 
-                    <div class="pl-16">
+                    <div class="pl-12">
                         <!-- Meta -->
                         <div class="flex items-center gap-2 my-2 text-[#c5c8cd] text-sm">
                             <p class="hover:text-[#edc458] transition-all duration-300"><i
@@ -196,17 +195,17 @@
                         </div>
 
                         <!-- Title -->
-                        <h3 class="text-white text-2xl font-bold leading-snug mb-[18px]">
+                        <h3 class="text-white text-2xl md:text-2xl font-semibold leading-snug mb-[18px]">
                             The Future is Now: A 2025 Guide to Digital Transformation
                         </h3>
 
                         <p class="text-[#c5c8cd] mb-[18px] text-md">
-                            Winning the Digital Race: The 2025 Transformation <br /> Roadmap. Next-Gen Digital
+                            Winning the Digital Race: The 2025 Transformation Roadmap. Next-Gen Digital
                             Transformation.
                         </p>
 
                         <!-- Read More -->
-                        <button class="mt-4 !px-6 !py-3 !rounded-full thm-btn">
+                        <button class="!px-6 !py-3 !rounded-full thm-btn">
                             Read More →
                         </button>
                     </div>
@@ -216,19 +215,19 @@
         </div>
 
         <!-- RIGHT - BOTTOM SMALL CARD -->
-        <div class="w-1/2 flex flex-col gap-6">
+        <div class="w-full xl:w-1/2 flex flex-col gap-6  p-4  sm:mx-8 lg:mx-36 xl:mx-0 ">
 
             {{-- Card 1 --}}
             <div
-                class="bg-gradient-to-r border flex gap-16 items-center justify-center from-[#1d253f] to-[#242e4b]  border-white/10 rounded-[40px] p-6 relative">
+                class="bg-gradient-to-r border flex flex-col md:flex-row gap-4 xl:gap-16 items-center justify-center from-[#1d253f] to-[#242e4b]  border-white/10 rounded-[40px] p-6 relative">
 
-                <div class="w-56 h-56 blog-two__img">
+                <div class="w-full xl:w-56 h-56 blog-two__img">
                     <img src="images/blog/blog-2-2.jpg"
                         class="rounded-2xl w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
 
                 <!-- Author -->
-                <div class="blog-two__user-two">
+                <div class="blog-two__user-two md:!left-[52%] md:!top-[50%]">
                     <div class="blog-two__user-two-img">
                         <img src="images/blog/blog-two-user-2.jpg" height="32" width="32" />
                     </div>
@@ -238,7 +237,7 @@
                 </div>
 
                 <!-- Content -->
-                <div class="w-1/2">
+                <div class="w-full xl:w-1/2 pl-[3.4rem]">
 
                     <div class="flex gap-3">
                         <div class="blog-two__tags-two">
@@ -271,25 +270,25 @@
 
             {{-- Card 2 --}}
             <div
-                class="bg-gradient-to-r border flex gap-16 items-center justify-center from-[#1d253f] to-[#242e4b]  border-white/10 rounded-[40px] p-6 relative">
+                class="bg-gradient-to-r border flex flex-col md:flex-row gap-4 xl:gap-16 items-center justify-center from-[#1d253f] to-[#242e4b]  border-white/10 rounded-[40px] p-6 relative">
 
-                <div class="w-56 h-56 blog-two__img">
+                <div class="w-full xl:w-56 h-56 blog-two__img">
                     <img src="images/blog/blog-2-3.jpg"
                         class="rounded-2xl w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
 
                 <!-- Author -->
-                <div class="blog-two__user-two">
+                <div class="blog-two__user-two md:!left-[52%] md:!top-[50%]">
                     <div class="blog-two__user-two-img">
                         <img src="images/blog/blog-two-user-3.jpg" height="32" width="32" />
                     </div>
                     <p class="blog-two__user-two-title">
-                        Alisa Olive
+                        Olive Smith
                     </p>
                 </div>
 
                 <!-- Content -->
-                <div class="w-1/2">
+                <div class="w-full xl:w-1/2 pl-[3.4rem]">
 
                     <div class="flex gap-3">
                         <div class="blog-two__tags-two">
@@ -300,7 +299,7 @@
                     </div>
 
                     <h3 class="text-white text-lg font-semibold mt-4">
-                        How to Maximize Efficiency with Smart Business
+                        5 Key Trends Shaping the Future of Technology
                     </h3>
 
                     <div class="flex gap-4 mt-4 text-[#c5c8cd] text-sm">
@@ -311,7 +310,6 @@
                                     class="ri-chat-3-line text-[#edc458]"></i> 80 Comments</p>
                         </div>
                     </div>
-
 
 
                     <button class="mt-6 !px-6 !py-3 !rounded-full thm-btn">
@@ -320,28 +318,27 @@
                 </div>
             </div>
 
-
-            {{-- Card 3 --}}
+            {{-- Card 2 --}}
             <div
-                class="bg-gradient-to-r border flex gap-16 items-center justify-center from-[#1d253f] to-[#242e4b]  border-white/10 rounded-[40px] p-6 relative">
+                class="bg-gradient-to-r border flex flex-col md:flex-row gap-4 xl:gap-16 items-center justify-center from-[#1d253f] to-[#242e4b]  border-white/10 rounded-[40px] p-6 relative">
 
-                <div class="w-56 h-56 blog-two__img">
+                <div class="w-full xl:w-56 h-56 blog-two__img">
                     <img src="images/blog/blog-2-4.jpg"
                         class="rounded-2xl w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
 
                 <!-- Author -->
-                <div class="blog-two__user-two">
+                <div class="blog-two__user-two md:!left-[52%] md:!top-[50%]">
                     <div class="blog-two__user-two-img">
                         <img src="images/blog/blog-two-user-4.jpg" height="32" width="32" />
                     </div>
                     <p class="blog-two__user-two-title">
-                        Jordan Walks
+                        John Doe
                     </p>
                 </div>
 
                 <!-- Content -->
-                <div class="w-1/2">
+                <div class="w-full xl:w-1/2 pl-[3.4rem]">
 
                     <div class="flex gap-3">
                         <div class="blog-two__tags-two">
@@ -352,8 +349,7 @@
                     </div>
 
                     <h3 class="text-white text-lg font-semibold mt-4">
-
-                        The Ultimate Guide to Digital Transformation in 2025
+                        5 Key Trends Shaping the Future of Technology
                     </h3>
 
                     <div class="flex gap-4 mt-4 text-[#c5c8cd] text-sm">
@@ -364,6 +360,7 @@
                                     class="ri-chat-3-line text-[#edc458]"></i> 80 Comments</p>
                         </div>
                     </div>
+
 
                     <button class="mt-6 !px-6 !py-3 !rounded-full thm-btn">
                         Read More →

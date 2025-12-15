@@ -33,33 +33,37 @@
 
                 <div class="mt-6 flex flex-col sm:flex-row items-start gap-4">
                     <button class="thm-btn ">Get Started →</button>
-                    <button class="thm-btn ">Read More →</button>
+
+                    <span class="btn-border">
+                        <button class="thm-btn main-slider-two__btn-box-2">
+                            Read More <span>→</span>
+                        </button>
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- FLOATING SHIELD ICON (DESKTOP ONLY) -->
+            <div class="hidden md:block absolute top-[10%] right-[10%] md:right-14 lg:right-[40%] ">
+                <div class="w-[70px] h-[70px] bg-blue-500/20 rounded-full backdrop-blur-sm shadow-lg 
+                    flex items-center justify-center float-animate">
+                    <div class="w-[50px] h-[50px] bg-blue-500/80 rounded-full shadow-xl 
+                        flex items-center justify-center">
+                        <img src="{{ asset('images/icon/main-slider-shield-check-icon.png') }}"
+                            class="opacity-90 object-contain" />
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </div>
-
-    <!-- FLOATING SHIELD ICON (DESKTOP ONLY) -->
-    <div class="hidden md:block absolute top-[10%] right-[10%] md:right-14 lg:right-[40%] ">
-        <div class="w-[70px] h-[70px] bg-blue-500/20 rounded-full backdrop-blur-sm shadow-lg 
-                    flex items-center justify-center float-animate">
-            <div class="w-[50px] h-[50px] bg-blue-500/80 rounded-full shadow-xl 
-                        flex items-center justify-center">
-                <img src="{{ asset('images/icon/main-slider-shield-check-icon.png') }}"
-                    class="opacity-90 object-contain" />
+            <!-- RIGHT SIDE BUTTONS (DESKTOP ONLY) -->
+            <div class="hidden md:flex absolute top-1/3 right-5 md:right-14 flex-col gap-5 z-30">
+                <button class="border border-white/40 rounded-xl px-4 py-2 hover:bg-white/10 transition">
+                    <i class="fa-solid fa-arrow-left rotate-45 text-lg"></i>
+                </button>
+                <button class="border border-white/40 rounded-xl px-4 py-2 hover:bg-white/10 transition">
+                    <i class="fa-solid fa-arrow-right rotate-45 text-lg"></i>
+                </button>
             </div>
-        </div>
-    </div>
-
-    <!-- RIGHT SIDE BUTTONS (DESKTOP ONLY) -->
-    <div class="hidden md:flex absolute top-1/3 right-5 md:right-14 flex-col gap-5 z-30">
-        <button class="border border-white/40 rounded-xl px-4 py-2 hover:bg-white/10 transition">
-            <i class="fa-solid fa-arrow-left rotate-45 text-lg"></i>
-        </button>
-        <button class="border border-white/40 rounded-xl px-4 py-2 hover:bg-white/10 transition">
-            <i class="fa-solid fa-arrow-right rotate-45 text-lg"></i>
-        </button>
-    </div>
 
 </section>

@@ -92,27 +92,41 @@
 
                     <!-- Play Button -->
                     <div class="absolute inset-0 flex justify-center items-center">
-                        <div
-                            class="w-20 h-20 bg-white/20 backdrop-blur-md rounded-full flex justify-center items-center">
-                            <div class="w-14 h-14 bg-white/30 rounded-full flex justify-center items-center">
+
+                        <div class="w-20 h-20 rounded-full flex justify-center items-center relative z-10">
+
+                            <div
+                                class="relative w-18 h-18 rounded-full flex justify-center items-center border border-white/30  p-4">
+
+                                <span class="absolute inset-0 -z-10">
+                                    <span
+                                        class="absolute inset-0 rounded-full border border-white/30 animate-ping bg-white/30 "></span>
+                                </span>
+
+                                <!-- Play icon -->
                                 <div class="w-10 h-10 bg-[#4FA0FF] rounded-full flex justify-center items-center">
                                     <i class="ri-play-fill text-white text-3xl"></i>
                                 </div>
+
                             </div>
+
                         </div>
                     </div>
+
+
                 </div>
             </div>
 
 
             <!-- RIGHT EVENTS LIST -->
-            <div class="flex flex-col gap-6 col-span-4 border">
+            <div class="flex flex-col gap-6 col-span-4 ">
 
                 <!-- EVENT CARD -->
-                <div class="bg-[#2D384E] lg:!w-[689px] rounded-3xl border border-white/10 relative overflow-hidden">
+                <div class="bg-[#2D384E] lg:!w-[689px] rounded-3xl border border-white/5 relative overflow-hidden">
 
-                    <div class="flex justify-between items-center px-6 py-6 gap-10 bg-[#151C30]">
-                        <div class="">
+                    <div
+                        class="flex justify-between flex-col xl:flex-row items-center md:items-start xl:items-center px-6 py-6 gap-2 bg-[#151C30]">
+                        <div>
                             <h3 class="text-white text-2xl font-semibold">Innovation Meets</h3>
                             <p class="text-[#a8b2c5] text-md mt-1">
                                 It is a long established fact that a reader will
@@ -159,7 +173,8 @@
 
                     </div>
 
-                    <div class="flex justify-between items-center pt-4 border-t border-white/10 px-6 py-4">
+                    <div
+                        class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 pt-4 border-t border-white/10 px-6 py-4">
                         <div class="flex items-center gap-4 text-[#a8b2c5] text-md font-semibold">
                             <span class="flex items-center gap-1">
                                 <i class="ri-map-pin-line text-[#edc458] text-lg font-medium"></i>
@@ -178,13 +193,12 @@
                     </div>
                 </div>
 
-
-
                 <!-- EVENT CARD -->
-                <div class="bg-[#2D384E] lg:!w-[689px] rounded-3xl border border-white/10 relative overflow-hidden">
+                <div class="bg-[#2D384E] lg:!w-[689px] rounded-3xl border border-white/5 relative overflow-hidden">
 
-                    <div class="flex justify-between items-center px-6 py-6 gap-10 bg-[#151C30]">
-                        <div class="">
+                    <div
+                        class="flex justify-between flex-col xl:flex-row items-center md:items-start xl:items-center px-6 py-6 gap-2 bg-[#151C30]">
+                        <div>
                             <h3 class="text-white text-2xl font-semibold">Innovation Meets</h3>
                             <p class="text-[#a8b2c5] text-md mt-1">
                                 It is a long established fact that a reader will
@@ -231,7 +245,8 @@
 
                     </div>
 
-                    <div class="flex justify-between items-center pt-4 border-t border-white/10 px-6 py-4">
+                    <div
+                        class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 pt-4 border-t border-white/10 px-6 py-4">
                         <div class="flex items-center gap-4 text-[#a8b2c5] text-md font-semibold">
                             <span class="flex items-center gap-1">
                                 <i class="ri-map-pin-line text-[#edc458] text-lg font-medium"></i>
@@ -244,7 +259,6 @@
                             </span>
                         </div>
 
-
                         <button class="event-one__btn">
                             Book Seat →
                         </button>
@@ -252,10 +266,11 @@
                 </div>
 
                 <!-- EVENT CARD -->
-                <div class="bg-[#2D384E] lg:!w-[689px] rounded-3xl border border-white/10 relative overflow-hidden">
+                <div class="bg-[#2D384E] lg:!w-[689px] rounded-3xl border border-white/5 relative overflow-hidden">
 
-                    <div class="flex justify-between items-center px-6 py-6 gap-10 bg-[#151C30]">
-                        <div class="">
+                    <div
+                        class="flex justify-between flex-col xl:flex-row items-center md:items-start xl:items-center px-6 py-6 gap-2 bg-[#151C30]">
+                        <div>
                             <h3 class="text-white text-2xl font-semibold">Innovation Meets</h3>
                             <p class="text-[#a8b2c5] text-md mt-1">
                                 It is a long established fact that a reader will
@@ -302,7 +317,8 @@
 
                     </div>
 
-                    <div class="flex justify-between items-center pt-4 border-t border-white/10 px-6 py-4">
+                    <div
+                        class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 pt-4 border-t border-white/10 px-6 py-4">
                         <div class="flex items-center gap-4 text-[#a8b2c5] text-md font-semibold">
                             <span class="flex items-center gap-1">
                                 <i class="ri-map-pin-line text-[#edc458] text-lg font-medium"></i>
@@ -315,13 +331,11 @@
                             </span>
                         </div>
 
-
                         <button class="event-one__btn">
                             Book Seat →
                         </button>
                     </div>
                 </div>
-
 
             </div>
 
