@@ -251,18 +251,17 @@
 
         <!-- RIGHT FORM BLOCK -->
         <div class="contact-two__right order-2 w-full h-auto 
-            1440:h-[610px] 
-            1440:w-[610px]">
+            xl:w-[610px]">
 
-            <form action="" class="contact-one__form w-full">
+            <form action="{{ route('contact.store') }}" method="POST" class="contact-one__form w-full">
+                @csrf
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
                     <!-- Full Name -->
                     <div>
                         <h4 class="contact-one__input-title">Full Name</h4>
                         <div class="relative w-full">
-                            <input type="text" placeholder="Thomas Alison"
+                            <input type="text" name="full_name" placeholder="Thomas Alison"
                                 class="w-full bg-transparent border border-[#2a3b59] text-white rounded-xl px-5 py-4 pr-12 focus:outline-none" />
                             <span class="contact-one__input-icon absolute right-4 top-5 text-gray-400">
                                 <i class="ri-user-line"></i>
@@ -274,7 +273,7 @@
                     <div>
                         <h4 class="contact-one__input-title">Email Address</h4>
                         <div class="relative w-full">
-                            <input type="email" placeholder="thomas@domain.com"
+                            <input type="email" name="email" placeholder="thomas@domain.com"
                                 class="w-full bg-transparent border border-[#2a3b59] text-white rounded-xl px-5 py-4 pr-12 focus:outline-none" />
                             <span class="contact-one__input-icon absolute right-4 top-5 text-gray-400">
                                 <i class="ri-mail-line"></i>
@@ -286,7 +285,7 @@
                     <div>
                         <h4 class="contact-one__input-title">Phone Number</h4>
                         <div class="relative w-full">
-                            <input type="text" placeholder="+12 (00) 123 4567 890"
+                            <input type="text" name="phone" placeholder="+12 (00) 123 4567 890"
                                 class="w-full bg-transparent border border-[#2a3b59] text-white rounded-xl px-5 py-4 pr-12 focus:outline-none" />
                             <span class="contact-one__input-icon absolute right-4 top-5 text-gray-400">
                                 <i class="ri-phone-line"></i>
@@ -294,18 +293,17 @@
                         </div>
                     </div>
 
-                    <!-- Select Subject -->
+                    <!-- Subject -->
                     <div>
                         <h4 class="contact-one__input-title">Subject</h4>
                         <div class="relative w-full">
-                            <select class="w-full bg-transparent border border-[#2a3b59] text-gray-400 rounded-xl px-5 py-4 pr-12
-                        focus:outline-none appearance-none cursor-pointer">
-                                <option class="text-black">Select a Service</option>
-                                <option class="text-black">Web Development</option>
-                                <option class="text-black">App Development</option>
-                                <option class="text-black">UI/UX Design</option>
+                            <select name="subject"
+                                class="w-full bg-transparent border border-[#2a3b59] text-gray-400 rounded-xl px-5 py-4 pr-12 focus:outline-none appearance-none cursor-pointer">
+                                <option value="">Select a Service</option>
+                                <option value="Web Development">Web Development</option>
+                                <option value="App Development">App Development</option>
+                                <option value="UI/UX Design">UI/UX Design</option>
                             </select>
-
                             <span class="absolute right-4 top-5 text-gray-400 pointer-events-none">
                                 <i class="ri-arrow-down-s-line text-xl"></i>
                             </span>
@@ -316,14 +314,13 @@
                     <div class="md:col-span-2">
                         <h4 class="contact-one__input-title">Inquiry about</h4>
                         <div class="relative w-full">
-                            <textarea rows="6" placeholder="Write your message"
+                            <textarea name="message" rows="6" placeholder="Write your message"
                                 class="w-full bg-transparent border border-[#2a3b59] text-white rounded-xl px-5 py-4 pr-12 focus:outline-none"></textarea>
                             <span class="contact-one__input-icon absolute right-4 top-5 text-gray-400">
                                 <i class="ri-edit-box-line"></i>
                             </span>
                         </div>
                     </div>
-
                 </div>
 
                 <!-- Submit Button -->
@@ -332,13 +329,29 @@
                         class="px-8 py-3 rounded-xl text-white font-semibold bg-gradient-to-r from-[#7b4dff] to-[#ff5686] hover:opacity-90 transition-all">
                         Submit Now →
                     </button>
+
+
                 </div>
 
+                {{-- Toast Message --}}
+                @if(session('success'))
+                    <div x-data="{ show: true }" x-show="show" x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0 translate-y-[-20px]"
+                        x-transition:enter-end="opacity-100 translate-y-0"
+                        x-transition:leave="transition ease-in duration-300"
+                        x-transition:leave-start="opacity-100 translate-y-0"
+                        x-transition:leave-end="opacity-0 translate-y-[-20px]" x-init="setTimeout(() => show = false, 5000)"
+                        class="fixed top-5 right-5 p-4 bg-green-500 text-white rounded-lg flex items-center justify-between shadow-lg z-50">
+                        <span>{{ session('success') }}</span>
+                        <button @click="show = false" class="ml-4 font-bold text-xl leading-none">✕</button>
+                    </div>
+                @endif
             </form>
+
 
         </div>
 
-        <!-- RIGHT CONTENT -->
+        <!-- LEFT CONTENT -->
         <div class="text-white order-1 text-start">
 
             {{-- Heading --}}
@@ -392,7 +405,6 @@
 
 
         </div>
-
 
     </div>
 

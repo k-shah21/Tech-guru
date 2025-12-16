@@ -21,24 +21,12 @@
         position: relative;
     }
 
-    /* Input Wrapper */
     .newsletter-two__input {
         position: relative;
         width: 100%;
+        z-index: 1;
     }
 
-    /* Email Input */
-    .newsletter-two__input input[type=email] {
-        color: #fff;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        background: transparent;
-        border-radius: 20px;
-        width: 100%;
-        height: 60px;
-        padding: 0 180px 0 25px;
-        font-size: 16px;
-        outline: none;
-    }
 
     .newsletter-two__form button.thm-btn {
         position: absolute;
@@ -52,7 +40,25 @@
         font-weight: 600;
         border: none;
         cursor: pointer;
+        z-index: 2;
     }
+
+
+    /* Email Input */
+    .newsletter-two__input input[type=email] {
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: transparent;
+        border-radius: 20px;
+        width: 100%;
+        height: 60px;
+        padding: 0 180px 0 25px;
+        font-size: 16px;
+        outline: none;
+        position: relative;
+        z-index: 1;
+    }
+
 
     /* Checkbox Wrapper */
     .newsletter-two__form .checked-box {
@@ -114,17 +120,21 @@
         </div>
 
         <div class="newsletter-two__right">
-            <form action="" class="newsletter-two__form">
+            <form action="{{ route('newsletter.store') }}" method="POST" class="newsletter-two__form">
+                @csrf
 
                 <div class="newsletter-two__input">
-                    <input type="email" placeholder="Enter your email">
-                    <button type="submit" class="thm-btn">Subscribe Now →</button>
+                    <input type="email" name="email" placeholder="Enter your email" class="z-40">
+                    <button type="submit" class="thm-btn z-40">Subscribe Now →</button>
                 </div>
 
                 <div class="checked-box text-start">
-                    <input type="checkbox" id="skipper" checked>
-                    <label for="skipper" name="skipper"><span></span> By subscribing, you accept our Privacy
-                        Policy</label>
+                    <input type="checkbox" id="skipper" name="terms" value="1" required>
+                    <label for="skipper">
+                        <span></span>
+                        By subscribing, you accept our Privacy Policy
+                    </label>
+
                 </div>
 
             </form>
