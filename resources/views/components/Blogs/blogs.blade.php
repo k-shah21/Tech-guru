@@ -1,3 +1,16 @@
+@php
+    $featured = $blogs->first();      // Latest blog
+    $others = $blogs->skip(1);         // Remaining 3 blogs
+@endphp
+@php
+    $authors = [
+        ['name' => 'John Smith', 'image' => 'images/blog/blog-two-user-1.jpg'],
+        ['name' => 'Olive Smith', 'image' => 'images/blog/blog-two-user-2.jpg'],
+        ['name' => 'John Doe', 'image' => 'images/blog/blog-two-user-3.jpg'],
+        ['name' => 'Sarah Khan', 'image' => 'images/blog/blog-two-user-4.jpg'],
+    ];
+@endphp
+
 <style>
     .blog-two__img {
         z-index: 1;
@@ -149,224 +162,120 @@
                     trends in the industry.
                 </p>
 
-                <button class="mb-8 !px-8 !py-4 !rounded-xl thm-btn xl:mb-16">
+                <a href="{{ route('blog.all') }}" class="inline-block mb-8 px-8 py-4 rounded-xl thm-btn xl:mb-16">
                     View All Blogs →
-                </button>
+                </a>
+
             </div>
 
             {{-- Big Card --}}
-            <div class="bg-[#152138]  border border-white/10 rounded-[40px] p-6 relative overflow-hidden">
+            @if($featured)
+                <div class="bg-[#152138] border border-white/10 rounded-[40px] p-6 relative overflow-hidden">
 
-                <div class="w-full h-64 relative blog-two__img group">
-                    <!-- Blog Image -->
-                    <img src="images/blog/blog-2-1.jpg"
-                        class="rounded-3xl w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <div class="w-full h-64 relative blog-two__img group">
+                        <img src="{{ asset('storage/' . $featured->main_image) }}"
+                            class="rounded-3xl w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
 
-                    <!-- Tags -->
-                    <div class="flex gap-3 absolute bottom-4 left-4 z-10">
-                        <span
-                            class="px-3 py-1 rounded-full bg-[#edc458] text-[#0b192c] text-sm font-medium">Digital</span>
-                        <span
-                            class="px-3 py-1 rounded-full bg-[#edc458] text-[#0b192c] text-sm font-medium">Technology</span>
+                        <!-- Tags -->
+                        <div class="flex gap-3 absolute bottom-4 left-4 z-10">
+                            @foreach(explode(',', $featured->tags) as $tag)
+                                <span class="px-3 py-1 rounded-full bg-[#edc458] text-[#0b192c] text-sm font-medium">
+                                    {{ trim($tag) }}
+                                </span>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <div class="mt-4 flex gap-6 justify-start items-start relative">
+                        <!-- Author -->
+                        <div class="blog-two__user-two !left-4 md:!left-4 !top-16 tracking-widest">
+                            <div class="blog-two__user-two-img">
+                                <img src="images/blog/blog-two-user-1.jpg" height="32" width="32" />
+                            </div>
+                            <p class="blog-two__user-two-title">
+                                John Walk
+                            </p>
+                        </div>
+                        <div class="pl-12">
+                            <!-- Meta -->
+                            <div class="flex items-center gap-2 my-2 text-[#c5c8cd] text-sm">
+                                <p>
+                                    <i class="ri-calendar-2-line text-[#edc458]"></i>
+                                    {{ $featured->created_at->format('M d, Y') }}
+                                </p>
+                            </div>
+
+                            <!-- Title -->
+                            <h3 class="text-white text-2xl font-semibold leading-snug mb-4">
+                                {{ $featured->title }}
+                            </h3>
+
+                            <p class="text-[#c5c8cd] mb-4 text-md">
+                                {{ Str::limit(strip_tags($featured->content), 120) }}
+                            </p>
+
+                            <a href="{{ url('/blog/' . $featured->slug) }}" class="!px-6 !py-3 !rounded-full thm-btn">
+                                Read More →
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <!-- Content -->
-                <div class="mt-4 flex gap-6  justify-start items-start relative">
-
-
-                    <!-- Author -->
-                    <div class="blog-two__user-two !left-4 md:!left-4 !top-16 tracking-widest">
-                        <div class="blog-two__user-two-img">
-                            <img src="images/blog/blog-two-user-1.jpg" height="32" width="32" />
-                        </div>
-                        <p class="blog-two__user-two-title">
-                            John Walk
-                        </p>
-                    </div>
-
-
-                    <div class="pl-12">
-                        <!-- Meta -->
-                        <div class="flex items-center gap-2 my-2 text-[#c5c8cd] text-sm">
-                            <p class="hover:text-[#edc458] transition-all duration-300"><i
-                                    class="ri-calendar-2-line text-[#edc458]"></i> April 5, 2025</p> |
-                            <p class="hover:text-[#edc458] transition-all duration-300"><i
-                                    class="ri-chat-3-line text-[#edc458]"></i> 80 Comments</p>
-                        </div>
-
-                        <!-- Title -->
-                        <h3 class="text-white text-2xl md:text-2xl font-semibold leading-snug mb-[18px]">
-                            The Future is Now: A 2025 Guide to Digital Transformation
-                        </h3>
-
-                        <p class="text-[#c5c8cd] mb-[18px] text-md">
-                            Winning the Digital Race: The 2025 Transformation Roadmap. Next-Gen Digital
-                            Transformation.
-                        </p>
-
-                        <!-- Read More -->
-                        <button class="!px-6 !py-3 !rounded-full thm-btn">
-                            Read More →
-                        </button>
-                    </div>
-                </div>
-            </div>
+            @endif
 
         </div>
 
         <!-- RIGHT - BOTTOM SMALL CARD -->
         <div class="w-full xl:w-1/2 flex flex-col gap-6  p-4  sm:mx-8 lg:mx-36 xl:mx-0 ">
 
-            {{-- Card 1 --}}
-            <div
-                class="bg-gradient-to-r border flex flex-col md:flex-row gap-4 xl:gap-16 items-center justify-center from-[#1d253f] to-[#242e4b]  border-white/10 rounded-[40px] p-6 relative">
+            @foreach($others as $blog)
+                @php
+                    $author = $authors[array_rand($authors)];
+                @endphp
 
-                <div class="w-full xl:w-56 h-56 blog-two__img">
-                    <img src="images/blog/blog-2-2.jpg"
-                        class="rounded-2xl w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                </div>
+                <div
+                    class="bg-gradient-to-r border flex flex-col md:flex-row gap-4 xl:gap-16 items-center from-[#1d253f] to-[#242e4b] border-white/10 rounded-[40px] p-6 relative">
 
-                <!-- Author -->
-                <div class="blog-two__user-two md:!left-[52%] md:!top-[50%]">
-                    <div class="blog-two__user-two-img">
-                        <img src="images/blog/blog-two-user-2.jpg" height="32" width="32" />
+                    <!-- Image -->
+                    <div class="w-full xl:w-56 h-56 blog-two__img">
+                        <img src="{{ asset('storage/' . $blog->main_image) }}"
+                            class="rounded-2xl w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                     </div>
-                    <p class="blog-two__user-two-title">
-                        John Smith
-                    </p>
-                </div>
 
-                <!-- Content -->
-                <div class="w-full xl:w-1/2 pl-[3.4rem]">
+                    <!-- Author -->
+                    <div class="blog-two__user-two md:!left-[52%] md:!top-[50%]">
+                        <div class="blog-two__user-two-img">
+                            <img src="{{ asset($author['image']) }}" width="32" height="32" />
+                        </div>
+                        <p class="blog-two__user-two-title">
+                            {{ $author['name'] }}
+                        </p>
+                    </div>
 
-                    <div class="flex gap-3">
-                        <div class="blog-two__tags-two">
-                            <span>Digital</span>
-                            <span>Technology</span>
+                    <!-- Content -->
+                    <div class="w-full xl:w-1/2 pl-[3.4rem]">
+
+                        <div class="flex gap-2 blog-two__tags-two">
+                            @foreach(explode(',', $blog->tags) as $tag)
+                                <span>{{ trim($tag) }}</span>
+                            @endforeach
                         </div>
 
-                    </div>
+                        <h3 class="text-white text-lg font-semibold mt-4">
+                            {{ $blog->title }}
+                        </h3>
 
-                    <h3 class="text-white text-lg font-semibold mt-4">
-                        5 Key Trends Shaping the Future of Technology
-                    </h3>
-
-                    <div class="flex gap-4 mt-4 text-[#c5c8cd] text-sm">
-                        <div class="flex items-center gap-2 my-1 text-[#c5c8cd] text-sm">
-                            <p class="hover:text-[#edc458] transition-all duration-300"><i
-                                    class="ri-calendar-2-line text-[#edc458]"></i> April 5, 2025</p> |
-                            <p class="hover:text-[#edc458] transition-all duration-300"><i
-                                    class="ri-chat-3-line text-[#edc458]"></i> 80 Comments</p>
-                        </div>
-                    </div>
-
-
-                    <button class="mt-6 !px-6 !py-3 !rounded-full thm-btn">
-                        Read More →
-                    </button>
-                </div>
-            </div>
-
-
-            {{-- Card 2 --}}
-            <div
-                class="bg-gradient-to-r border flex flex-col md:flex-row gap-4 xl:gap-16 items-center justify-center from-[#1d253f] to-[#242e4b]  border-white/10 rounded-[40px] p-6 relative">
-
-                <div class="w-full xl:w-56 h-56 blog-two__img">
-                    <img src="images/blog/blog-2-3.jpg"
-                        class="rounded-2xl w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                </div>
-
-                <!-- Author -->
-                <div class="blog-two__user-two md:!left-[52%] md:!top-[50%]">
-                    <div class="blog-two__user-two-img">
-                        <img src="images/blog/blog-two-user-3.jpg" height="32" width="32" />
-                    </div>
-                    <p class="blog-two__user-two-title">
-                        Olive Smith
-                    </p>
-                </div>
-
-                <!-- Content -->
-                <div class="w-full xl:w-1/2 pl-[3.4rem]">
-
-                    <div class="flex gap-3">
-                        <div class="blog-two__tags-two">
-                            <span>Digital</span>
-                            <span>Technology</span>
+                        <div class="text-[#c5c8cd] text-sm mt-2">
+                            <i class="ri-calendar-2-line text-[#edc458]"></i>
+                            {{ $blog->created_at->format('M d, Y') }}
                         </div>
 
+                        <a href="{{ url('/blog/' . $blog->slug) }}"
+                            class="mt-6 inline-block !px-6 !py-3 !rounded-full thm-btn">
+                            Read More →
+                        </a>
                     </div>
-
-                    <h3 class="text-white text-lg font-semibold mt-4">
-                        5 Key Trends Shaping the Future of Technology
-                    </h3>
-
-                    <div class="flex gap-4 mt-4 text-[#c5c8cd] text-sm">
-                        <div class="flex items-center gap-2 my-1 text-[#c5c8cd] text-sm">
-                            <p class="hover:text-[#edc458] transition-all duration-300"><i
-                                    class="ri-calendar-2-line text-[#edc458]"></i> April 5, 2025</p> |
-                            <p class="hover:text-[#edc458] transition-all duration-300"><i
-                                    class="ri-chat-3-line text-[#edc458]"></i> 80 Comments</p>
-                        </div>
-                    </div>
-
-
-                    <button class="mt-6 !px-6 !py-3 !rounded-full thm-btn">
-                        Read More →
-                    </button>
                 </div>
-            </div>
-
-            {{-- Card 2 --}}
-            <div
-                class="bg-gradient-to-r border flex flex-col md:flex-row gap-4 xl:gap-16 items-center justify-center from-[#1d253f] to-[#242e4b]  border-white/10 rounded-[40px] p-6 relative">
-
-                <div class="w-full xl:w-56 h-56 blog-two__img">
-                    <img src="images/blog/blog-2-4.jpg"
-                        class="rounded-2xl w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                </div>
-
-                <!-- Author -->
-                <div class="blog-two__user-two md:!left-[52%] md:!top-[50%]">
-                    <div class="blog-two__user-two-img">
-                        <img src="images/blog/blog-two-user-4.jpg" height="32" width="32" />
-                    </div>
-                    <p class="blog-two__user-two-title">
-                        John Doe
-                    </p>
-                </div>
-
-                <!-- Content -->
-                <div class="w-full xl:w-1/2 pl-[3.4rem]">
-
-                    <div class="flex gap-3">
-                        <div class="blog-two__tags-two">
-                            <span>Digital</span>
-                            <span>Technology</span>
-                        </div>
-
-                    </div>
-
-                    <h3 class="text-white text-lg font-semibold mt-4">
-                        5 Key Trends Shaping the Future of Technology
-                    </h3>
-
-                    <div class="flex gap-4 mt-4 text-[#c5c8cd] text-sm">
-                        <div class="flex items-center gap-2 my-1 text-[#c5c8cd] text-sm">
-                            <p class="hover:text-[#edc458] transition-all duration-300"><i
-                                    class="ri-calendar-2-line text-[#edc458]"></i> April 5, 2025</p> |
-                            <p class="hover:text-[#edc458] transition-all duration-300"><i
-                                    class="ri-chat-3-line text-[#edc458]"></i> 80 Comments</p>
-                        </div>
-                    </div>
-
-
-                    <button class="mt-6 !px-6 !py-3 !rounded-full thm-btn">
-                        Read More →
-                    </button>
-                </div>
-            </div>
+            @endforeach
 
         </div>
 

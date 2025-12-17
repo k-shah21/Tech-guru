@@ -8,9 +8,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\NewsLetterController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [BlogController::class, 'user'])->name('home');
 
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
@@ -40,6 +38,8 @@ Route::get('/admin/blog/{id}/edit', [BlogController::class, 'edit'])->name('blog
 Route::put('/admin/blog/{id}/update', [BlogController::class, 'update'])->name('blog.update');
 
 Route::delete('/admin/blog/{id}/delete', [BlogController::class, 'delete'])->name('blog.delete');
+
+Route::get('/blogs', [BlogController::class, 'all'])->name('blog.all');
 
 // Auth
 

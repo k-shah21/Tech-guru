@@ -21,6 +21,13 @@ class BlogController
         return view('admin.blog.create');
     }
 
+    public function user()
+    {
+        $blogs = Blog::latest()->take(4)->get();
+
+        return view('home', compact('blogs'));
+    }
+
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -106,5 +113,10 @@ class BlogController
         return redirect()
             ->route('blog.index')
             ->with('success', 'Blog deleted successfully!');
+    }
+
+    public function all()
+    {
+        return view('Blogs.all-blogs');
     }
 }

@@ -14,7 +14,7 @@
     <x-getintouch.getintouch />
     <x-events.event />
     <x-testimonials.testimonials />
-    <x-blogs.blogs />
+    <x-blogs.blogs :blogs="$blogs" />
     <x-newsletter.newsletter />
 
 </x-layout>

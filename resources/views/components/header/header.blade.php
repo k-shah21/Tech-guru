@@ -1,6 +1,7 @@
 <style>
     .link-underline {
         position: relative;
+        display: inline-block;
     }
 
     .link-underline::after {
@@ -11,20 +12,23 @@
         width: 0%;
         height: 2px;
         background-color: #edc458;
-        transition: width 0.3s ease, right 0.3s ease;
+        transition: width 0.3s ease;
     }
 
     .link-underline:hover::after {
         width: 100%;
-        right: 0;
-        left: auto;
+        color: #edc458
+    }
+
+    .link-underline.active::after {
+        width: 100%;
     }
 </style>
 
 <div x-data="{ openMenu: false }">
 
     <!-- EVERYTHING must be inside this div -->
-    <header id="mainHeader" class="border sticky top-0 z-50 w-full py-5 px-5 md:py-6 lg:p-6 border-b border-white/20">
+    <header id="mainHeader" class=" sticky top-0 z-50 w-full py-5 px-5 md:py-6 lg:p-6 border-b border-white/20">
 
         <div class="md:px-4 px-3 flex items-center justify-between">
 
@@ -32,14 +36,13 @@
                 <img src="images/logo-1.webp" />
             </div>
 
-            <nav class="hidden xl:flex items-center gap-8 text-gray-300">
-                <a href="#"
-                    class="hover:text-[#edc458] transition text-[#edc458] flex items-center gap-1 link-underline">
-
-                    Home
-                    <i class="ri-arrow-drop-down-line text-2xl"></i>
+            <nav class="hidden xl:flex items-center justify-center gap-8 text-gray-300 flex-1">
+                <a href="{{ route('home') }}"
+                    class="link-underline flex justify-center items-center {{ request()->routeIs('home') ? 'active text-[#edc458]' : '' }}">
+                    Home <i class="ri-arrow-drop-down-line text-2xl"></i>
 
                 </a>
+
 
                 <a href="#"
                     class="hover:text-[#edc458] text-[#f3f2f3] link-underline transition  link-underline">About</a>
@@ -57,7 +60,9 @@
                     <i class="ri-arrow-drop-down-line text-2xl"></i>
 
                 </a>
-                <a href="#" class="hover:text-[#edc458] text-[#f3f2f3]  link-underline transition">Blog</a>
+                <a href="{{ route('blog.all') }}"
+                    class="hover:text-[#edc458] text-[#f3f2f3]  link-underline transition {{ request()->routeIs('blogs') ? 'active text-[#edc458]' : '' }}">Blog
+                    <i class="ri-arrow-drop-down-line text-2xl"></i></a>
                 <a href="#" class="hover:text-[#edc458] text-[#f3f2f3]  link-underline transition">Contact</a>
             </nav>
 
