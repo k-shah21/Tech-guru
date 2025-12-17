@@ -142,10 +142,10 @@
     </div>
 
     {{-- Blogs --}}
-    <div class="max-w-[1200px] mx-auto px-4 md:px-8 py-20 xl:py-36">
+    <div class="max-w-[1300px] mx-auto px-4 md:px-8 py-20 xl:py-36">
 
         <!-- TOP HEADING -->
-        <div class="flex justify-between flex-col gap-4 items-center mb-10">
+        <div class="flex justify-between flex-col gap-4 items-center mb-10 xl:w-1/2 xl:mx-auto">
 
             <!-- Left Heading -->
             <div>
@@ -157,7 +157,7 @@
                 </p>
 
                 <h2
-                    class="text-2xl  text-center md:text-[40px] lg:text-4xl font-medium tracking-wide !mt-10 leading-28">
+                    class="text-2xl  text-center md:text-[40px] lg:text-[40px] lg:leading-10 font-medium tracking-wide !mt-10 leading-28">
                     How We've <span class="text-[#edc458] font-normal font-marcellus">Empowered Businesses with
                         Innovative </span> Tech
                     Solutions
@@ -166,286 +166,78 @@
 
         </div>
 
+
+
         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 xl:gap-0">
 
+            @foreach ($blogs as $blog)
+                {{-- Blog Card --}}
+                <div class="flex flex-col gap-4 items-center rounded-[40px] relative xl:p-4">
 
+                    <!-- Image -->
+                    <div class="w-full h-60 blog-two__img">
+                        <img src="{{ asset($blog->main_image ?? 'images/blog/blog-2-2.jpg') }}"
+                            class="rounded-2xl w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                            alt="{{ $blog->title }}" />
 
-            {{-- Blog Card --}}
-            <div class="flex flex-col  gap-4  items-center 
-            rounded-[40px] relative xl:p-4">
-
-                <!-- Image -->
-                <div class="w-full  h-60 blog-two__img">
-                    <img src="images/blog/blog-2-2.jpg"
-                        class="rounded-2xl w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
-
-                    <!-- Tags -->
-                    <div class="flex gap-2 blog-two__tags-two">
-                        <span>Digital</span>
-                        <span>Technology</span>
-                    </div>
-                </div>
-
-
-
-
-
-                <!-- Content -->
-                <div class="w-full pl-[3.4rem] relative">
-                    <!-- Author -->
-                    <div class="blog-two__user-two">
-                        <div class="blog-two__user-two-img">
-                            <img src="images/blog/blog-two-user-2.jpg" width="32" height="32" />
+                        <!-- Tags -->
+                        <div class="flex gap-2 blog-two__tags-two">
+                            @foreach(explode(',', $blog->tags) as $tag)
+                                <span>{{ trim($tag) }}</span>
+                            @endforeach
                         </div>
-                        <p class="blog-two__user-two-title">
-                            John Smith
-                        </p>
                     </div>
 
-                    <!-- Date -->
-                    <div class="text-[#c5c8cd] text-sm">
-                        <i class="ri-calendar-2-line text-[#edc458]"></i>
-                        April 5, 2025
-                    </div>
+                    <!-- Content -->
+                    <div class="w-full pl-[3.4rem] relative">
 
-
-                    <!-- Title -->
-                    <h3 class="text-white text-lg font-semibold mt-2">
-                        5 Key Trends Shaping the Future of Technology
-                    </h3>
-                    <p class="mt-3 text-base text-[#c5c8cd] font-medium leading-6 tracking-wide">
-                        Explore essential cybersecurity strategies to safeguard sensitive information and defend against
-                        evolving cyber threats.</p>
-
-                    <!-- Button -->
-                    <a href="#" class="mt-6 inline-block !px-6 !py-3 !rounded-full thm-btn">
-                        Read More →
-                    </a>
-                </div>
-            </div>
-
-            {{-- Blog Card --}}
-            <div class="flex flex-col  gap-4  items-center 
-            rounded-[40px] relative xl:p-4">
-
-                <!-- Image -->
-                <div class="w-full  h-60 blog-two__img">
-                    <img src="images/blog/blog-2-2.jpg"
-                        class="rounded-2xl w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
-
-                    <!-- Tags -->
-                    <div class="flex gap-2 blog-two__tags-two">
-                        <span>Digital</span>
-                        <span>Technology</span>
-                    </div>
-                </div>
-
-
-
-
-
-                <!-- Content -->
-                <div class="w-full pl-[3.4rem] relative">
-                    <!-- Author -->
-                    <div class="blog-two__user-two">
-                        <div class="blog-two__user-two-img">
-                            <img src="images/blog/blog-two-user-2.jpg" width="32" height="32" />
+                        <!-- Author -->
+                        <div class="blog-two__user-two">
+                            <div class="blog-two__user-two-img">
+                                <img src="{{ asset($blog->author_image ?? 'images/blog/blog-two-user-2.jpg') }}" width="32"
+                                    height="32" />
+                            </div>
+                            <p class="blog-two__user-two-title">
+                                {{ $blog->author_name ?? 'Admin' }}
+                            </p>
                         </div>
-                        <p class="blog-two__user-two-title">
-                            John Smith
-                        </p>
-                    </div>
 
-                    <!-- Date -->
-                    <div class="text-[#c5c8cd] text-sm">
-                        <i class="ri-calendar-2-line text-[#edc458]"></i>
-                        April 5, 2025
-                    </div>
-
-
-                    <!-- Title -->
-                    <h3 class="text-white text-lg font-semibold mt-2">
-                        5 Key Trends Shaping the Future of Technology
-                    </h3>
-                    <p class="mt-3 text-base text-[#c5c8cd] font-medium leading-6 tracking-wide">
-                        Explore essential cybersecurity strategies to safeguard sensitive information and defend against
-                        evolving cyber threats.</p>
-
-                    <!-- Button -->
-                    <a href="#" class="mt-6 inline-block !px-6 !py-3 !rounded-full thm-btn">
-                        Read More →
-                    </a>
-                </div>
-            </div>
-
-            {{-- Blog Card --}}
-            <div class="flex flex-col  gap-4  items-center 
-            rounded-[40px] relative xl:p-4">
-
-                <!-- Image -->
-                <div class="w-full  h-60 blog-two__img">
-                    <img src="images/blog/blog-2-2.jpg"
-                        class="rounded-2xl w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
-
-                    <!-- Tags -->
-                    <div class="flex gap-2 blog-two__tags-two">
-                        <span>Digital</span>
-                        <span>Technology</span>
-                    </div>
-                </div>
-
-
-
-
-
-                <!-- Content -->
-                <div class="w-full pl-[3.4rem] relative">
-                    <!-- Author -->
-                    <div class="blog-two__user-two">
-                        <div class="blog-two__user-two-img">
-                            <img src="images/blog/blog-two-user-2.jpg" width="32" height="32" />
+                        <!-- Date -->
+                        <div class="text-[#c5c8cd] text-sm">
+                            <i class="ri-calendar-2-line text-[#edc458]"></i>
+                            {{ $blog->created_at->format('F d, Y') }}
                         </div>
-                        <p class="blog-two__user-two-title">
-                            John Smith
+
+                        <!-- Title -->
+                        <h3 class="text-white text-lg font-semibold mt-2">
+                            {{ $blog->title }}
+                        </h3>
+
+                        <p class="mt-3 text-base text-[#c5c8cd] font-medium leading-6 tracking-wide">
+                            {{ Str::limit($blog->meta_description, 120) }}
                         </p>
-                    </div>
 
-                    <!-- Date -->
-                    <div class="text-[#c5c8cd] text-sm">
-                        <i class="ri-calendar-2-line text-[#edc458]"></i>
-                        April 5, 2025
-                    </div>
+                        <!-- Button -->
+                        <a href="{{ route('blog.showBlogDetails', $blog->slug) }}"
+                            class="mt-6 inline-block !px-6 !py-3 !rounded-full thm-btn">
+                            Read More →
+                        </a>
 
-
-                    <!-- Title -->
-                    <h3 class="text-white text-lg font-semibold mt-2">
-                        5 Key Trends Shaping the Future of Technology
-                    </h3>
-                    <p class="mt-3 text-base text-[#c5c8cd] font-medium leading-6 tracking-wide">
-                        Explore essential cybersecurity strategies to safeguard sensitive information and defend against
-                        evolving cyber threats.</p>
-
-                    <!-- Button -->
-                    <a href="#" class="mt-6 inline-block !px-6 !py-3 !rounded-full thm-btn">
-                        Read More →
-                    </a>
-                </div>
-            </div>
-
-            {{-- Blog Card --}}
-            <div class="flex flex-col  gap-4  items-center 
-            rounded-[40px] relative xl:p-4">
-
-                <!-- Image -->
-                <div class="w-full  h-60 blog-two__img">
-                    <img src="images/blog/blog-2-2.jpg"
-                        class="rounded-2xl w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
-
-                    <!-- Tags -->
-                    <div class="flex gap-2 blog-two__tags-two">
-                        <span>Digital</span>
-                        <span>Technology</span>
                     </div>
                 </div>
-
-
-
-
-
-                <!-- Content -->
-                <div class="w-full pl-[3.4rem] relative">
-                    <!-- Author -->
-                    <div class="blog-two__user-two">
-                        <div class="blog-two__user-two-img">
-                            <img src="images/blog/blog-two-user-2.jpg" width="32" height="32" />
-                        </div>
-                        <p class="blog-two__user-two-title">
-                            John Smith
-                        </p>
-                    </div>
-
-                    <!-- Date -->
-                    <div class="text-[#c5c8cd] text-sm">
-                        <i class="ri-calendar-2-line text-[#edc458]"></i>
-                        April 5, 2025
-                    </div>
-
-
-                    <!-- Title -->
-                    <h3 class="text-white text-lg font-semibold mt-2">
-                        5 Key Trends Shaping the Future of Technology
-                    </h3>
-                    <p class="mt-3 text-base text-[#c5c8cd] font-medium leading-6 tracking-wide">
-                        Explore essential cybersecurity strategies to safeguard sensitive information and defend against
-                        evolving cyber threats.</p>
-
-                    <!-- Button -->
-                    <a href="#" class="mt-6 inline-block !px-6 !py-3 !rounded-full thm-btn">
-                        Read More →
-                    </a>
-                </div>
-            </div>
-
-            {{-- Blog Card --}}
-            <div class="flex flex-col  gap-4  items-center 
-            rounded-[40px] relative xl:p-4">
-
-                <!-- Image -->
-                <div class="w-full  h-60 blog-two__img">
-                    <img src="images/blog/blog-2-2.jpg"
-                        class="rounded-2xl w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
-
-                    <!-- Tags -->
-                    <div class="flex gap-2 blog-two__tags-two">
-                        <span>Digital</span>
-                        <span>Technology</span>
-                    </div>
-                </div>
-
-
-
-
-
-                <!-- Content -->
-                <div class="w-full pl-[3.4rem] relative">
-                    <!-- Author -->
-                    <div class="blog-two__user-two">
-                        <div class="blog-two__user-two-img">
-                            <img src="images/blog/blog-two-user-2.jpg" width="32" height="32" />
-                        </div>
-                        <p class="blog-two__user-two-title">
-                            John Smith
-                        </p>
-                    </div>
-
-                    <!-- Date -->
-                    <div class="text-[#c5c8cd] text-sm">
-                        <i class="ri-calendar-2-line text-[#edc458]"></i>
-                        April 5, 2025
-                    </div>
-
-
-                    <!-- Title -->
-                    <h3 class="text-white text-lg font-semibold mt-2">
-                        5 Key Trends Shaping the Future of Technology
-                    </h3>
-                    <p class="mt-3 text-base text-[#c5c8cd] font-medium leading-6 tracking-wide">
-                        Explore essential cybersecurity strategies to safeguard sensitive information and defend against
-                        evolving cyber threats.</p>
-
-                    <!-- Button -->
-                    <a href="#" class="mt-6 inline-block !px-6 !py-3 !rounded-full thm-btn">
-                        Read More →
-                    </a>
-                </div>
-            </div>
-
-
-
-
+            @endforeach
 
         </div>
+
+        <!-- Pagination -->
+        <div class="mt-12 flex justify-center">
+            {{ $blogs->links() }}
+        </div>
+
     </div>
+
+
+
 
     <x-newsletter.newsletter />
 

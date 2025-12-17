@@ -18,6 +18,16 @@
             <h2 class="fw-bold">Create Blog</h2>
             <a href="/blogs" class="btn btn-outline-dark px-4">Back</a>
         </div>
+        @if ($errors->any())
+            <div class="mb-4 p-4 rounded-lg bg-red-500/10 text-red-400 z-50">
+                <ul class="list-disc list-inside">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
 
         <form action=" {{ route('blog.store') }}" method="POST" enctype="multipart/form-data" class="pb-5">
 

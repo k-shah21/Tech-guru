@@ -1,6 +1,6 @@
 @php
-    $featured = $blogs->first();      // Latest blog
-    $others = $blogs->skip(1);         // Remaining 3 blogs
+    $featured = $blogs->first();
+    $others = $blogs->skip(1);         
 @endphp
 @php
     $authors = [
@@ -145,6 +145,7 @@
     <div class="max-w-7xl sm:mx-8 lg:mx-36 xl:mx-auto flex flex-col xl:flex-row justify-between items-center">
         {{-- Left --}}
         <div class="xl:w-1/2 w-full p-4 flex flex-col gap-5 xl:pe-10">
+
             <div>
                 <p class="text-[#4FA0FF] tracking-wider text-md font-medium flex items-center gap-2 mb-6">
                     <span class="w-2 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#79b0f0] rounded-full"></span>
@@ -211,7 +212,7 @@
                             </h3>
 
                             <p class="text-[#c5c8cd] mb-4 text-md">
-                                {{ Str::limit(strip_tags($featured->content), 120) }}
+                                {{ Str::limit(strip_tags($featured->meta_description), 120) }}
                             </p>
 
                             <a href="{{ url('/blog/' . $featured->slug) }}" class="!px-6 !py-3 !rounded-full thm-btn">

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class BlogController
@@ -30,40 +33,63 @@ class BlogController
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'title' => 'required|string|max:120',
-            'heading' => 'required|string|max:255',
-            'meta_description' => 'nullable|string|max:160',
-            'tags' => 'nullable|string|max:255',
-            'content' => 'required|string',
+        try {
+            DB::beginTransaction();
 
-            'main_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
-            'image_alt' => 'required|string|max:40',
+            $validated = $request->validate([
+                'title' => 'required|string|max:120',
+                'heading' => 'required|string|max:255',
+                'meta_description' => 'nullable|string|max:160',
+                'tags' => 'nullable|string|max:255',
+                'content' => 'required|string',
 
-            'status' => 'required|in:published,draft',
-        ]);
+                'main_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+                'image_alt' => 'required_with:main_image|string|max:40',
 
-        if (! empty($validated['tags'])) {
-            $validated['tags'] = collect(explode(',', $validated['tags']))
-                ->map(fn ($tag) => trim($tag))
-                ->filter()
-                ->implode(', ');
+                'status' => 'required|in:published,draft',
+            ]);
+
+            // Format tags
+            if (! empty($validated['tags'])) {
+                $validated['tags'] = collect(explode(',', $validated['tags']))
+                    ->map(fn ($tag) => trim($tag))
+                    ->filter()
+                    ->implode(', ');
+            }
+
+            // Handle image upload
+            if ($request->hasFile('main_image')) {
+                $validated['main_image'] = $request
+                    ->file('main_image')
+                    ->store('blogs', 'public');
+            }
+
+            // Generate UNIQUE slug
+            $slug = Str::slug($validated['title']);
+            $count = Blog::where('slug', 'LIKE', "{$slug}%")->count();
+            $validated['slug'] = $count ? "{$slug}-".($count + 1) : $slug;
+
+            Blog::create($validated);
+
+            DB::commit();
+
+            return redirect()
+                ->route('blog.index')
+                ->with('success', 'Blog created successfully!');
+        } catch (\Throwable $e) {
+
+            DB::rollBack();
+
+            Log::error('Blog creation failed', [
+                'message' => $e->getMessage(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+            ]);
+
+            return back()
+                ->withInput()
+                ->with('error', 'Something went wrong while creating the blog.');
         }
-
-        // Handle image upload
-        if ($request->hasFile('main_image')) {
-            $imagePath = $request->file('main_image')->store('blogs', 'public');
-            $validated['main_image'] = $imagePath;
-        }
-
-        // Optional: auto slug
-        $validated['slug'] = Str::slug($validated['title']);
-
-        Blog::create($validated);
-
-        return redirect()
-            ->route('blog.index')
-            ->with('success', 'Blog created successfully!');
     }
 
     public function edit($id)
@@ -75,33 +101,73 @@ class BlogController
 
     public function update(Request $request, $id)
     {
-        $blog = Blog::findOrFail($id);
+        try {
+            DB::beginTransaction();
 
-        $validated = $request->validate([
-            'title' => 'required|string|max:120',
-            'heading' => 'required|string|max:255',
-            'meta_description' => 'nullable|string|max:160',
-            'tags' => 'nullable|string|max:255',
-            'content' => 'required|string',
-            'main_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
-            'image_alt' => 'nullable|string|max:50',
-        ]);
+            $blog = Blog::findOrFail($id);
 
-        // Update image if uploaded
-        if ($request->hasFile('main_image')) {
-            $validated['main_image'] = $request->file('main_image')->store('blogs', 'public');
+            $validated = $request->validate([
+                'title' => 'required|string|max:120',
+                'heading' => 'required|string|max:255',
+                'meta_description' => 'nullable|string|max:160',
+                'tags' => 'nullable|string|max:255',
+                'content' => 'required|string',
+
+                'main_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+                'image_alt' => 'required_with:main_image|string|max:50',
+            ]);
+
+            // Format tags
+            if (! empty($validated['tags'])) {
+                $validated['tags'] = collect(explode(',', $validated['tags']))
+                    ->map(fn ($tag) => trim($tag))
+                    ->filter()
+                    ->implode(', ');
+            }
+
+            // Replace image safely
+            if ($request->hasFile('main_image')) {
+
+                // Delete old image
+                if ($blog->main_image && Storage::disk('public')->exists($blog->main_image)) {
+                    Storage::disk('public')->delete($blog->main_image);
+                }
+
+                $validated['main_image'] = $request
+                    ->file('main_image')
+                    ->store('blogs', 'public');
+            }
+
+            // Update slug only if title changed
+            if ($blog->title !== $validated['title']) {
+                $slug = Str::slug($validated['title']);
+                $count = Blog::where('slug', 'LIKE', "{$slug}%")
+                    ->where('id', '!=', $blog->id)
+                    ->count();
+
+                $validated['slug'] = $count ? "{$slug}-".($count + 1) : $slug;
+            }
+
+            $blog->update($validated);
+
+            DB::commit();
+
+            return redirect()
+                ->route('blog.index')
+                ->with('success', 'Blog updated successfully!');
+        } catch (\Throwable $e) {
+
+            DB::rollBack();
+
+            Log::error('Blog update failed', [
+                'message' => $e->getMessage(),
+                'blog_id' => $id,
+            ]);
+
+            return back()
+                ->withInput()
+                ->with('error', 'Something went wrong while updating the blog.');
         }
-
-        // Update slug only if title changed
-        if ($blog->title !== $validated['title']) {
-            $validated['slug'] = Str::slug($validated['title']).'-'.time();
-        }
-
-        $blog->update($validated);
-
-        return redirect()
-            ->route('blog.index')
-            ->with('success', 'Blog updated successfully!');
     }
 
     public function delete($id)
@@ -117,6 +183,17 @@ class BlogController
 
     public function all()
     {
-        return view('Blogs.all-blogs');
+        $blogs = Blog::latest()->paginate(perPage: 9);
+
+        return view('Blogs.all-blogs', compact('blogs'));
+    }
+
+    public function showBlogDetails($slug)
+    {
+        $blog = Blog::where('slug', $slug)
+            ->where('status', 'published')
+            ->firstOrFail();
+
+        return view('Blogs.show', compact('blog'));
     }
 }

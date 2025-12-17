@@ -41,8 +41,9 @@ Route::delete('/admin/blog/{id}/delete', [BlogController::class, 'delete'])->nam
 
 Route::get('/blogs', [BlogController::class, 'all'])->name('blog.all');
 
-// Auth
+Route::get('/blog-details/{slug}', [BlogController::class, 'showBlogDetails'])->name('blog.showBlogDetails');
 
+// Auth
 // Login
 Route::get('/login', [LoginController::class, 'create'])
     ->middleware('guest')
