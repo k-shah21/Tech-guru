@@ -14,11 +14,21 @@
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+
 
     <style>
         body {
             background: #f0f2f5;
             overflow-x: hidden;
+        }
+
+        .btn-light {
+            background: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
         }
 
         /* Sidebar */
@@ -120,7 +130,7 @@
     </nav>
 
     <!-- SIDEBAR -->
-    <div id="sidebar" class="collapsed">
+    <div id="sidebar">
         <ul class="nav d-flex flex-column justify-content-between h-100">
             <li>
                 <a href="/admin/dashboard" class="nav-link active">
@@ -147,7 +157,7 @@
     </div>
 
     <!-- CONTENT SLOT -->
-    <div id="content" class="collapsed">
+    <div id="content">
         {{$slot}}
     </div>
 

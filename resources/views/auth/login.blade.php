@@ -13,7 +13,8 @@
         <!-- Email Address -->
         <div class="mb-3">
             <label for="email" class="form-label">{{ __('Email') }}</label>
-            <input id="email" class="form-control @error('email') is-invalid @enderror" type="email" name="email" value="{{ old('email') }}" required autofocus autocomplete="username" />
+            <input id="email" class="form-control @error('email') is-invalid @enderror" type="email" name="email"
+                value="{{ old('email') }}" required autofocus autocomplete="username" />
             @error('email')
                 <div class="invalid-feedback d-block">
                     {{ $message }}
@@ -24,10 +25,8 @@
         <!-- Password -->
         <div class="mb-3">
             <label for="password" class="form-label">{{ __('Password') }}</label>
-            <input id="password" class="form-control @error('password') is-invalid @enderror"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
+            <input id="password" class="form-control @error('password') is-invalid @enderror" type="password"
+                name="password" required autocomplete="current-password" />
             @error('password')
                 <div class="invalid-feedback d-block">
                     {{ $message }}
@@ -45,13 +44,14 @@
 
         <div class="d-flex justify-content-end gap-3 mt-4">
             @if (Route::has('password.request'))
-                <a class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover text-decoration-none" href="{{ route('password.request') }}">
+                <a class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover text-decoration-none"
+                    href="{{ route('password.request') }}">
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
 
             <button type="submit" class="btn btn-primary">
-           Log in
+                Log in
             </button>
         </div>
     </form>

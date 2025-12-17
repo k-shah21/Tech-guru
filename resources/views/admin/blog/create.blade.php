@@ -65,6 +65,21 @@
                         <textarea id="editor" name="content"></textarea>
                     </div>
 
+                    <!-- Status -->
+                    <div class="mb-4">
+                        <label for="status" class="form-label fw-semibold">Visibility</label>
+
+                        <select id="status" name="status" class="form-select form-select-lg rounded-3">
+                            <option value="published" selected>Public</option>
+                            <option value="draft">Draft</option>
+                        </select>
+
+                        <small class="text-muted">
+                            Public blogs are visible on the website. Drafts are hidden.
+                        </small>
+                    </div>
+
+
                     <!-- Main Image -->
                     <div class="mb-4">
                         <label class="form-label fw-semibold">Main Image</label>

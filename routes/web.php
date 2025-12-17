@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\NewsLetterController;
@@ -38,3 +40,29 @@ Route::get('/admin/blog/{id}/edit', [BlogController::class, 'edit'])->name('blog
 Route::put('/admin/blog/{id}/update', [BlogController::class, 'update'])->name('blog.update');
 
 Route::delete('/admin/blog/{id}/delete', [BlogController::class, 'delete'])->name('blog.delete');
+
+// Auth
+
+// Login
+Route::get('/login', [LoginController::class, 'create'])
+    ->middleware('guest')
+    ->name('login');
+
+Route::post('/login', [LoginController::class, 'store'])
+    ->middleware('guest');
+
+// Logout
+Route::post('/logout', [LoginController::class, 'destroy'])
+    ->middleware('auth')
+    ->name('logout');
+
+// Register
+Route::get('/register', [RegisterController::class, 'create'])
+    ->middleware('guest')
+    ->name('register');
+
+Route::post('/register', [RegisterController::class, 'store'])
+    ->middleware('guest');
+
+// Logout User
+Route::post('/logout', [LoginController::class, 'logout']);

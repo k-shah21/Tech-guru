@@ -11,8 +11,9 @@ class BlogController
     public function index()
     {
         $blogs = Blog::latest()->get();
+        $publicCount = Blog::where('status', 'published')->count();
 
-        return view('admin.blogs', compact('blogs'));
+        return view('admin.blogs', compact('blogs', 'publicCount'));
     }
 
     public function show()
@@ -28,10 +29,11 @@ class BlogController
             'meta_description' => 'nullable|string|max:160',
             'tags' => 'nullable|string|max:255',
             'content' => 'required|string',
+
             'main_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
             'image_alt' => 'required|string|max:40',
-            'image' => 'nullable|string|max:50',
 
+            'status' => 'required|in:published,draft',
         ]);
 
         if (! empty($validated['tags'])) {
