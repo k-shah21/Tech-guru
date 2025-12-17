@@ -162,10 +162,9 @@
 <footer class="text-gray-600 body-font relative overflow-hidden">
     <div
         class="container relative z-30 max-w-7xl px-3 py-12 mx-auto grid grid-cols-1 md:grid-cols-10 gap-8 items-center">
-        <!-- Contact Info Card - Takes 30% on xl (approx 3.6 columns out of 12) -->
         <div class="md:col-span-5 xl:col-span-4">
             <div class="bg-[#313C50] h-[424px] rounded-[40px] p-12 text-center md:text-left">
-                <img src="images/resources/footer-logo.png" alt="footer logo">
+                <img src="{{ asset('images/resources/footer-logo.png') }}" alt="footer logo">
 
                 <ul class="list-unstyled site-footer-two__contact-list mt-6">
                     <!-- Contact Info -->

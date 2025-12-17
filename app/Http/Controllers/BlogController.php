@@ -194,6 +194,6 @@ class BlogController
             ->where('status', 'published')
             ->firstOrFail();
 
-        return view('Blogs.show', compact('blog'));
+        return view('Blogs.blog-details', compact('blog'));
     }
 }

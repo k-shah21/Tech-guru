@@ -23,6 +23,12 @@ body {
     color: white;
     overflow-x: hidden !important;
 }
+p {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500 !important;
+    line-height: 24px;
+}
 
 .font-marcellus {
     --font-marcellus: "Marcellus", serif;

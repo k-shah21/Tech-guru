@@ -215,7 +215,8 @@
                                 {{ Str::limit(strip_tags($featured->meta_description), 120) }}
                             </p>
 
-                            <a href="{{ url('/blog/' . $featured->slug) }}" class="!px-6 !py-3 !rounded-full thm-btn">
+                            <a href="{{ url('/blog-details/' . $featured->slug) }}"
+                                class="!px-6 !py-3 !rounded-full thm-btn">
                                 Read More →
                             </a>
                         </div>

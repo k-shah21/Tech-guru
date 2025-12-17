@@ -33,7 +33,7 @@
         <div class="md:px-4 px-3 flex items-center justify-between">
 
             <div class="flex items-center gap-2">
-                <img src="images/logo-1.webp" />
+                <img src="{{ asset('images/logo-1.webp') }}" />
             </div>
 
             <nav class="hidden xl:flex items-center justify-center gap-8 text-gray-300 flex-1">
