@@ -128,39 +128,10 @@
 
    <div class="page-wrap">
 
-     <!-- Header -->
-     <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap">
-       <div>
-         <h1 class="h3 mb-0 fw-bold">Dashboard</h1>
-         <small class="text-muted">Overview & bookings</small>
-       </div>
-
-       <div class="d-flex align-items-center gap-3 mt-3 mt-md-0">
-         <div class="text-end">
-           @auth
-
-
-
-           <div class="small text-muted">Welcome, <strong>{{ auth()->user()->name }}</strong></div>
-           <li>
-             <i class="fa-solid fa-door-closed"></i>
-             <form class="inline" method="POST" action="/logout">
-               @csrf
-               <button type="submit">
-                 Logout
-               </button>
-             </form>
-           </li>
-
-           @else
-
-           @endauth
-
-         </div>
-         <button class="btn-light p-2">
-           <i class="bi bi-bell"></i>
-         </button>
-       </div>
+     <!-- Dashboard Header -->
+     <div class="mb-4">
+       <h1 class="h3 fw-bold">Dashboard</h1>
+       <small class="text-muted">Overview & bookings</small>
      </div>
 
      <!-- Stats -->
@@ -218,11 +189,9 @@
                    <form action="{{ route('contacts.delete', $contact->id) }}" method="POST">
                      @csrf
                      @method('DELETE')
-                     <div class="action-buttons">
-                       <button type="submit" class="delete">
-                         <i class="ri-delete-bin-line"></i>
-                       </button>
-                     </div>
+                     <button type="submit" class="btn btn-sm btn-outline-danger ms-2">
+                       <i class="ri-delete-bin-6-line"></i>
+                     </button>
                    </form>
                  </td>
                </tr>
@@ -264,11 +233,9 @@
                    <form action="{{ route('newsletter.delete', $newsLetter->id) }}" method="POST">
                      @csrf
                      @method('DELETE')
-                     <div class="action-buttons">
-                       <button type="submit" class="delete">
-                         <i class="ri-delete-bin-line"></i>
-                       </button>
-                     </div>
+                     <button type="submit" class="btn btn-sm btn-outline-danger ms-2">
+                       <i class="ri-delete-bin-6-line"></i>
+                     </button>
                    </form>
                  </td>
                </tr>

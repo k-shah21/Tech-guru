@@ -1,7 +1,6 @@
 <style>
     .slick-dots {
         bottom: 0px;
-        rotate: 90deg;
     }
 
     .slick-dots li button {
@@ -78,6 +77,7 @@
         </h2>
     </div>
 
+    <!-- GLOW BACKGROUND -->
     <div class="absolute inset-0 flex items-center justify-start pointer-events-none z-[2]">
         <div
             class="w-[700px] h-[700px] lg:w-[900px] lg:h-[900px] translate-x-20 rounded-full blur-[100px] opacity-100 bg-[radial-gradient(circle,_rgba(66,44,72,0.9),_rgba(0,0,0,0))]">
@@ -88,13 +88,14 @@
             class="absolute z-1 sca pointer-events-none float-vertical opacity-10">
     </div>
 
+    <!-- GLOW BACKGROUND -->
     <div class="absolute inset-0 flex items-center justify-end pointer-events-none">
-        <!-- GLOW BACKGROUND -->
         <div
             class="w-[700px] h-[700px] lg:w-[900px] lg:h-[900px] translate-x-20 rounded-full blur-[100px] opacity-100 bg-[radial-gradient(circle,_rgba(66,44,72,0.9),_rgba(0,0,0,0))] z-[2]">
         </div>
     </div>
 
+    <!-- Cards Container -->
     <div class="mt-10 max-w-[1400px] mx-auto px-4 relative z-30">
         <div class="responsive">
             <!-- Card 1 -->
@@ -411,13 +412,11 @@
                 </div>
             </div>
 
-
-
         </div>
 
         <div class="mt-10 flex items-center justify-between w-full px-4">
 
-            <div class="relative mt-0 w-auto ps-6 ml-10 slick-dots">
+            <div class="relative mt-0 w-auto ps-6 ml-10 slick-dots rotate-90">
                 <ul></ul>
             </div>
 
@@ -436,11 +435,11 @@
             </div>
         </div>
     </div>
+
 </section>
 
 <script>
-
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('.responsive').slick({
             dots: true,
             infinite: false,
@@ -453,8 +452,7 @@
             nextArrow: $('.custom-next'),
             appendDots: $('.slick-dots'),
 
-            responsive: [
-                {
+            responsive: [{
                     breakpoint: 1024,
                     settings: {
                         slidesToShow: 3,
@@ -499,18 +497,18 @@
         updateCardWidths();
 
         // Update on slide change
-        $('.responsive').on('afterChange', function () {
+        $('.responsive').on('afterChange', function() {
             updateCardWidths();
         });
 
-        $(document).on('mouseenter', '.responsive .slick-slide', function () {
+        $(document).on('mouseenter', '.responsive .slick-slide', function() {
             const slides = $('.responsive .slick-slide');
             slides.css('flex', '0 0 200px');
             $(this).css('flex', '0 0 500px');
         });
 
         // When mouse leaves, restore the 4th card to 500px
-        $(document).on('mouseleave', '.responsive .slick-slide', function () {
+        $(document).on('mouseleave', '.responsive .slick-slide', function() {
             // Only update if we're not hovering over any slide
             if (!$('.responsive .slick-slide:hover').length) {
                 updateCardWidths();

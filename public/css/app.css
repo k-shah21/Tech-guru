@@ -142,6 +142,66 @@ p {
 .thm-btn:hover {
     color: #333;
 }
+
+.event-one__btn {
+    color: #fff;
+    z-index: 1;
+    border-radius: 22px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 24px 9px;
+    font-size: 16px;
+    font-weight: 500;
+    display: inline-flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.event-one__btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(90deg, #6065d4, #fa5674);
+    border-radius: 35px;
+    padding: 1px;
+
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    transition: all 0.5s ease;
+}
+
+.event-one__btn::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 0;
+    background-color: #ffd25d;
+    border-radius: 22px;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+}
+
+.event-one__btn:hover::after {
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+}
+.btn--hero {
+    background: linear-gradient(90deg, #6065d4, #fa5674);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+}
 .btn--header {
     background: linear-gradient(270deg, #5cb0e9 0%, #3d72fc 100%);
 }
@@ -236,13 +296,4 @@ p {
 
 .wave-animate {
     animation: floatWave 5s ease-in-out infinite;
-}
-
-.preview-img {
-    clip-path: inset(0 100% 0 0);
-    transition: clip-path 0.6s ease-out;
-}
-
-.preview-img.reveal {
-    clip-path: inset(0 0 0 0);
 }

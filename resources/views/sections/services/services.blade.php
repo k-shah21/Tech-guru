@@ -261,6 +261,10 @@
     </div>
 </section>
 
+<style>
+
+</style>
+
 <!-- JS -->
 <script>
     document.querySelectorAll(".group").forEach(row => {
@@ -279,6 +283,4 @@
             preview.style.opacity = "0";
         });
     });
-
-
 </script>

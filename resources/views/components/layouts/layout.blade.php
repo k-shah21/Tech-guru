@@ -57,6 +57,17 @@
         }
     </script>
 
+    <style>
+        .preview-img {
+            clip-path: inset(0 100% 0 0);
+            transition: clip-path 0.6s ease-out;
+        }
+
+        .preview-img.reveal {
+            clip-path: inset(0 0 0 0);
+        }
+    </style>
+
     <title>Tech Guru</title>
 </head>
 

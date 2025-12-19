@@ -1,4 +1,4 @@
-<x-adminlayout>
+<x-layouts.adminlayout>
 
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="fw-bold">Edit Blog: {{ $blog->title }}</h2>
@@ -69,11 +69,11 @@
                     <input type="file" name="main_image" class="form-control rounded-3">
 
                     @if($blog->main_image)
-                        <div class="mt-3">
-                            <p class="text-muted mb-1">Current Image:</p>
-                            <img src="{{ asset('storage/' . $blog->main_image) }}" class="rounded" width="200"
-                                alt="{{ $blog->image_alt }}">
-                        </div>
+                    <div class="mt-3">
+                        <p class="text-muted mb-1">Current Image:</p>
+                        <img src="{{ asset('storage/' . $blog->main_image) }}" class="rounded" width="200"
+                            alt="{{ $blog->image_alt }}">
+                    </div>
                     @endif
                 </div>
 
@@ -109,4 +109,4 @@
         });
     </script>
 
-</x-adminlayout>
+</x-layouts.adminlayout>

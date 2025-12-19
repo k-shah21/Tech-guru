@@ -1,10 +1,10 @@
-<x-guest-layout>
+<x-layouts.guest-layout>
     <!-- Session Status -->
     @if ($status = session('status'))
-        <div class="alert alert-success alert-dismissible fade show mb-4" role="alert">
-            {{ $status }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+    <div class="alert alert-success alert-dismissible fade show mb-4" role="alert">
+        {{ $status }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
     @endif
 
     <form method="POST" action="{{ route('login') }}">
@@ -16,9 +16,9 @@
             <input id="email" class="form-control @error('email') is-invalid @enderror" type="email" name="email"
                 value="{{ old('email') }}" required autofocus autocomplete="username" />
             @error('email')
-                <div class="invalid-feedback d-block">
-                    {{ $message }}
-                </div>
+            <div class="invalid-feedback d-block">
+                {{ $message }}
+            </div>
             @enderror
         </div>
 
@@ -28,9 +28,9 @@
             <input id="password" class="form-control @error('password') is-invalid @enderror" type="password"
                 name="password" required autocomplete="current-password" />
             @error('password')
-                <div class="invalid-feedback d-block">
-                    {{ $message }}
-                </div>
+            <div class="invalid-feedback d-block">
+                {{ $message }}
+            </div>
             @enderror
         </div>
 
@@ -44,10 +44,10 @@
 
         <div class="d-flex justify-content-end gap-3 mt-4">
             @if (Route::has('password.request'))
-                <a class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover text-decoration-none"
-                    href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
+            <a class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover text-decoration-none"
+                href="{{ route('password.request') }}">
+                {{ __('Forgot your password?') }}
+            </a>
             @endif
 
             <button type="submit" class="btn btn-primary">
@@ -55,4 +55,4 @@
             </button>
         </div>
     </form>
-</x-guest-layout>
+</x-layouts.guest-layout>

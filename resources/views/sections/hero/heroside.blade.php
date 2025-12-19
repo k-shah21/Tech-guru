@@ -1,4 +1,4 @@
-<div class="w-[100px] border-white/30 border-r hidden 2xl:flex flex-col justify-around hero-sidebar">
+<div class="w-[117px] border-white/30 border-r hidden 2xl:flex flex-col justify-around hero-sidebar">
 
     <!-- TOP TEXT BLOCK -->
     <div class="flex flex-col items-center space-y-10 font-bold">

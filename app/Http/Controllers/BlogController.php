@@ -11,6 +11,47 @@ use Illuminate\Support\Str;
 
 class BlogController
 {
+    protected function formatTags(?string $tags): ?string
+    {
+        return $tags ? collect(explode(',', $tags))
+            ->map(fn($tag) => trim($tag))
+            ->filter()
+            ->implode(', ') : null;
+    }
+
+    protected function generateUniqueSlug(string $title, ?int $ignoreId = null): string
+    {
+        $slug = Str::slug($title);
+        $query = Blog::where('slug', 'LIKE', "{$slug}%");
+        if ($ignoreId) $query->where('id', '!=', $ignoreId);
+        $count = $query->count();
+        return $count ? "{$slug}-" . ($count + 1) : $slug;
+    }
+
+    protected function handleImageUpload(Request $request, ?string $existingPath = null): ?string
+    {
+        if ($request->hasFile('main_image')) {
+            if ($existingPath && Storage::disk('public')->exists($existingPath)) {
+                Storage::disk('public')->delete($existingPath);
+            }
+            return $request->file('main_image')->store('blogs', 'public');
+        }
+        return $existingPath;
+    }
+    protected function blogValidationRules(bool $isUpdate = false): array
+    {
+        return [
+            'title' => 'required|string|max:120',
+            'heading' => 'required|string|max:255',
+            'meta_description' => 'nullable|string|max:160',
+            'tags' => 'nullable|string|max:255',
+            'content' => 'required|string',
+            'main_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'image_alt' => $isUpdate ? 'required_with:main_image|string|max:50' : 'required_with:main_image|string|max:40',
+            'status' => $isUpdate ? '' : 'required|in:published,draft',
+        ];
+    }
+
     public function index()
     {
         $blogs = Blog::latest()->get();
@@ -33,53 +74,17 @@ class BlogController
 
     public function store(Request $request)
     {
+        $validated = $request->validate($this->blogValidationRules());
+
+        $validated['tags'] = $this->formatTags($validated['tags']);
+        $validated['main_image'] = $this->handleImageUpload($request);
+        $validated['slug'] = $this->generateUniqueSlug($validated['title']);
+
         try {
-            DB::beginTransaction();
+            DB::transaction(fn() => Blog::create($validated));
 
-            $validated = $request->validate([
-                'title' => 'required|string|max:120',
-                'heading' => 'required|string|max:255',
-                'meta_description' => 'nullable|string|max:160',
-                'tags' => 'nullable|string|max:255',
-                'content' => 'required|string',
-
-                'main_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
-                'image_alt' => 'required_with:main_image|string|max:40',
-
-                'status' => 'required|in:published,draft',
-            ]);
-
-            // Format tags
-            if (! empty($validated['tags'])) {
-                $validated['tags'] = collect(explode(',', $validated['tags']))
-                    ->map(fn($tag) => trim($tag))
-                    ->filter()
-                    ->implode(', ');
-            }
-
-            // Handle image upload
-            if ($request->hasFile('main_image')) {
-                $validated['main_image'] = $request
-                    ->file('main_image')
-                    ->store('blogs', 'public');
-            }
-
-            // Generate UNIQUE slug
-            $slug = Str::slug($validated['title']);
-            $count = Blog::where('slug', 'LIKE', "{$slug}%")->count();
-            $validated['slug'] = $count ? "{$slug}-" . ($count + 1) : $slug;
-
-            Blog::create($validated);
-
-            DB::commit();
-
-            return redirect()
-                ->route('blog.index')
-                ->with('success', 'Blog created successfully!');
+            return redirect()->route('blog.index')->with('success', 'Blog created successfully!');
         } catch (\Throwable $e) {
-
-            DB::rollBack();
-
             Log::error('Blog creation failed', [
                 'message' => $e->getMessage(),
                 'file' => $e->getFile(),
@@ -88,11 +93,10 @@ class BlogController
 
             generatesitemap();
 
-            return back()
-                ->withInput()
-                ->with('error', 'Something went wrong while creating the blog.');
+            return back()->withInput()->with('error', 'Something went wrong while creating the blog.');
         }
     }
+
 
     public function edit($id)
     {
@@ -104,64 +108,22 @@ class BlogController
 
     public function update(Request $request, $id)
     {
+        $blog = Blog::findOrFail($id);
+
+        $validated = $request->validate($this->blogValidationRules(isUpdate: true));
+
+        $validated['tags'] = $this->formatTags($validated['tags']);
+        $validated['main_image'] = $this->handleImageUpload($request, $blog->main_image);
+
+        if ($blog->title !== $validated['title']) {
+            $validated['slug'] = $this->generateUniqueSlug($validated['title'], $blog->id);
+        }
+
         try {
-            DB::beginTransaction();
+            DB::transaction(fn() => $blog->update($validated));
 
-            $blog = Blog::findOrFail($id);
-
-            $validated = $request->validate([
-                'title' => 'required|string|max:120',
-                'heading' => 'required|string|max:255',
-                'meta_description' => 'nullable|string|max:160',
-                'tags' => 'nullable|string|max:255',
-                'content' => 'required|string',
-
-                'main_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
-                'image_alt' => 'required_with:main_image|string|max:50',
-            ]);
-
-            // Format tags
-            if (! empty($validated['tags'])) {
-                $validated['tags'] = collect(explode(',', $validated['tags']))
-                    ->map(fn($tag) => trim($tag))
-                    ->filter()
-                    ->implode(', ');
-            }
-
-            // Replace image safely
-            if ($request->hasFile('main_image')) {
-
-                // Delete old image
-                if ($blog->main_image && Storage::disk('public')->exists($blog->main_image)) {
-                    Storage::disk('public')->delete($blog->main_image);
-                }
-
-                $validated['main_image'] = $request
-                    ->file('main_image')
-                    ->store('blogs', 'public');
-            }
-
-            // Update slug only if title changed
-            if ($blog->title !== $validated['title']) {
-                $slug = Str::slug($validated['title']);
-                $count = Blog::where('slug', 'LIKE', "{$slug}%")
-                    ->where('id', '!=', $blog->id)
-                    ->count();
-
-                $validated['slug'] = $count ? "{$slug}-" . ($count + 1) : $slug;
-            }
-
-            $blog->update($validated);
-
-            DB::commit();
-
-            return redirect()
-                ->route('blog.index')
-                ->with('success', 'Blog updated successfully!');
+            return redirect()->route('blog.index')->with('success', 'Blog updated successfully!');
         } catch (\Throwable $e) {
-
-            DB::rollBack();
-
             Log::error('Blog update failed', [
                 'message' => $e->getMessage(),
                 'blog_id' => $id,
@@ -169,11 +131,10 @@ class BlogController
 
             generatesitemap();
 
-            return back()
-                ->withInput()
-                ->with('error', 'Something went wrong while updating the blog.');
+            return back()->withInput()->with('error', 'Something went wrong while updating the blog.');
         }
     }
+
 
     public function delete($id)
     {

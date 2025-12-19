@@ -8,15 +8,6 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function logout(Request $request)
-    {
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return redirect('/')->with('message', 'You have been logged out successfully');
-    }
-
     // Show login page
     public function create()
     {
@@ -45,14 +36,12 @@ class LoginController extends Controller
         ])->onlyInput('email');
     }
 
-    // Logout
-    public function destroy(Request $request)
+    public function logout(Request $request)
     {
         Auth::logout();
-
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/login');
+        return redirect('/')->with('message', 'You have been logged out successfully');
     }
 }

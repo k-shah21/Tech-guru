@@ -30,7 +30,7 @@
             <h2 class="fw-bold">Blog List</h2>
 
             <a href="/admin/blog/create" class="add-btn">
-                <i class="bi bi-plus-circle me-1"></i>
+                <i class="ri-add-line"></i>
                 Add New Blog
             </a>
         </div>
@@ -120,7 +120,7 @@
                             {{-- Actions --}}
                             <td>
                                 <a href="{{ route('blog.edit', $blog->id) }}" class="btn btn-sm btn-outline-warning">
-                                    <i class="bi bi-pencil-square"></i>
+                                    <i class="ri-edit-circle-line"></i>
                                 </a>
                                 <form action="{{ route('blog.delete', $blog->id) }}" method="POST" class="d-inline"
                                     onsubmit="return confirm('Delete this blog?');">
@@ -128,7 +128,7 @@
                                     @method('DELETE')
 
                                     <button class="btn btn-sm btn-outline-danger ms-2">
-                                        <i class="bi bi-trash"></i>
+                                        <i class="ri-delete-bin-6-line"></i>
                                     </button>
                                 </form>
                             </td>

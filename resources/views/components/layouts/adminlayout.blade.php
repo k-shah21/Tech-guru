@@ -11,7 +11,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jodit@latest/es2021/jodit.fat.min.css" />
@@ -35,22 +34,35 @@
             border: none;
         }
 
-        /* Sidebar */
         #sidebar {
             position: fixed;
             top: 56px;
             left: 0;
-            height: calc(100% - 56px);
+            min-height: calc(100vh - 56px);
             width: 250px;
             background: #eeeeee;
             border-right: 1px solid #e2e2e2;
-            transition: all 0.3s ease;
-            padding-top: 20px;
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            transition: width 0.3s ease;
             box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
         }
 
         #sidebar.collapsed {
             width: 70px;
+        }
+
+        #toggleBtn {
+            background: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
         }
 
         #sidebar .nav-link {
@@ -60,19 +72,49 @@
             color: #333;
             padding: 12px 20px;
             border-radius: 8px;
-            margin: 6px 12px;
-            transition: 0.3s;
+            margin: 6px 6px;
             font-weight: 500;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s;
         }
 
         #sidebar .nav-link:hover,
         #sidebar .nav-link.active {
             background: #ffffff;
+
+        }
+
+        #sidebar.collapsed .nav-link {
+            width: 50px;
         }
 
         #sidebar.collapsed .nav-link span {
             display: none;
         }
+
+        #sidebar.collapsed .nav-link {
+            justify-content: center;
+        }
+
+        .sidebar-bottom .logout-btn {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #333;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .sidebar-bottom .logout-btn:hover {
+            background: #ffffff;
+        }
+
 
         /* Main content */
         #content {
@@ -81,36 +123,16 @@
             padding: 20px;
             transition: 0.3s;
             background-color: white;
+            min-height: calc(100vh - 56px);
+
         }
 
         #content.collapsed {
             margin-left: 70px;
         }
 
-        .nav-shadow {
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
         .nav-Bg {
             background: #EEEEEE;
-        }
-
-        .bi-person-circle,
-        .bi-bell {
-            color: white;
-            cursor: pointer;
-        }
-
-        #toggleBtn {
-            outline-color: white;
-        }
-
-        #sidebar.collapsed .nav-link {
-            justify-content: center;
-        }
-
-        .log_out {
-            color: black;
         }
     </style>
 
@@ -121,51 +143,61 @@
 
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-light fixed-top nav-shadow px-3 nav-Bg">
+    <nav class="navbar navbar-light fixed-top px-5 nav-Bg">
+        <h1 class="inline-block">
+            Tech Guru
+        </h1>
         <div class="d-flex align-items-center">
-            <button id="toggleBtn" class="btn btn-light me-3">
-                <i class="bi bi-list"></i>
-            </button>
-        </div>
-
-        <div class="d-flex align-items-center">
-            <i class="bi bi-bell fs-5 me-4 text-black"></i>
-            <i class="bi bi-person-circle fs-4 text-black"></i>
+            <i class="ri-notification-3-line fs-5 me-4 text-black"></i>
+            <i class="ri-account-box-fill fs-4"></i>
         </div>
     </nav>
 
 
     <!-- SIDEBAR -->
     <div id="sidebar">
-        <ul class="nav d-flex flex-column justify-content-between h-100">
+        <!-- Toggle Button -->
+        <div class="sidebar-top d-flex justify-content-end pe-3 mb-3">
+            <button id="toggleBtn" class="btn btn-light">
+                <i class="ri-logout-box-line"></i>
+            </button>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav flex-column flex-grow-1">
             <li>
                 <a href="/admin/dashboard" class="nav-link active">
-                    <i class="bi bi-speedometer2"></i>
+                    <i class="ri-dashboard-line fs-4"></i>
                     <span>Dashboard</span>
                 </a>
+            </li>
+            <li>
                 <a href="/admin/blogs" class="nav-link">
-                    <i class="bi bi-people"></i>
+                    <i class="ri-blogger-line fs-4"></i>
                     <span>Blog</span>
                 </a>
-
-                <form action="/admin/sitemap" method="POST" class="nav-link">
-                    @csrf
-                    <button type="submit">Generate Sitemap</button>
-                </form>
-
             </li>
-            <li style="border-top: 1px solid #e2e2e2; padding-top: 10px;">
-                <form style="width: 100%;">
-                    {{-- method="POST" action="{{ route('logout') }}" --}}
+            <li>
+                <form action="/admin/sitemap" method="POST">
                     @csrf
-                    <button type="submit" class="nav-link log_out"
-                        style="border: none; background: none; width: 100%; text-align: left; cursor: pointer;">
-                        <i class="bi bi-box-arrow-right log_out"></i>
-                        <span class="log_out">Logout</span>
+                    <button type="submit" class="nav-link">
+                        <i class="ri-brush-ai-fill fs-4"></i>
+                        <span>Generate Sitemap</span>
                     </button>
                 </form>
             </li>
         </ul>
+
+        <!-- Logout -->
+        <div class="sidebar-bottom mt-auto pb-3">
+            <form method="POST" action="/logout">
+                @csrf
+                <button type="submit" class="nav-link logout-btn">
+                    <i class="ri-logout-circle-line fs-4"></i>
+                    <span>Logout</span>
+                </button>
+            </form>
+        </div>
     </div>
 
 
@@ -214,6 +246,7 @@
         const toggleBtn = document.getElementById('toggleBtn');
         const sidebar = document.getElementById('sidebar');
         const content = document.getElementById('content');
+
 
         toggleBtn.addEventListener('click', () => {
             sidebar.classList.toggle('collapsed');

@@ -1,107 +1,7 @@
-<style>
-    /* Default slider (blue → light blue) */
-    .range-slider {
-        -webkit-appearance: none;
-        width: 100%;
-        height: 6px;
-        border-radius: 9999px;
-        background: linear-gradient(to right, #3e74fb, #5eafea7b);
-        outline: none;
-        cursor: pointer;
-        opacity: 1;
-    }
-
-    /* Second slider (purple → pink) */
-    .range-slider.second {
-        background: linear-gradient(to right, #6564d0, #ef577b);
-    }
-
-    /* Thumb */
-    .range-slider::-webkit-slider-thumb,
-    .range-slider.second::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        height: 16px;
-        width: 16px;
-        background: white;
-        border-radius: 50%;
-        border: 3px solid #3e74fb;
-        cursor: pointer;
-    }
-
-    /* Thumb for second slider */
-    .range-slider.second::-webkit-slider-thumb {
-        border-color: #ef577b;
-    }
-
-    @keyframes float-vertical {
-        0% {
-            transform: translateY(-10px);
-        }
-
-        50% {
-            transform: translateY(10px);
-        }
-
-        100% {
-            transform: translateY(-10px);
-        }
-    }
-
-    .float-vertical {
-        animation: float-vertical 3s ease-in-out infinite;
-    }
-
-    @keyframes floatY {
-        0% {
-            transform: translateY(0);
-        }
-
-        50% {
-            transform: translateY(20px);
-        }
-
-        100% {
-            transform: translateY(0);
-        }
-    }
-
-    .float-animate {
-        animation: floatY 10s ease-in-out infinite;
-    }
-
-
-    @keyframes float-left-right {
-        0% {
-            transform: translateX(0);
-        }
-
-        50% {
-            transform: translateX(30px);
-        }
-
-        /* move right */
-        100% {
-            transform: translateX(0);
-        }
-    }
-
-    .float-left-right {
-        animation: float-left-right 2s ease-in-out infinite;
-    }
-
-    @media (min-width: 992px) and (max-width: 1199px) {
-        .why-choose-custom {
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    }
-</style>
-
-{{-- py-48 --}}
 <!-- Why CHOOSE us -->
 <section class="relative bg-[#0a1a2f] py-12 overflow-hidden">
 
+    <!-- Gredient BACKGROUND -->
     <div class="absolute inset-0 flex items-center justify-start pointer-events-none">
         <div class="w-[600px] h-[600px] lg:w-[700px] lg:h-[700px]
                 -translate-x-20
@@ -110,6 +10,7 @@
         </div>
     </div>
 
+    <!-- Gredient BACKGROUND -->
     <div class="absolute inset-0 flex items-center justify-end pointer-events-none">
 
         <!-- GLOW BACKGROUND -->
@@ -126,13 +27,12 @@
     </div>
 
 
-    {{-- gap-y-16 --}}
 
     <div class="relative z-10 max-w-[1300px] mx-auto 
             px-4 sm:px-6 lg:px-8 
             grid gap-y-16  xl:grid-cols-2 gap-x-20 items-center">
         <!-- LEFT IMAGE BLOCK -->
-        <div class="relative flex justify-center order-2 border md:w-[670px] mx-auto">
+        <div class="relative flex justify-center order-2 md:w-[670px] mx-auto">
 
             <!-- Main Image -->
             <img src="images/resources/about-one-img-1.jpg" alt="Why choose us" class="scale-100" width="670"
@@ -216,3 +116,99 @@
     </div>
 
 </section>
+
+<style>
+    .range-slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 6px;
+        border-radius: 9999px;
+        background: linear-gradient(to right, #3e74fb, #5eafea7b);
+        outline: none;
+        cursor: pointer;
+        opacity: 1;
+    }
+
+    .range-slider.second {
+        background: linear-gradient(to right, #6564d0, #ef577b);
+    }
+
+    .range-slider::-webkit-slider-thumb,
+    .range-slider.second::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 16px;
+        width: 16px;
+        background: white;
+        border-radius: 50%;
+        border: 3px solid #3e74fb;
+        cursor: pointer;
+    }
+
+    .range-slider.second::-webkit-slider-thumb {
+        border-color: #ef577b;
+    }
+
+    @keyframes float-vertical {
+        0% {
+            transform: translateY(-10px);
+        }
+
+        50% {
+            transform: translateY(10px);
+        }
+
+        100% {
+            transform: translateY(-10px);
+        }
+    }
+
+    .float-vertical {
+        animation: float-vertical 3s ease-in-out infinite;
+    }
+
+    @keyframes floatY {
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(20px);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .float-animate {
+        animation: floatY 10s ease-in-out infinite;
+    }
+
+
+    @keyframes float-left-right {
+        0% {
+            transform: translateX(0);
+        }
+
+        50% {
+            transform: translateX(30px);
+        }
+
+        /* move right */
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    .float-left-right {
+        animation: float-left-right 2s ease-in-out infinite;
+    }
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+        .why-choose-custom {
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+</style>

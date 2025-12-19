@@ -1,65 +1,12 @@
 <style>
-    .event-one__btn {
-        color: var(--techguru-white);
-        z-index: 1;
-        border-radius: 22px;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        padding: 10px 24px 9px;
-        font-size: 16px;
-        font-weight: 500;
-        display: inline-flex;
-        position: relative;
-        overflow: hidden;
-    }
 
-    .event-one__btn::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-        background: linear-gradient(90deg, #6065d4, #fa5674);
-        border-radius: 35px;
-        padding: 1px;
-
-        -webkit-mask:
-            linear-gradient(#fff 0 0) content-box,
-            linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-
-        transition: all .5s ease;
-    }
-
-    .event-one__btn::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 50%;
-        height: 0;
-        background-color: #ffd25d;
-        border-radius: 22px;
-        z-index: -1;
-        opacity: 0;
-        visibility: hidden;
-        transition: all .4s ease-in-out;
-    }
-
-    .event-one__btn:hover::after {
-        height: 100%;
-        width: 100%;
-        opacity: 1;
-        visibility: visible;
-    }
 </style>
 
 <section class="relative bg-[#172537] py-24 px-6 lg:px-0 overflow-hidden">
-    <div class="max-w-7xl mx-auto  z-20 relative">
+    <div class="max-w-7xl mx-auto z-20 relative">
 
         <!-- TOP HEADING + BUTTON -->
-        <div class="flex justify-between flex-col gap-4 items-start lg:items-center mb-16 ">
+        <div class="flex justify-between flex-col xl:flex-row gap-4 items-center mb-16">
 
             <!-- Left Heading -->
             <div>
@@ -83,11 +30,11 @@
 
 
         <!-- MAIN CONTENT: LEFT VIDEO + RIGHT EVENTS -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-28">
+        <div class="grid grid-cols-1 xl:grid-cols-12 gap-24 xl:gap-28">
 
             <!-- LEFT IMAGE / VIDEO -->
-            <div class="flex justify-center col-span-4">
-                <div class="relative w-full md:w-[480px] lg:w-[520px] overflow-hidden rounded-3xl shadow-xl">
+            <div class="flex justify-center  md:max-w-[660px] xl:w-full mx-auto col-span-1 xl:col-span-5 ">
+                <div class="relative w-full md:w-[480px] lg:!w-[620px] overflow-hidden rounded-3xl shadow-xl">
                     <img src="images/resources/event-one-img-1.jpg" class="w-full h-full object-cover rounded-3xl" />
 
                     <!-- Play Button -->
@@ -119,7 +66,7 @@
 
 
             <!-- RIGHT EVENTS LIST -->
-            <div class="flex flex-col gap-6 col-span-4 ">
+            <div class="flex flex-col gap-6 md:max-w-[660px] xl:w-full mx-auto col-span-1 xl:col-span-7 ">
 
                 <!-- EVENT CARD -->
                 <div class="bg-[#2D384E] lg:!w-[689px] rounded-3xl border border-white/5 relative overflow-hidden">
@@ -353,10 +300,8 @@
 
 
 <script>
-    // Starting point: 97 days from now
     const startDays = 97;
 
-    // Convert 97 days → milliseconds
     let countdownTime = startDays * 24 * 60 * 60 * 1000;
 
     function updateTimer() {
@@ -369,14 +314,12 @@
         const minutes = Math.floor((countdownTime / (1000 * 60)) % 60);
         const seconds = Math.floor((countdownTime / 1000) % 60);
 
-        // Update HTML
         document.getElementById("days").textContent = days.toString().padStart(2, '0');
         document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
         document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
         document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
     }
 
-    // Run initially & then every second
     updateTimer();
     setInterval(updateTimer, 1000);
 </script>

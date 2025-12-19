@@ -87,7 +87,7 @@
         height: 100% !important;
     }
 
-    .swiper-slide img {
+    .img {
         display: block;
     }
 
@@ -153,13 +153,13 @@
         </div>
     </div>
 
-    <!-- Swiper Container -->
-    <div class="swiper testimonialSwiper max-w-6xl mx-auto px-4 ">
+    <!--  Container -->
+    <div class="testimonialSwiper max-w-6xl mx-auto px-4 ">
 
-        <div class="swiper-wrapper  flex justify-center flex-row">
+        <div class="flex justify-center flex-row gap-10">
 
             <!-- SLIDE 1 -->
-            <div class="swiper-slide  relative z-30 !w-[400px] ">
+            <div class="relative z-30 !w-[400px] ">
 
                 <div class="bg-[#202944] border testimonial-two__single  !p-8 relative w-full">
 
@@ -192,7 +192,7 @@
             </div>
 
             <!-- SLIDE 1 -->
-            <div class="swiper-slide  relative z-30 !w-[400px] ">
+            <div class="relative z-30 !w-[400px] ">
 
                 <div class="bg-[#202944] border testimonial-two__single  !p-8 relative w-full">
 
@@ -225,7 +225,7 @@
             </div>
 
             <!-- SLIDE 1 -->
-            <div class="swiper-slide  relative z-30 !w-[400px] ">
+            <div class=" relative z-30 !w-[400px] ">
 
                 <div class="bg-[#202944] border testimonial-two__single  !p-8 relative w-full">
 
@@ -256,145 +256,9 @@
                     </div>
                 </div>
             </div>
-
-            <!-- SLIDE 1 -->
-            <div class="swiper-slide  relative z-30 !w-[400px] ">
-
-                <div class="bg-[#202944] border testimonial-two__single  !p-8 relative w-full">
-
-                    <div class="testimonial-two__single-inner overflow-hidden absolute inset-0 "></div>
-                    <div class="flex gap-1 mb-4">
-                        <i class="ri-star-s-fill text-2xl font-light text-[#edc458]"></i>
-                        <i class="ri-star-s-fill text-2xl font-light text-[#edc458]"></i>
-                        <i class="ri-star-s-fill text-2xl font-light text-[#edc458]"></i>
-                        <i class="ri-star-s-line text-2xl font-light text-[#a8b2c5]"></i>
-                        <i class="ri-star-s-line text-2xl font-light text-[#a8b2c5]"></i>
-                    </div>
-
-                    <p class="text-[#c5c8cd] leading-relaxed text-base tracking-wide">
-                        Absolutely fantastic experience! The team exceeded our expectations and delivered a solution
-                        that perfectly met our needs.
-                    </p>
-
-                    <div class="flex items-center gap-8 mt-6 overflow-visible">
-                        <img src="images/testimonial/testimonial-1-1.jpg"
-                            class="w-14 h-14 rounded-full border border-white absolute -left-8" alt="">
-                        <div class="ms-4">
-                            <p class="text-white font-semibold text-xl">James Anderson</p>
-                            <p class="text-[#a8b2c5] text-md mt-2">Product Designer</p>
-                        </div>
-
-                        <i class="ri-double-quotes-r text-6xl text-blue-400 ml-auto mt-5"></i>
-
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- SLIDE 1 -->
-            <div class="swiper-slide  relative z-30 !w-[400px] ">
-
-                <div class="bg-[#202944] border testimonial-two__single  !p-8 relative w-full">
-
-                    <div class="testimonial-two__single-inner overflow-hidden absolute inset-0 "></div>
-                    <div class="flex gap-1 mb-4">
-                        <i class="ri-star-s-fill text-2xl font-light text-[#edc458]"></i>
-                        <i class="ri-star-s-fill text-2xl font-light text-[#edc458]"></i>
-                        <i class="ri-star-s-fill text-2xl font-light text-[#edc458]"></i>
-                        <i class="ri-star-s-line text-2xl font-light text-[#a8b2c5]"></i>
-                        <i class="ri-star-s-line text-2xl font-light text-[#a8b2c5]"></i>
-                    </div>
-
-                    <p class="text-[#c5c8cd] leading-relaxed text-base tracking-wide">
-                        Absolutely fantastic experience! The team exceeded our expectations and delivered a solution
-                        that perfectly met our needs.
-                    </p>
-
-                    <div class="flex items-center gap-8 mt-6 overflow-visible">
-                        <img src="images/testimonial/testimonial-1-1.jpg"
-                            class="w-14 h-14 rounded-full border border-white absolute -left-8" alt="">
-                        <div class="ms-4">
-                            <p class="text-white font-semibold text-xl">James Anderson</p>
-                            <p class="text-[#a8b2c5] text-md mt-2">Product Designer</p>
-                        </div>
-
-                        <i class="ri-double-quotes-r text-6xl text-blue-400 ml-auto mt-5"></i>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- SLIDE 1 -->
-            <div class="swiper-slide  relative z-30 !w-[400px] ">
-
-                <div class="bg-[#202944] border testimonial-two__single  !p-8 relative w-full">
-
-                    <div class="testimonial-two__single-inner overflow-hidden absolute inset-0 "></div>
-                    <div class="flex gap-1 mb-4">
-                        <i class="ri-star-s-fill text-2xl font-light text-[#edc458]"></i>
-                        <i class="ri-star-s-fill text-2xl font-light text-[#edc458]"></i>
-                        <i class="ri-star-s-fill text-2xl font-light text-[#edc458]"></i>
-                        <i class="ri-star-s-line text-2xl font-light text-[#a8b2c5]"></i>
-                        <i class="ri-star-s-line text-2xl font-light text-[#a8b2c5]"></i>
-                    </div>
-
-                    <p class="text-[#c5c8cd] leading-relaxed text-base tracking-wide">
-                        Absolutely fantastic experience! The team exceeded our expectations and delivered a solution
-                        that perfectly met our needs.
-                    </p>
-
-                    <div class="flex items-center gap-8 mt-6 overflow-visible">
-                        <img src="images/testimonial/testimonial-1-1.jpg"
-                            class="w-14 h-14 rounded-full border border-white absolute -left-8" alt="">
-                        <div class="ms-4">
-                            <p class="text-white font-semibold text-xl">James Anderson</p>
-                            <p class="text-[#a8b2c5] text-md mt-2">Product Designer</p>
-                        </div>
-
-                        <i class="ri-double-quotes-r text-6xl text-blue-400 ml-auto mt-5"></i>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- SLIDE 1 -->
-            <div class="swiper-slide  relative z-30 !w-[400px] ">
-
-                <div class="bg-[#202944] border testimonial-two__single  !p-8 relative w-full">
-
-                    <div class="testimonial-two__single-inner overflow-hidden absolute inset-0 "></div>
-                    <div class="flex gap-1 mb-4">
-                        <i class="ri-star-s-fill text-2xl font-light text-[#edc458]"></i>
-                        <i class="ri-star-s-fill text-2xl font-light text-[#edc458]"></i>
-                        <i class="ri-star-s-fill text-2xl font-light text-[#edc458]"></i>
-                        <i class="ri-star-s-line text-2xl font-light text-[#a8b2c5]"></i>
-                        <i class="ri-star-s-line text-2xl font-light text-[#a8b2c5]"></i>
-                    </div>
-
-                    <p class="text-[#c5c8cd] leading-relaxed text-base tracking-wide">
-                        Absolutely fantastic experience! The team exceeded our expectations and delivered a solution
-                        that perfectly met our needs.
-                    </p>
-
-                    <div class="flex items-center gap-8 mt-6 overflow-visible">
-                        <img src="images/testimonial/testimonial-1-1.jpg"
-                            class="w-14 h-14 rounded-full border border-white absolute -left-8" alt="">
-                        <div class="ms-4">
-                            <p class="text-white font-semibold text-xl">James Anderson</p>
-                            <p class="text-[#a8b2c5] text-md mt-2">Product Designer</p>
-                        </div>
-
-                        <i class="ri-double-quotes-r text-6xl text-blue-400 ml-auto mt-5"></i>
-
-                    </div>
-                </div>
-            </div>
-
 
         </div>
 
-        <!-- PAGINATION -->
-        <div class="swiper-pagination !mt-10 swiper-pagination-bullet"></div>
 
     </div>
 
@@ -441,7 +305,7 @@
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
-            renderBullet: function (index, className) {
+            renderBullet: function(index, className) {
                 if (index < 4) {
                     return `<span class="${className}"></span>`;
                 }
