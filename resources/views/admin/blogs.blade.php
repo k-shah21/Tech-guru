@@ -1,4 +1,4 @@
-<x-adminlayout>
+<x-layouts.adminlayout>
     <style>
         .page-wrap {
             padding: 30px;
@@ -76,69 +76,69 @@
                     <tbody>
 
                         @forelse($blogs as $blog)
-                            <tr>
-                                <td>{{ $blog->id }}</td>
+                        <tr>
+                            <td>{{ $blog->id }}</td>
 
-                                {{-- Image --}}
-                                <td>
-                                    @if($blog->main_image)
-                                        <img src="{{ asset('storage/' . $blog->main_image) }}" class="blog-thumb"
-                                            alt="{{ $blog->image_alt ?? $blog->title }}">
-                                    @else
-                                        <span class="text-muted">No Image</span>
-                                    @endif
-                                </td>
+                            {{-- Image --}}
+                            <td>
+                                @if($blog->main_image)
+                                <img src="{{ asset('storage/' . $blog->main_image) }}" class="blog-thumb"
+                                    alt="{{ $blog->image_alt ?? $blog->title }}">
+                                @else
+                                <span class="text-muted">No Image</span>
+                                @endif
+                            </td>
 
-                                {{-- Title --}}
-                                <td class="fw-semibold">
-                                    {{ $blog->title }}
-                                </td>
+                            {{-- Title --}}
+                            <td class="fw-semibold">
+                                {{ $blog->title }}
+                            </td>
 
-                                {{-- Tags --}}
-                                <td>
-                                    @if($blog->tags)
-                                        @foreach(explode(',', $blog->tags) as $tag)
-                                            <span class="badge bg-primary me-1">
-                                                {{ trim($tag) }}
-                                            </span>
-                                        @endforeach
-                                    @else
-                                        <span class="text-muted">No Tags</span>
-                                    @endif
-                                </td>
+                            {{-- Tags --}}
+                            <td>
+                                @if($blog->tags)
+                                @foreach(explode(',', $blog->tags) as $tag)
+                                <span class="badge bg-primary me-1">
+                                    {{ trim($tag) }}
+                                </span>
+                                @endforeach
+                                @else
+                                <span class="text-muted">No Tags</span>
+                                @endif
+                            </td>
 
-                                {{-- Status --}}
-                                <td>
-                                    {{ $blog->status }}
-                                </td>
+                            {{-- Status --}}
+                            <td>
+                                {{ $blog->status }}
+                            </td>
 
-                                {{-- Date --}}
-                                <td>
-                                    {{ $blog->created_at->format('M d, Y') }}
-                                </td>
+                            {{-- Date --}}
+                            <td>
+                                {{ $blog->created_at->format('M d, Y') }}
+                            </td>
 
-                                {{-- Actions --}}
-                                <td>
-                                    <a href="{{ route('blog.edit', $blog->id) }}" class="btn btn-sm btn-outline-warning">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                    <form action="{{ route('blog.delete', $blog->id) }}" method="POST" class="d-inline"
-                                        onsubmit="return confirm('Delete this blog?');">
-                                        @csrf
-                                        @method('DELETE')
+                            {{-- Actions --}}
+                            <td>
+                                <a href="{{ route('blog.edit', $blog->id) }}" class="btn btn-sm btn-outline-warning">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+                                <form action="{{ route('blog.delete', $blog->id) }}" method="POST" class="d-inline"
+                                    onsubmit="return confirm('Delete this blog?');">
+                                    @csrf
+                                    @method('DELETE')
 
-                                        <button class="btn btn-sm btn-outline-danger ms-2">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
+                                    <button class="btn btn-sm btn-outline-danger ms-2">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
                         @empty
-                            <tr>
-                                <td colspan="6" class="text-center text-muted py-4">
-                                    No blogs found.
-                                </td>
-                            </tr>
+                        <tr>
+                            <td colspan="6" class="text-center text-muted py-4">
+                                No blogs found.
+                            </td>
+                        </tr>
                         @endforelse
 
                     </tbody>
@@ -148,4 +148,4 @@
         </div>
     </div>
 
-</x-adminlayout>
+</x-layouts.adminlayout>

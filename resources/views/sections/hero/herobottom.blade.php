@@ -1,4 +1,3 @@
-{{-- BOTTOM BAR --}}
 <div class="hero-bottombar py-4 lg:py-5 xl:py-8 w-full px-9 flex flex-col md:flex-row items-center gap-6 
         border-t border-white/20 justify-between relative z-10">
 
@@ -39,3 +38,28 @@
     </div>
 
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const slider = document.getElementById("brandSlider");
+        const slideWidth = slider.children[0].offsetWidth + 30;
+        let index = 0;
+
+        setInterval(() => {
+            index++;
+            slider.style.transform = `translateX(${-slideWidth * index}px)`;
+
+            if (index >= slider.children.length - 4) {
+                setTimeout(() => {
+                    slider.style.transition = "none";
+                    slider.style.transform = "translateX(0)";
+                    index = 0;
+
+                    setTimeout(() => {
+                        slider.style.transition = "transform 0.5s";
+                    }, 500);
+                }, 500);
+            }
+        }, 1500);
+    });
+</script>

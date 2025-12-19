@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\NewsLetterController;
+use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [BlogController::class, 'user'])->name('home');
@@ -67,3 +68,7 @@ Route::post('/register', [RegisterController::class, 'store'])
 
 // Logout User
 Route::post('/logout', [LoginController::class, 'logout']);
+
+
+// Site Map
+Route::post('/admin/sitemap', [SitemapController::class, 'generateSitemap']);

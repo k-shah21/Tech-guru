@@ -21,14 +21,14 @@ class BlogController
 
     public function show()
     {
-        return view('admin.blog.create');
+        return view('admin.blogform.create');
     }
 
     public function user()
     {
         $blogs = Blog::latest()->take(4)->get();
 
-        return view('home', compact('blogs'));
+        return view('pages.home', compact('blogs'));
     }
 
     public function store(Request $request)
@@ -52,7 +52,7 @@ class BlogController
             // Format tags
             if (! empty($validated['tags'])) {
                 $validated['tags'] = collect(explode(',', $validated['tags']))
-                    ->map(fn ($tag) => trim($tag))
+                    ->map(fn($tag) => trim($tag))
                     ->filter()
                     ->implode(', ');
             }
@@ -67,7 +67,7 @@ class BlogController
             // Generate UNIQUE slug
             $slug = Str::slug($validated['title']);
             $count = Blog::where('slug', 'LIKE', "{$slug}%")->count();
-            $validated['slug'] = $count ? "{$slug}-".($count + 1) : $slug;
+            $validated['slug'] = $count ? "{$slug}-" . ($count + 1) : $slug;
 
             Blog::create($validated);
 
@@ -86,6 +86,8 @@ class BlogController
                 'line' => $e->getLine(),
             ]);
 
+            generatesitemap();
+
             return back()
                 ->withInput()
                 ->with('error', 'Something went wrong while creating the blog.');
@@ -96,7 +98,8 @@ class BlogController
     {
         $blog = Blog::findOrFail($id);
 
-        return view('admin.blog.crud.editblog', compact('blog'));
+        generatesitemap();
+        return view('admin.blogform.editblog', compact('blog'));
     }
 
     public function update(Request $request, $id)
@@ -120,7 +123,7 @@ class BlogController
             // Format tags
             if (! empty($validated['tags'])) {
                 $validated['tags'] = collect(explode(',', $validated['tags']))
-                    ->map(fn ($tag) => trim($tag))
+                    ->map(fn($tag) => trim($tag))
                     ->filter()
                     ->implode(', ');
             }
@@ -145,7 +148,7 @@ class BlogController
                     ->where('id', '!=', $blog->id)
                     ->count();
 
-                $validated['slug'] = $count ? "{$slug}-".($count + 1) : $slug;
+                $validated['slug'] = $count ? "{$slug}-" . ($count + 1) : $slug;
             }
 
             $blog->update($validated);
@@ -164,6 +167,8 @@ class BlogController
                 'blog_id' => $id,
             ]);
 
+            generatesitemap();
+
             return back()
                 ->withInput()
                 ->with('error', 'Something went wrong while updating the blog.');
@@ -176,6 +181,7 @@ class BlogController
 
         $blog->delete();
 
+        generatesitemap();
         return redirect()
             ->route('blog.index')
             ->with('success', 'Blog deleted successfully!');
@@ -185,7 +191,7 @@ class BlogController
     {
         $blogs = Blog::latest()->paginate(perPage: 9);
 
-        return view('Blogs.all-blogs', compact('blogs'));
+        return view('pages.all-blogs', compact('blogs'));
     }
 
     public function showBlogDetails($slug)
@@ -194,6 +200,13 @@ class BlogController
             ->where('status', 'published')
             ->firstOrFail();
 
-        return view('Blogs.blog-details', compact('blog'));
+        $recentBlog = Blog::where('status', 'published')
+            ->where('id', '!=',  $blog->id)
+            ->latest()
+            ->take(3)
+            ->get();
+
+        generatesitemap();
+        return view('pages.blog-details', compact('blog', 'recentBlog'));
     }
 }

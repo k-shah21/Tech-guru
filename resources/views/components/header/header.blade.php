@@ -25,10 +25,8 @@
     }
 </style>
 
-<div x-data="{ openMenu: false }">
-
-    <!-- EVERYTHING must be inside this div -->
-    <header id="mainHeader" class=" sticky top-0 z-50 w-full py-5 px-5 md:py-6 lg:p-6 border-b border-white/20">
+<header x-data="{ openMenu: false }">
+    <div id="mainHeader" class=" sticky top-0 z-50 w-full py-5 px-5 md:py-6 lg:p-6 border-b border-white/20">
 
         <div class="md:px-4 px-3 flex items-center justify-between">
 
@@ -96,7 +94,7 @@
             </div>
 
         </div>
-    </header>
+    </div>
 
     <!-- OVERLAY -->
     <div x-show="openMenu" x-transition.opacity class=" fixed inset-0 bg-black/50 z-[998]" @click="openMenu = false">
@@ -118,4 +116,4 @@
 
     </div>
 
-</div>
+</header>

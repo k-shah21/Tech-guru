@@ -7,8 +7,6 @@
     <title>@yield('title', 'Dashboard')</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jodit/4.7.6/es2021/jodit.min.css" />
 
-
-
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -16,6 +14,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jodit@latest/es2021/jodit.fat.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/jodit@latest/es2021/jodit.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jodit/4.7.6/es2021/jodit.min.css" />
+
+    <!-- Alpine Js -->
+    <script src="//unpkg.com/alpinejs" defer></script>
 
     <style>
         body {
@@ -114,13 +118,14 @@
 
 <body>
 
+
+
     <!-- NAVBAR -->
     <nav class="navbar navbar-light fixed-top nav-shadow px-3 nav-Bg">
         <div class="d-flex align-items-center">
             <button id="toggleBtn" class="btn btn-light me-3">
                 <i class="bi bi-list"></i>
             </button>
-            <a href="/dashboard"> <img src="http://cbdoil.test/wp-content/uploads/2025/05/logo.svg" alt=""></a>
         </div>
 
         <div class="d-flex align-items-center">
@@ -128,6 +133,7 @@
             <i class="bi bi-person-circle fs-4 text-black"></i>
         </div>
     </nav>
+
 
     <!-- SIDEBAR -->
     <div id="sidebar">
@@ -141,6 +147,12 @@
                     <i class="bi bi-people"></i>
                     <span>Blog</span>
                 </a>
+
+                <form action="/admin/sitemap" method="POST" class="nav-link">
+                    @csrf
+                    <button type="submit">Generate Sitemap</button>
+                </form>
+
             </li>
             <li style="border-top: 1px solid #e2e2e2; padding-top: 10px;">
                 <form style="width: 100%;">
@@ -156,10 +168,47 @@
         </ul>
     </div>
 
+
     <!-- CONTENT SLOT -->
     <div id="content">
         {{$slot}}
     </div>
+
+    {{-- Bootstrap Toast Message --}}
+    @if(session('message'))
+    <div
+        x-data="{ show: true }"
+        x-show="show"
+        x-init="setTimeout(() => show = false, 3500)"
+        class="position-fixed top-0 end-0 p-3"
+        style="z-index: 9999; margin-top: 80px;">
+        <div class="toast show shadow border-0">
+            <div class="toast-body d-flex align-items-center gap-2 bg-white rounded">
+
+                <!-- Icon -->
+                <span class="badge bg-success rounded-circle d-flex align-items-center justify-content-center"
+                    style="width:32px;height:32px;">
+                    ✓
+                </span>
+
+                <!-- Message -->
+                <span class="small fw-medium text-dark">
+                    {{ session('message') }}
+                </span>
+
+                <!-- Close -->
+                <button
+                    type="button"
+                    class="btn-close ms-auto"
+                    @click="show = false"
+                    aria-label="Close">
+                </button>
+            </div>
+        </div>
+    </div>
+    @endif
+
+
 
     <script>
         const toggleBtn = document.getElementById('toggleBtn');
@@ -181,12 +230,19 @@
                 link.classList.add('active');
             }
         });
-
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jodit/4.7.6/es2021/jodit.min.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jodit@latest/es2021/jodit.fat.min.js"></script>
+    <script src="https://unpkg.com/jodit@latest/es2021/jodit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jodit/4.7.6/es2021/jodit.min.js"></script>
+    <script>
+        const editor = Jodit.make('#editor', {
+            buttons: ['bold', 'italic', 'underline', '|', 'ul', 'ol']
+        });
+    </script>
+
 </body>
 
 </html>

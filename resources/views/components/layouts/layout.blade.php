@@ -19,85 +19,60 @@
         rel="stylesheet">
 
 
-    {{-- Icons --}}
+    <!-- Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 
 
-    {{-- slick css --}}
+    <!-- Slick css -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css"
         href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 
 
-    {{-- slick js --}}
+    <!-- Slick js -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
+    <!-- Alpine Js -->
     <script src="//unpkg.com/alpinejs" defer></script>
+
+    <!-- Tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet" href="{{ asset("css/app.css") }}">
 
     <script>
-
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
                         marcellus: ['Marcellus', 'serif'],
                         spacegrotesk: ['"Space Grotesk"', 'sans-serif'],
-                    }
-                     screens: {
+                    },
+                    screens: {
                         '1440': '1440px',
                     },
                 }
             }
         }
-        document.addEventListener("DOMContentLoaded", () => {
-            const slider = document.getElementById("brandSlider");
-            const slideWidth = slider.children[0].offsetWidth + 30;
-            let index = 0;
-
-            setInterval(() => {
-                index++;
-                slider.style.transform = `translateX(${-slideWidth * index}px)`;
-
-                if (index >= slider.children.length - 4) {
-                    setTimeout(() => {
-                        slider.style.transition = "none";
-                        slider.style.transform = "translateX(0)";
-                        index = 0;
-
-                        setTimeout(() => {
-                            slider.style.transition = "transform 0.5s";
-                        }, 500);
-                    }, 500);
-                }
-            }, 1500);
-        });
-
-
     </script>
-
-    {{-- tailwind --}}
-    <script src="https://cdn.tailwindcss.com"></script>
 
     <title>Tech Guru</title>
 </head>
 
 
-<body class="bg-[#0B192C] font-spacegrotesk w-full min-h-screen text-white">
+<body class="bg-[#0B192C] w-full text-white">
 
-    {{-- HEADER --}}
+    <!-- HEADER -->
     <x-header.topHeader />
 
-    {{-- MAIN CONTENT --}}
+    <!-- MAIN CONTENT -->
     <main class="flex-grow">
         {{ $slot }}
     </main>
 
+    <!-- Footer -->
     <x-footer.footer />
-
-
 
 </body>
 

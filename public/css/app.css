@@ -15,24 +15,39 @@
 .orange-color {
     color: #edc458;
 }
-html {
-    overflow-x: hidden !important;
+
+.font-marcellus {
+    --font-marcellus: "Marcellus", serif;
 }
+
+html,
 body {
     font-family: var(--font-sans);
     color: white;
     overflow-x: hidden !important;
 }
-p {
+
+h2 {
     color: #ffffff;
-    font-size: 16px;
-    font-weight: 500 !important;
-    line-height: 24px;
+    margin: 35px 0 25px;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 40px;
+}
+h3 {
+    color: #ffffff;
+    margin: 35px 0 25px;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 40px;
+}
+p {
+    color: #c5c8cd;
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.75rem;
 }
 
-.font-marcellus {
-    --font-marcellus: "Marcellus", serif;
-}
 /* Header or Footer  */
 .underline {
     position: relative;

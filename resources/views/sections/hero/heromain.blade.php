@@ -1,7 +1,7 @@
 <section class="relative flex flex-col lg:flex-row grow">
 
     <!-- SIDEBAR -->
-    <x-hero.heroSide />
+    @include('sections.hero.heroside')
 
     <!-- MAIN HERO CONTENT -->
     <div class="grid grid-cols-1 lg:grid-cols-2 items-start gap-10 min-h-[70vh] 
