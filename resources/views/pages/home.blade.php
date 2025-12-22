@@ -1,7 +1,7 @@
 <x-layouts.layout>
 
     <x-header.header />
-    <x-layouts.hero bg="images/backgrounds/slider.jpg" class="-mt-28 relative z-0" />
+    <x-layouts.hero bg="images/backgrounds/slider.jpg" class="relative z-0" />
     @include('sections.about.about')
     @include('sections.counter.counter')
     @include('sections.services.services')

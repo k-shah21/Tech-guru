@@ -67,7 +67,7 @@
     <x-header.topHeader />
 
     <!-- MAIN CONTENT -->
-    <main class="flex-grow">
+    <main class="flex-grow relative">
         {{ $slot }}
     </main>
 

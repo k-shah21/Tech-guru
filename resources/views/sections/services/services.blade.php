@@ -138,6 +138,7 @@
                     class="service-preview absolute -top-8 left-1/3 translate-x-[calc(-50%+30px)] pointer-events-none opacity-0 transition-all duration-300 ">
                     <img src="" class="preview-img z-20 object-cover rounded-xl shadow-2xl w-full h-full"/>
                 </div>
+
                 <div class="hidden xl:block xl:col-span-1"></div>
                 <div
                     class="col-span-12 lg:col-span-8 [@media(min-width:1439px)]:col-span-7 grid grid-cols-1 [@media(min-width:768px)]:grid-cols-3 gap-3 font-medium text-[#AEB5D1] items-start">
@@ -170,7 +171,7 @@
 
             <!-- ROW 2 -->
             <div class="group relative grid grid-cols-1 md:grid-cols-12 items-center 
-                border-b border-white/10 py-10 gap-8" data-image="/images/services/services-2-2.jpg">
+                border-b border-white/10 py-4 gap-8" data-image="/images/services/services-2-2.jpg">
 
                 <div
                     class="col-span-12 lg:col-span- [@media(min-width:1440px)]:col-span-4 flex items-center justify-center lg:justify-start gap-4">
@@ -186,6 +187,7 @@
                     class="service-preview absolute -top-8 left-1/3 translate-x-[calc(-50%+30px)] pointer-events-none opacity-0 transition-all duration-300 ">
                     <img src="" class="preview-img z-20 object-cover rounded-xl shadow-2xl w-full h-full"/>
                 </div>
+
                 <div class="hidden xl:block xl:col-span-1"></div>
                 <div
                     class="col-span-12 lg:col-span-8 [@media(min-width:1439px)]:col-span-7 grid grid-cols-1 [@media(min-width:768px)]:grid-cols-3 gap-3 font-medium text-[#AEB5D1] items-start">
@@ -232,6 +234,7 @@
                     class="service-preview absolute -top-8 left-1/3 translate-x-[calc(-50%+30px)] pointer-events-none opacity-0 transition-all duration-300 ">
                     <img src="" class="preview-img z-20 object-cover rounded-xl shadow-2xl w-full h-full"/>
                 </div>
+
                 <div class="hidden xl:block xl:col-span-1"></div>
                 <div
                     class="col-span-12 lg:col-span-8 [@media(min-width:1439px)]:col-span-7 grid grid-cols-1 [@media(min-width:768px)]:grid-cols-3 gap-3 font-medium text-[#AEB5D1] items-start">
@@ -327,6 +330,7 @@
         row.addEventListener("mouseleave", () => {
             img.classList.remove("reveal");
             preview.style.opacity = "0";
+
         });
     });
 

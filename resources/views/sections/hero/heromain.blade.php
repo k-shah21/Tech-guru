@@ -4,10 +4,10 @@
     @include('sections.hero.heroside')
 
     <!-- IMAGE ON TOP -->
-    <img src="images/shapes/main-slider-two-shape-3.png"
+    <img src="{{ asset('images/shapes/main-slider-two-shape-3.png') }}"
         class="absolute -top-20 right-0 z-10 pointer-events-none float-vertical opacity-10" alt="">
 
-    <img src="images/shapes/main-slider-two-shape-2.png" alt=""
+    <img src="{{ asset('images/shapes/main-slider-two-shape-2.png') }}" alt=""
         class="absolute left-0 -bottom-24 opacity-5 float-horizontal">
 
     <!-- MAIN HERO CONTENT -->
@@ -41,7 +41,7 @@
 
                     <div class="btn-gradient-border">
 
-                        <button class="thm-btn bg-transparent">
+                        <button class="thm-btn">
                             <span>Learn More →</span>
                         </button>
                     </div>
@@ -62,14 +62,13 @@
                 </div>
             </div>
 
-            <!-- RIGHT SIDE BUTTONS (DESKTOP ONLY) -->
+          
             <div class="hidden md:flex absolute top-1/3 right-5 md:right-14 flex-col gap-5 z-30">
                 <button
                     onclick="nextSlide();  resetAutoSlide()"
                     class="group relative overflow-hidden rounded-xl px-4 py-2
            border border-white/40 transition-all duration-500">
 
-                    <!-- Gradient Background (fade in) -->
                     <span
                         class="absolute inset-0 rounded-xl
                bg-[linear-gradient(270deg,#5cb0e9_0%,#3d72fc_100%)]
@@ -87,7 +86,6 @@
                     class="group relative overflow-hidden rounded-xl px-4 py-2
            border border-white/40 transition-all duration-500">
 
-                    <!-- Gradient Background (fade in) -->
                     <span
                         class="absolute inset-0 rounded-xl
                bg-[linear-gradient(270deg,#5cb0e9_0%,#3d72fc_100%)]
@@ -127,7 +125,6 @@
         }
     }
 
-    /* Animation classes */
     .animate-slide-top {
         animation: slideFromTop 2s ease-out forwards;
     }
@@ -136,7 +133,6 @@
         animation: slideFromBottom 2s ease-out forwards;
     }
 
-    /* Optional: add delay utility */
     .animate-delay-200 {
         animation-delay: 0.2s;
     }
@@ -155,7 +151,6 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
-        padding: 18px 25px;
         font-size: 16px;
         font-weight: 500;
         line-height: 16px;
@@ -207,7 +202,7 @@
                 },
                 {
                     text: 'Read More →',
-                    class: 'thm-btn bg-transparent'
+                    class: 'thm-btn'
                 }
             ]
         },
@@ -222,7 +217,7 @@
                 },
                 {
                     text: 'Learn More →',
-                    class: 'thm-btn bg-transparent'
+                    class: 'thm-btn'
                 }
             ]
         },
@@ -237,7 +232,7 @@
                 },
                 {
                     text: 'Learn More →',
-                    class: 'thm-btn bg-transparent'
+                    class: 'thm-btn'
                 }
             ]
         },
@@ -249,7 +244,6 @@
     function setSlide(index) {
         const slide = slides[index];
 
-        // --- Background ---
         heroBg.style.opacity = 0;
         heroBg.style.animation = 'none';
         setTimeout(() => {
@@ -259,24 +253,36 @@
             heroBg.style.animation = 'zoomIn 5s linear forwards';
         }, 300);
 
-        // --- Content ---
         heroBadge.textContent = slide.badge;
         heroHeading.innerHTML = slide.heading;
         heroParagraph.textContent = slide.paragraph;
 
-        // Buttons
         heroButtons.innerHTML = '';
-        slide.buttons.forEach(btn => {
-            const button = document.createElement('button');
-            button.className = btn.class;
-            button.textContent = btn.text;
-            heroButtons.appendChild(button);
+        slide.buttons.forEach((btn, index) => {
+            if (index === 1) {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'btn-gradient-border';
+
+                const button = document.createElement('button');
+                button.className = btn.class; 
+                
+                const span = document.createElement('span');
+                span.textContent = btn.text;
+                button.appendChild(span);
+
+                wrapper.appendChild(button);
+                heroButtons.appendChild(wrapper);
+            } else {
+                const button = document.createElement('button');
+                button.className = btn.class;
+                button.textContent = btn.text;
+                heroButtons.appendChild(button);
+            }
         });
 
-        // --- Re-trigger animations ---
         [heroBadge, heroHeading, heroParagraph, heroButtons].forEach(el => {
             el.classList.remove('animate-slide-top', 'animate-slide-bottom');
-            void el.offsetWidth; // force reflow
+            void el.offsetWidth; 
             if (el === heroBadge || el === heroHeading) {
                 el.classList.add('animate-slide-top');
             } else {

@@ -25,10 +25,11 @@
     }
 </style>
 
-<header x-data="{ openMenu: false, scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 50)">
-    <div id="mainHeader" 
-        :class="scrolled ? 'bg-[#0B192C] shadow-lg border-transparent' : 'bg-transparent border-white/20'"
-        class="sticky top-0 z-50 w-full py-5 px-5 md:py-6 lg:p-6 border-b transition-all duration-300">
+<header x-data="{ openMenu: false, scrolled: false }" 
+        @scroll.window="scrolled = (window.pageYOffset > 50)"
+        :class="scrolled ? 'fixed top-0 bg-[#0B192C] shadow-lg border-transparent' : 'absolute top-0 bg-transparent border-white/20'"
+        class="z-50 w-full border-b transition-all duration-300">
+    <div id="mainHeader" class="w-full py-5 px-5 md:py-6 lg:p-6">
 
         <div class="md:px-4 px-3 flex items-center justify-between">
 
@@ -36,7 +37,7 @@
                 <img src="{{ asset('images/logo-1.webp') }}" />
             </div>
 
-            <nav class="hidden xl:flex items-center justify-center gap-14 text-gray-300 font-semibold flex-1">
+            <nav class="hidden xl:flex items-center justify-center gap-14 text-gray-300 font-medium flex-1 font-marcellus">
                 <a href="{{ route('home') }}"
                     class="link-underline flex justify-center items-center {{ request()->routeIs('home') ? 'active text-[#edc458]' : '' }}">
                     Home

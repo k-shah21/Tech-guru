@@ -1,6 +1,5 @@
 @props(['bg'])
-<div
-    class="parent relative overflow-hidden">
+<div {{ $attributes->merge(['class' => 'parent relative overflow-hidden']) }}>
 
     <!-- BACKGROUND IMAGE LAYER -->
     <div
@@ -16,11 +15,8 @@
                from-black via-black/70 via-[40%] to-transparent z-[1] ">
     </div>
 
-    <!-- HEADER -->
-    <!-- HEADER (Moved to layout/home) -->
-
     <!-- MAIN HERO CONTENT -->
-    <div class="relative z-10">
+    <div class="relative z-10 pt-28 lg:pt-[103px]">
         @include('sections.hero.heromain')
     </div>
 

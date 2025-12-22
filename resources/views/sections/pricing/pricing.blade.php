@@ -38,9 +38,9 @@
         {{-- PLAN SWITCHER --}}
         <div class="flex justify-center !mb-20 relative">
 
-            <div class="inline-flex px-2 flex-col md:flex-row rounded-full md:border md:border-[#7350F5]">
+            <div class="plan-switcher inline-flex px-2 flex-col md:flex-row rounded-full md:border md:border-[#7350F5]">
                 <button onclick="changePlan('monthly')" id="btn-monthly"
-                    class="px-8 py-3 rounded-full text-white text-base font-medium bg-gradient-to-r from-[#6651ff] to-[#ff4d94]">
+                    class="active px-8 py-3 rounded-full text-white text-base font-medium">
                     MONTHLY
                 </button>
                 <button onclick="changePlan('yearly')" id="btn-yearly"
@@ -181,6 +181,33 @@
 
 </section>
 
+<style>
+    .plan-switcher>button {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .plan-switcher>button::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        background: linear-gradient(270deg, #fa5674 0%, #6065d4 100%);
+        border-radius: 25px;
+
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform .4s ease;
+
+        z-index: -1;
+    }
+
+    .plan-switcher>button.active::before {
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+</style>
 
 
 <script>
@@ -192,13 +219,9 @@
         document.getElementById("price-business").innerText = "$" + pricing[plan].business;
 
         document.querySelectorAll("button[id^='btn-']").forEach(btn => {
-            btn.classList.remove("bg-gradient-to-r", "from-[#6651ff]", "to-[#ff4d94]");
+            btn.classList.remove("active");
         });
 
-        document.getElementById("btn-" + plan).classList.add(
-            "bg-gradient-to-r",
-            "from-[#6651ff]",
-            "to-[#ff4d94]"
-        );
+        document.getElementById("btn-" + plan).classList.add("active");
     }
 </script>
