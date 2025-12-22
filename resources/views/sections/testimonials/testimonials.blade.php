@@ -124,12 +124,10 @@
 
 <section class="relative w-full py-28">
 
-    <div class="max-w-6xl mx-auto text-center mb-16 px-4">
-        <x-section-heading subtitle="Testimonials" align="center">
-            Customer Experiences <br /> That
-            <span class="text-[#edc458] font-marcellus font-medium tracking-wider">Speak Volumes</span>
-        </x-section-heading>
-    </div>
+    <x-section-heading subtitle="Testimonials" align="center" class="!leading-[75px]">
+        Customer Experiences <br /> That
+        <span class="text-[#edc458] font-marcellus font-medium tracking-wider">Speak Volumes</span>
+    </x-section-heading>
 
 
     {{-- BackGround Gredient --}}

@@ -1,21 +1,21 @@
 @php
-    $pricing = [
-        'monthly' => [
-            'personal' => '5.60',
-            'premium' => '25.60',
-            'business' => '120.60',
-        ],
-        'yearly' => [
-            'personal' => '15.00',
-            'premium' => '35.00',
-            'business' => '150.00',
-        ],
-        'packages' => [
-            'personal' => '55.00',
-            'premium' => '125.00',
-            'business' => '200.00',
-        ],
-    ];
+$pricing = [
+'monthly' => [
+'personal' => '5.60',
+'premium' => '25.60',
+'business' => '120.60',
+],
+'yearly' => [
+'personal' => '15.00',
+'premium' => '35.00',
+'business' => '150.00',
+],
+'packages' => [
+'personal' => '55.00',
+'premium' => '125.00',
+'business' => '200.00',
+],
+];
 @endphp
 
 
@@ -24,15 +24,15 @@
 
     <!-- Header Section -->
     <div class="relative w-full text-center flex flex-col items-center justify-center px-4 md:px-0 max-w-[1320px] mx-auto">
-        <x-section-heading subtitle="Pricing & Plan" align="center">
-            Select the Perfect <span class="text-[#edc458] ">Plan for Your
+        <x-section-heading subtitle="Pricing & Plan" align="center" class="w-1/2">
+            Select the Perfect <span class="text-[#edc458] font-normal">Plan for Your
                 Needs That Fits You
             </span>
-        </x-section-heading> 
-      
+        </x-section-heading>
+
     </div>
 
-  <!-- Pricing Cards -->
+    <!-- Pricing Cards -->
     <div class="w-[1320px] mx-auto px-5 z-30 flex justify-center items-center flex-col ">
 
         {{-- PLAN SWITCHER --}}

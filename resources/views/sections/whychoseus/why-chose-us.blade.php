@@ -33,7 +33,7 @@
             grid gap-y-16  xl:grid-cols-12 gap-x-20 xl:gap-x-28 items-center">
 
         <!-- LEFT IMAGE BLOCK -->
-        <div class="relative flex justify-center order-2 md:w-[670px] mx-auto border col-span-7">
+        <div class="relative flex justify-center order-2 md:w-[670px] mx-auto col-span-7">
 
             <!-- Main Image -->
             <img src="images/resources/about-one-img-1.jpg" alt="Why choose us" class="scale-100" width="670"

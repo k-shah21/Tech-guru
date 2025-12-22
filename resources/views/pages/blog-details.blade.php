@@ -44,11 +44,11 @@
 
     </div>
 
-    <main class="xl:max-w-[1320px] md:max-w-[738px] lg:max-w-[960px] mx-auto py-40 px-4  grid grid-cols-1 lg:grid-cols-10 h-auto">
+    <main class="xl:max-w-[1320px] md:max-w-[738px] lg:max-w-[960px] mx-auto pt-40 pb-10 px-4  grid grid-cols-1 lg:grid-cols-10 h-auto">
 
 
         {{-- Left Content --}}
-        <div class="col-span-1 lg:col-span-6 flex flex-col gap-10 lg:border-b pb-6 border-white/20 md:px-4 xl:me-[67px]">
+        <div class="col-span-1 lg:col-span-6 flex flex-col gap-10 pb-6 border-white/20 md:px-4 xl:me-[67px]">
 
             <div class="relative">
                 <img src="{{ asset('images/blog/blog-details-img-1.jpg') }}" alt="blog-details-img-1" width="743"
@@ -145,7 +145,7 @@
             <form action="{{ route('contact.store') }}" method="POST"
                 class="w-full bg-[#243042] p-5 rounded-2xl">
 
-                <h2 class="mt-5 mb-[46px] text-[30px] font-bold leading-10">How Can We Help You</h2>
+                <h2 class="mt-5 text-[30px] font-bold leading-10">How Can We Help You</h2>
                 @csrf
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">

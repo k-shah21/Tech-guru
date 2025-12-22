@@ -94,6 +94,11 @@
 
     .link-underline {
         position: relative;
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: var(--font-marcellus);
     }
 
     .link-underline::after {
@@ -198,7 +203,7 @@
         </div>
 
         <!-- Portfolio Column -->
-        <div class="footer-widget font-semibold md:col-span-5 xl:col-span-2">
+        <div class="footer-widget font-semibold md:col-span-5 xl:col-span-2 pl-8">
             <p class="text-[#4FA0FF] tracking-wider text-2xl font-medium mb-6">
                 Portfolio
             </p>
@@ -300,7 +305,7 @@
         </div>
 
         <!-- Our Services Column -->
-        <div class="footer-widget font-semibold mt-6 md:col-span-5 xl:col-span-2">
+        <div class="footer-widget font-semibold md:col-span-5 xl:col-span-2">
             <p class="text-[#4FA0FF] tracking-wider text-2xl font-medium mb-6">
                 Our Services
             </p>

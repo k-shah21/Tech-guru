@@ -32,12 +32,12 @@
                     <img src="{{ asset('images/resources/event-one-img-1.jpg') }}" class="w-full h-full object-cover rounded-3xl" />
 
                     <!-- Play Button -->
-                    <div class="absolute inset-0 flex justify-center items-center group cursor-pointer">
+                    <div class="absolute inset-0 flex justify-center items-center cursor-pointer">
 
                         <div class="w-20 h-20 rounded-full flex justify-center items-center relative z-10">
 
                             <div
-                                class="relative w-24 h-24 rounded-full flex justify-center items-center border border-white/30  p-4">
+                                class="group relative w-24 h-24 rounded-full flex justify-center items-center border border-white/30  p-4">
 
                                 <span class="absolute inset-0 -z-10">
                                     <span

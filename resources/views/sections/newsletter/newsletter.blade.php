@@ -7,12 +7,6 @@
         background: linear-gradient(270deg, rgb(250, 86, 116) 0%, rgb(96, 101, 212) 100%) text;
     }
 
-    .newsletter-two__text {
-        margin-top: 10px;
-        font-size: 16px;
-        line-height: 26px;
-        color: #ddd;
-    }
 
     /* RIGHT SIDE */
     .newsletter-two__right {
@@ -120,7 +114,7 @@
                     <span class="newsletter-two__title">Subscribe to Our Newsletter</span>
                 </x-section-heading>
             </div>
-            <p class="newsletter-two__text">Get the latest SEO tips and software insights straight to your inbox.</p>
+            <p class="tracking-wide">Get the latest SEO tips and software insights straight to your inbox.</p>
         </div>
 
         <div class="newsletter-two__right">

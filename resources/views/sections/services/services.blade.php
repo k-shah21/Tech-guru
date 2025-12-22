@@ -129,39 +129,78 @@
                     <div class="w-10 h-10 rounded-full border border-[#FF7AC4] text-[#FF7AC4]
                         flex items-center justify-center font-semibold p-2">01</div>
                     <h3
-                        class="text-white text-2xl  [@media(min-width:1439px)]:w-2/3 font-medium group-hover:text-[#FF7AC4] transition">
+                        class="text-white text-2xl  [@media(min-width:1439px)]:w-2/3 font-medium transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
                         Software Development Solutions
                     </h3>
                 </div>
 
                 <div
-                    class="service-preview absolute -top-8 left-1/3 translate-x-[calc(-50%+30px)] pointer-events-none opacity-0 transition-all duration-300 ">
-                    <img src="" class="preview-img z-20 object-cover rounded-xl shadow-2xl w-full h-full"/>
+                    class="service-preview absolute -top-10 left-1/3 translate-x-[calc(-50%-15px)] pointer-events-none opacity-0 transition-all duration-300 ">
+                    <img src="" class="preview-img z-20 object-cover rounded-xl shadow-2xl w-full h-full" />
                 </div>
 
                 <div class="hidden xl:block xl:col-span-1"></div>
                 <div
                     class="col-span-12 lg:col-span-8 [@media(min-width:1439px)]:col-span-7 grid grid-cols-1 [@media(min-width:768px)]:grid-cols-3 gap-3 font-medium text-[#AEB5D1] items-start">
 
-                    <p class="transition group-hover:text-[#B86BFF] text-left">
-                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> UI/UX Design
-                    </p>
-                    <p class="transition group-hover:text-[#B86BFF] text-left">
-                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> Web Applications
-                    </p>
-
-                    <p class="transition group-hover:text-[#B86BFF] text-left">
-                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> Mobile Apps
-                    </p>
-                    <p class="transition group-hover:text-[#B86BFF] text-left">
-                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> Custom Software
+                    <p class="group text-left transition">
+                        <span class="group-hover:opacity-0 transition-all duration-200">+</span>
+                        <span class="transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+                            UI/UX Design
+                        </span>
                     </p>
 
                     <p class="transition group-hover:text-[#B86BFF] text-left">
-                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> UI/UX Design
+                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> <span class="transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+
+                            Web Applications
+                        </span>
+                    </p>
+
+                    <p class="transition group-hover:text-[#B86BFF] text-left">
+                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> <span class="transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+                            Mobile Apps
+                        </span>
                     </p>
                     <p class="transition group-hover:text-[#B86BFF] text-left">
-                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> UI/UX Design
+                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> <span class="transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+
+                            Custom Software
+                        </span>
+                    </p>
+
+                    <p class="transition group-hover:text-[#B86BFF] text-left">
+                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> <span class="transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+
+                            UI/UX Design
+                        </span>
+                    </p>
+                    <p class="transition group-hover:text-[#B86BFF] text-left">
+                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> <span class="transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+
+                            UI/UX Design
+                        </span>
                     </p>
 
                 </div>
@@ -178,14 +217,17 @@
                     <div class="w-10 h-10 rounded-full border border-[#FF7AC4] text-[#FF7AC4]
                         flex items-center justify-center font-semibold p-2">02</div>
                     <h3
-                        class="text-white text-2xl  [@media(min-width:1439px)]:w-2/3 font-medium group-hover:text-[#FF7AC4] transition">
-                    Cybersecurity Risk Management
+                        class="text-white text-2xl  [@media(min-width:1439px)]:w-2/3 font-medium  transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+                        Cybersecurity Risk Management
                     </h3>
                 </div>
 
                 <div
-                    class="service-preview absolute -top-8 left-1/3 translate-x-[calc(-50%+30px)] pointer-events-none opacity-0 transition-all duration-300 ">
-                    <img src="" class="preview-img z-20 object-cover rounded-xl shadow-2xl w-full h-full"/>
+                    class="service-preview absolute -top-10 left-1/3 translate-x-[calc(-50%-15px)] pointer-events-none opacity-0 transition-all duration-300 ">
+                    <img src="" class="preview-img z-20 object-cover rounded-xl shadow-2xl w-full h-full" />
                 </div>
 
                 <div class="hidden xl:block xl:col-span-1"></div>
@@ -193,24 +235,60 @@
                     class="col-span-12 lg:col-span-8 [@media(min-width:1439px)]:col-span-7 grid grid-cols-1 [@media(min-width:768px)]:grid-cols-3 gap-3 font-medium text-[#AEB5D1] items-start">
 
                     <p class="transition group-hover:text-[#B86BFF] text-left">
-                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> Cloud Migration
+                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> <span class="transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+
+                            Cloud Migration
+                        </span>
                     </p>
                     <p class="transition group-hover:text-[#B86BFF] text-left">
-                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> DevOps Consulting
+                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> <span class="transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+
+                            DevOps Consulting
+                        </span>
                     </p>
 
                     <p class="transition group-hover:text-[#B86BFF] text-left">
-                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> AWS/Azure
+                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> <span class="transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+
+                            AWS/Azure
+                        </span>
                     </p>
                     <p class="transition group-hover:text-[#B86BFF] text-left">
-                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> Security Audits
+                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> <span class="transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+
+                            Security Audits
+                        </span>
                     </p>
 
                     <p class="transition group-hover:text-[#B86BFF] text-left">
-                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> Server Management
+                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> <span class="transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+
+                            Server Management
+                        </span>
                     </p>
                     <p class="transition group-hover:text-[#B86BFF] text-left">
-                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> CI/CD Pipelines
+                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> <span class="transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+
+                            CI/CD Pipelines
+                        </span>
                     </p>
 
                 </div>
@@ -225,14 +303,17 @@
                     <div class="w-10 h-10 rounded-full border border-[#FF7AC4] text-[#FF7AC4]
                         flex items-center justify-center font-semibold p-2">03</div>
                     <h3
-                        class="text-white text-2xl  [@media(min-width:1439px)]:w-2/3 font-medium group-hover:text-[#FF7AC4] transition">
-                     Cloud Solutions Provider
+                        class="text-white text-2xl  [@media(min-width:1439px)]:w-2/3 font-medium  transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+                        Cloud Solutions Provider
                     </h3>
                 </div>
 
                 <div
-                    class="service-preview absolute -top-8 left-1/3 translate-x-[calc(-50%+30px)] pointer-events-none opacity-0 transition-all duration-300 ">
-                    <img src="" class="preview-img z-20 object-cover rounded-xl shadow-2xl w-full h-full"/>
+                    class="service-preview absolute -top-10 left-1/3 translate-x-[calc(-50%-15px)] pointer-events-none opacity-0 transition-all duration-300 ">
+                    <img src="" class="preview-img z-20 object-cover rounded-xl shadow-2xl w-full h-full" />
                 </div>
 
                 <div class="hidden xl:block xl:col-span-1"></div>
@@ -240,24 +321,60 @@
                     class="col-span-12 lg:col-span-8 [@media(min-width:1439px)]:col-span-7 grid grid-cols-1 [@media(min-width:768px)]:grid-cols-3 gap-3 font-medium text-[#AEB5D1] items-start">
 
                     <p class="transition group-hover:text-[#B86BFF] text-left">
-                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> Strategy
+                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> <span class="transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+
+                            Strategy
+                        </span>
                     </p>
                     <p class="transition group-hover:text-[#B86BFF] text-left">
-                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> Process Optimization
+                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> <span class="transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+
+                            Process Optimization
+                        </span>
                     </p>
 
                     <p class="transition group-hover:text-[#B86BFF] text-left">
-                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> Legacy Modernization
+                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> <span class="transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+
+                            Legacy Modernization
+                        </span>
                     </p>
                     <p class="transition group-hover:text-[#B86BFF] text-left">
-                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> Automation
+                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> <span class="transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+
+                            Automation
+                        </span>
                     </p>
 
                     <p class="transition group-hover:text-[#B86BFF] text-left">
-                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> Consulting
+                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> <span class="transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+
+                            Consulting
+                        </span>
                     </p>
                     <p class="transition group-hover:text-[#B86BFF] text-left">
-                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> Training
+                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> <span class="transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+
+                            Training
+                        </span>
                     </p>
 
                 </div>
@@ -272,38 +389,77 @@
                     <div class="w-10 h-10 rounded-full border border-[#FF7AC4] text-[#FF7AC4]
                         flex items-center justify-center font-semibold p-2">04</div>
                     <h3
-                        class="text-white text-2xl  [@media(min-width:1439px)]:w-2/3 font-medium group-hover:text-[#FF7AC4] transition">
+                        class="text-white text-2xl  [@media(min-width:1439px)]:w-2/3 font-medium  transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent ">
                         Data Analytics Consultant
                     </h3>
                 </div>
 
                 <div
-                    class="service-preview absolute -top-8 left-1/3 translate-x-[calc(-50%+30px)] pointer-events-none opacity-0 transition-all duration-300 ">
-                    <img src="" class="preview-img z-20 object-cover rounded-xl shadow-2xl w-full h-full"/>
+                    class="service-preview absolute -top-10 left-1/3 translate-x-[calc(-50%-15px)] pointer-events-none opacity-0 transition-all duration-300 ">
+                    <img src="" class="preview-img z-20 object-cover rounded-xl shadow-2xl w-full h-full" />
                 </div>
                 <div class="hidden xl:block xl:col-span-1"></div>
                 <div
                     class="col-span-12 lg:col-span-8 [@media(min-width:1439px)]:col-span-7 grid grid-cols-1 [@media(min-width:768px)]:grid-cols-3 gap-3 font-medium text-[#AEB5D1] items-start">
 
                     <p class="transition group-hover:text-[#B86BFF] text-left">
-                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> Big Data
+                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> <span class="transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+
+                            Big Data
+                        </span>
                     </p>
                     <p class="transition group-hover:text-[#B86BFF] text-left">
-                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> Machine Learning
+                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> <span class="transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+
+                            Machine Learning
+                        </span>
                     </p>
 
                     <p class="transition group-hover:text-[#B86BFF] text-left">
-                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> Business Intelligence
+                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> <span class="transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+
+                            Business Intelligence
+                        </span>
                     </p>
                     <p class="transition group-hover:text-[#B86BFF] text-left">
-                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> Predictive Modeling
+                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> <span class="transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+
+                            Predictive Modeling
+                        </span>
                     </p>
 
                     <p class="transition group-hover:text-[#B86BFF] text-left">
-                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> Data Mining
+                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> <span class="transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+
+                            Data Mining
+                        </span>
                     </p>
                     <p class="transition group-hover:text-[#B86BFF] text-left">
-                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> AI Solutions
+                        <span class="group-hover:opacity-0 transition-all duration-200">+</span> <span class="transition-all duration-200 
+        group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
+        group-hover:bg-clip-text
+        group-hover:text-transparent">
+
+                            AI Solutions
+                        </span>
                     </p>
 
                 </div>
