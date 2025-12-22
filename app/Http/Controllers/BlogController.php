@@ -43,12 +43,12 @@ class BlogController
         return [
             'title' => 'required|string|max:120',
             'heading' => 'required|string|max:255',
-            'meta_description' => 'nullable|string|max:160',
-            'tags' => 'nullable|string|max:255',
+            'meta_description' => 'required|string|max:160',
+            'tags' => 'required|string|max:255',
             'content' => 'required|string',
             'main_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
             'image_alt' => $isUpdate ? 'required_with:main_image|string|max:50' : 'required_with:main_image|string|max:40',
-            'status' => $isUpdate ? '' : 'required|in:published,draft',
+
         ];
     }
 

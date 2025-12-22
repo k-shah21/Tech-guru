@@ -1,5 +1,5 @@
 <!-- Why CHOOSE us -->
-<section class="relative bg-[#0a1a2f] py-12 overflow-hidden">
+<section class="relative bg-[#0a1a2f] py-12 xl:py-[148px] overflow-hidden ">
 
     <!-- Gredient BACKGROUND -->
     <div class="absolute inset-0 flex items-center justify-start pointer-events-none">
@@ -28,11 +28,12 @@
 
 
 
-    <div class="relative z-10 max-w-[1300px] mx-auto 
+    <div class="relative z-10 max-w-[1400px] mx-auto 
             px-4 sm:px-6 lg:px-8 
-            grid gap-y-16  xl:grid-cols-2 gap-x-20 items-center">
+            grid gap-y-16  xl:grid-cols-12 gap-x-20 xl:gap-x-28 items-center">
+
         <!-- LEFT IMAGE BLOCK -->
-        <div class="relative flex justify-center order-2 md:w-[670px] mx-auto">
+        <div class="relative flex justify-center order-2 md:w-[670px] mx-auto border col-span-7">
 
             <!-- Main Image -->
             <img src="images/resources/about-one-img-1.jpg" alt="Why choose us" class="scale-100" width="670"
@@ -58,23 +59,15 @@
 
 
         <!-- RIGHT CONTENT -->
-        <div class="text-white order-1 why-choose-custom md:mx-20">
+        <div class="text-white order-1 why-choose-custom md:mx-20 xl:mx-0 col-span-5">
 
 
-            <p class="text-[#4FA0FF] tracking-wider text-sm font-medium 
-                  flex items-center justify-start gap-2">
-
-                <span class="w-2 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#79b0f0] rounded-full"></span>
-                Why choose us
-                <span class="w-8 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#6daef8] rounded-full"></span>
-            </p>
-
-            <h2 class="text-3xl sm:text-4xl tracking-wider my-8 font-bold leading-snug">
+            <x-section-heading subtitle="Why choose us" align="left">
                 Elevate Growth <span class="text-[#edc458] font-marcellus font-normal tracking-tight">
                     with Our Best Cutting-Edge IT
                 </span>
                 Solutions for Success
-            </h2>
+            </x-section-heading>
 
             <p class="text-gray-300 max-w-lg mb-10 text-lg sm:text-xl">
                 Innovating and empowering businesses with tailored solutions

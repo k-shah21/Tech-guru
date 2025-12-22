@@ -58,43 +58,20 @@
     }
 </style>
 
-<section class="min-h-[800px] py-12 relative overflow-hidden">
+<section class="py-12 xl:py-[148px] relative overflow-hidden">
 
     <!-- Header Section -->
-    <div class="relative w-full text-center flex flex-col items-center justify-center px-4 md:px-0 mb-12 z-50">
-        <p class="text-[#4FA0FF] tracking-wider text-sm font-medium flex items-center justify-center gap-2">
-            <span class="w-2 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#79b0f0] rounded-full"></span>
-            Portfolio
-            <span class="w-8 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#6daef8] rounded-full"></span>
-        </p>
-
-        <h2 class="text-3xl md:text-4xl font-bold text-white leading-tight mt-6">
+    <div class="relative max-w-[1320px] mx-auto w-full text-center flex flex-col items-center justify-center px-4 md:px-0 mb-12 z-50">
+        <x-section-heading subtitle="Portfolio" align="center">
             Explore Our Creative
             <span class="font-medium mt-2 text-[#F2C65A] font-marcellus ">
                 Journey <br class="hidden md:block" />
                 Crafting Success Through
             </span>
-        </h2>
+        </x-section-heading>
     </div>
 
-    <!-- GLOW BACKGROUND -->
-    <div class="absolute inset-0 flex items-center justify-start pointer-events-none z-[2]">
-        <div
-            class="w-[700px] h-[700px] lg:w-[900px] lg:h-[900px] translate-x-20 rounded-full blur-[100px] opacity-100 bg-[radial-gradient(circle,_rgba(66,44,72,0.9),_rgba(0,0,0,0))]">
-        </div>
-
-        {{-- background images --}}
-        <img src="images/shapes/portfolio-two-shape-1.png" alt=""
-            class="absolute z-1 sca pointer-events-none float-vertical opacity-10">
-    </div>
-
-    <!-- GLOW BACKGROUND -->
-    <div class="absolute inset-0 flex items-center justify-end pointer-events-none">
-        <div
-            class="w-[700px] h-[700px] lg:w-[900px] lg:h-[900px] translate-x-20 rounded-full blur-[100px] opacity-100 bg-[radial-gradient(circle,_rgba(66,44,72,0.9),_rgba(0,0,0,0))] z-[2]">
-        </div>
-    </div>
-
+   
     <!-- Cards Container -->
     <div class="mt-10 max-w-[1400px] mx-auto px-4 relative z-30">
         <div class="responsive">
@@ -433,6 +410,25 @@
                     <i class="ri-arrow-right-up-line text-xl"></i>
                 </div>
             </div>
+        </div>
+    </div>
+
+
+     <!-- GLOW BACKGROUND -->
+    <div class="absolute inset-0 flex items-center justify-start pointer-events-none z-[2]">
+        <div
+            class="w-[700px] h-[700px] lg:w-[900px] lg:h-[900px] translate-x-20 rounded-full blur-[100px] opacity-100 bg-[radial-gradient(circle,_rgba(66,44,72,0.9),_rgba(0,0,0,0))]">
+        </div>
+
+        {{-- background images --}}
+        <img src="images/shapes/portfolio-two-shape-1.png" alt=""
+            class="absolute z-1 sca pointer-events-none float-vertical opacity-10">
+    </div>
+
+    <!-- GLOW BACKGROUND -->
+    <div class="absolute inset-0 flex items-center justify-end pointer-events-none">
+        <div
+            class="w-[700px] h-[700px] lg:w-[900px] lg:h-[900px] translate-x-20 rounded-full blur-[100px] opacity-100 bg-[radial-gradient(circle,_rgba(66,44,72,0.9),_rgba(0,0,0,0))] z-[2]">
         </div>
     </div>
 

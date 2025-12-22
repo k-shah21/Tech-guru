@@ -12,10 +12,10 @@
 
     <!-- MAIN HERO CONTENT -->
     <div class="grid grid-cols-1 lg:grid-cols-2 items-start gap-10 min-h-[70vh] 
-                px-6 sm:px-10 md:px-3 !2xl:pl-48 w-full py-4">
+                px-6 sm:px-10 md:px-3 2xl:pl-40 w-full py-4">
 
         <div class="flex justify-center items-center  gap-10 min-h-[70vh] 
-            px-1 sm:px-2 md:px-12 xl:pl-24 3xl:pl-48 w-full">
+            px-1 sm:px-2 md:px-12 xl:pl-24 3xl:pl-48 xl:w-10/12">
 
             <!-- TEXT SIDE -->
             <div class="flex flex-col gap-5 xl:grow">
@@ -199,7 +199,7 @@
     const slides = [{
             image: '/images/backgrounds/slider-2-1.jpg',
             badge: '🔒 IT Solutions Designed for Your Success',
-            heading: '<span class="text-[#edc458] font-normal md:font-medium font-marcellus">Techguru</span> - Smart Solutions for a <span class="text-[#edc458] font-normal md:font-medium font-marcellus">Connected world</span>',
+            heading: 'Tech Guru - Smart Solutions for a <span class="text-[#edc458] font-normal md:font-medium font-marcellus">Connected World</span>',
             paragraph: 'From strategic IT consulting to seamless implementation, we deliver tailored solutions that drive efficiency.',
             buttons: [{
                     text: 'Get Started →',
@@ -214,7 +214,7 @@
         {
             image: '/images/backgrounds/slider-2-3.jpg',
             badge: '🚀 Innovative IT Solutions for Growth',
-            heading: '<span class="text-[#edc458] font-normal md:font-medium font-marcellus">Techguru</span> - Empowering Innovation Delivering Solutions',
+            heading: '<span class="text-[#edc458] font-normal md:font-medium font-marcellus">Techguru - </span> Empowering Innovation Delivering Solutions',
             paragraph: 'We provide cutting-edge IT strategies that help businesses scale efficiently and stay ahead of competition.',
             buttons: [{
                     text: 'Start Now →',
@@ -227,7 +227,7 @@
             ]
         },
         {
-            image: '/images/backgrounds/slider-2-3.jpg',
+            image: '/images/backgrounds/slider.jpg',
             badge: '🚀 Innovative IT Solutions for Growth',
             heading: 'Tailored IT <span class="text-[#edc458] font-normal md:font-medium font-marcellus">Strategies to Drive Your Business</span> Forword.',
             paragraph: 'We provide cutting-edge IT strategies that help businesses scale efficiently and stay ahead of competition.',
@@ -261,7 +261,7 @@
 
         // --- Content ---
         heroBadge.textContent = slide.badge;
-        heroHeading.innerHTML = slide.heading; // <-- use innerHTML here
+        heroHeading.innerHTML = slide.heading;
         heroParagraph.textContent = slide.paragraph;
 
         // Buttons

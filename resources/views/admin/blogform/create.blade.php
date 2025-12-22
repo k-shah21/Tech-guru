@@ -5,15 +5,7 @@
         <h2 class="fw-bold">Create Blog</h2>
         <a href="/admin/blogs" class="btn btn-outline-dark px-4">Back</a>
     </div>
-    @if ($errors->any())
-    <div class="mb-4 p-4 rounded-lg bg-red-500/10 text-red-400 z-50">
-        <ul class="list-disc list-inside">
-            @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif
+
 
 
     <form action=" {{ route('blog.store') }}" method="POST" enctype="multipart/form-data" class="pb-5">
@@ -30,50 +22,61 @@
                 <!-- Title -->
                 <div class="mb-4">
                     <label class="form-label fw-semibold">Title</label>
-                    <input type="text" name="title" class="form-control form-control-lg rounded-3"
+                    <input type="text"
+                        name="title"
+                        value="{{ old('title') }}"
+                        class="form-control form-control-lg rounded-3 @error('title') is-invalid @enderror"
                         placeholder="Enter blog title">
-                </div>
 
+                    @error('title')
+                    <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                </div>
                 <!-- Heading -->
                 <div class="mb-4">
                     <label class="form-label fw-semibold">Heading</label>
-                    <input type="text" name="heading" class="form-control form-control-lg rounded-3"
+                    <input type="text"
+                        value="{{ old('heading') }}"
+                        name="heading" class="form-control form-control-lg rounded-3"
                         placeholder="Enter main heading">
+                    @error('heading')
+                    <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
 
                 <!-- Meta Description -->
                 <div class="mb-4">
                     <label class="form-label fw-semibold">Meta Description</label>
-                    <textarea name="meta_description" rows="3" class="form-control rounded-3"
+                    <textarea name="meta_description"
+                        value="{{ old('meta_description') }}"
+                        rows="3" class="form-control rounded-3"
                         placeholder="Write short SEO description..."></textarea>
                     <small class="text-muted">Recommended: 50–160 characters.</small>
+                    @error('meta_description')
+                    <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
 
                 <!-- Tags -->
                 <div class="mb-4">
                     <label class="form-label fw-semibold">Tags (Comma Seprated)</label>
-                    <input type="text" name="tags" class="form-control rounded-3"
+                    <input type="text"
+                        value="{{ old('tags') }}"
+                        name="tags" class="form-control rounded-3"
                         placeholder="Type a tag and press Enter">
+                    @error('tags')
+                    <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
 
                 <!-- Content -->
                 <div class="mb-4">
                     <label class="form-label fw-semibold">Content</label>
-                    <textarea id="editor" name="content"></textarea>
-                </div>
-
-                <!-- Status -->
-                <div class="mb-4">
-                    <label for="status" class="form-label fw-semibold">Visibility</label>
-
-                    <select id="status" name="status" class="form-select form-select-lg rounded-3">
-                        <option value="published" selected>Public</option>
-                        <option value="draft">Draft</option>
-                    </select>
-
-                    <small class="text-muted">
-                        Public blogs are visible on the website. Drafts are hidden.
-                    </small>
+                    <textarea id="editor"
+                        value="{{ old('content') }}" name="content"></textarea>
+                    @error('content')
+                    <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
 
 
@@ -82,9 +85,9 @@
                     <label class="form-label fw-semibold">Main Image</label>
 
                     <div class="mb-2 text-muted small">
-                        Required size: <strong>324 × 221 px</strong><br>
+                        Required size: <strong class="text-danger">324 × 221 px</strong><br>
                         Allowed formats: <strong>WEBP, JPG, PNG</strong><br>
-                        Recommended format: <strong>WEBP</strong> (best for SEO & speed)
+                        Recommended format: <strong>WEBP</strong> <span class="text-success"> (best for SEO & speed) </span>
                     </div>
 
                     <input type="file" name="main_image" class="form-control rounded-3">
@@ -93,9 +96,12 @@
                 <!-- Main Image Alt -->
                 <div class="mb-4">
                     <label class="form-label fw-semibold">Main Image Alt</label>
-                    <input type="text" name="image_alt" class="form-control rounded-3"
+                    <input type="text" name="image_alt" value="{{ old('image_alt') }}" class="form-control rounded-3"
                         placeholder="Describe the main image for SEO">
                     <small class="text-muted">Maximum 50 characters allowed.</small>
+                    @error('image_alt')
+                    <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
 
             </div>

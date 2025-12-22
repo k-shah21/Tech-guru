@@ -7,7 +7,7 @@
     .link-underline::after {
         content: "";
         position: absolute;
-        bottom: -2px;
+        bottom: -1px;
         left: 0;
         width: 0%;
         height: 2px;
@@ -25,8 +25,10 @@
     }
 </style>
 
-<header x-data="{ openMenu: false }">
-    <div id="mainHeader" class=" sticky top-0 z-50 w-full py-5 px-5 md:py-6 lg:p-6 border-b border-white/20">
+<header x-data="{ openMenu: false, scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 50)">
+    <div id="mainHeader" 
+        :class="scrolled ? 'bg-[#0B192C] shadow-lg border-transparent' : 'bg-transparent border-white/20'"
+        class="sticky top-0 z-50 w-full py-5 px-5 md:py-6 lg:p-6 border-b transition-all duration-300">
 
         <div class="md:px-4 px-3 flex items-center justify-between">
 
@@ -34,33 +36,32 @@
                 <img src="{{ asset('images/logo-1.webp') }}" />
             </div>
 
-            <nav class="hidden xl:flex items-center justify-center gap-8 text-gray-300 flex-1">
+            <nav class="hidden xl:flex items-center justify-center gap-14 text-gray-300 font-semibold flex-1">
                 <a href="{{ route('home') }}"
                     class="link-underline flex justify-center items-center {{ request()->routeIs('home') ? 'active text-[#edc458]' : '' }}">
-                    Home <i class="ri-arrow-drop-down-line text-2xl"></i>
+                    Home
 
                 </a>
 
-
                 <a href="#"
-                    class="hover:text-[#edc458] text-[#f3f2f3] link-underline transition  link-underline">About</a>
+                    class="hover:text-[#edc458] text-[#f3f2f3] link-underline transition ">About</a>
                 <a href="#"
                     class="hover:text-[#edc458] text-[#f3f2f3] link-underline transition  flex items-center gap-1">Pages
-                    <i class="ri-arrow-drop-down-line text-2xl"></i>
+
 
                 </a>
                 <a href="#"
-                    class="hover:text-[#edc458] text-[#f3f2f3]  link-underline transition  flex items-center gap-1 ">Services
-                    <i class="ri-arrow-drop-down-line text-2xl"></i>
+                    class="hover:text-[#edc458] text-[#f3f2f3] link-underline transition flex items-center gap-1 ">Services
+
                 </a>
                 <a href="#"
-                    class="hover:text-[#edc458] text-[#f3f2f3]  link-underline transition  flex items-center gap-1 ">Shop
-                    <i class="ri-arrow-drop-down-line text-2xl"></i>
+                    class="hover:text-[#edc458] text-[#f3f2f3] link-underline transition flex items-center gap-1 ">Shop
+
 
                 </a>
                 <a href="{{ route('blog.all') }}"
-                    class="hover:text-[#edc458] text-[#f3f2f3]  link-underline transition {{ request()->routeIs('blogs') ? 'active text-[#edc458]' : '' }}">Blog
-                    <i class="ri-arrow-drop-down-line text-2xl"></i></a>
+                    class="hover:text-[#edc458] text-[#f3f2f3] flex justify-center items-center link-underline transition {{ request()->routeIs('blogs') ? 'active text-[#edc458]' : '' }}">Blog</a>
+
                 <a href="#" class="hover:text-[#edc458] text-[#f3f2f3]  link-underline transition">Contact</a>
             </nav>
 

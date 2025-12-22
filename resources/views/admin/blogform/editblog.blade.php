@@ -25,6 +25,10 @@
                     <label class="form-label fw-semibold">Title</label>
                     <input type="text" name="title" class="form-control form-control-lg rounded-3"
                         value="{{ old('title', $blog->title) }}" placeholder="Enter blog title">
+
+                    @error('title')
+                    <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
 
                 <!-- Heading -->
@@ -32,6 +36,10 @@
                     <label class="form-label fw-semibold">Heading</label>
                     <input type="text" name="heading" class="form-control form-control-lg rounded-3"
                         value="{{ old('heading', $blog->heading) }}" placeholder="Enter main heading">
+
+                    @error('heading')
+                    <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
 
                 <!-- Meta Description -->
@@ -40,6 +48,9 @@
                     <textarea name="meta_description" rows="3" class="form-control rounded-3"
                         placeholder="Write short SEO description...">{{ old('meta_description', $blog->meta_description) }}</textarea>
                     <small class="text-muted">Recommended: 50–160 characters.</small>
+                    @error('meta_description')
+                    <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
 
                 <!-- Tags -->
@@ -47,13 +58,19 @@
                     <label class="form-label fw-semibold">Tags (Comma Separated)</label>
                     <input type="text" name="tags" class="form-control rounded-3" value="{{ old('tags', $blog->tags) }}"
                         placeholder="Type tags separated by commas">
+                    @error('tags')
+                    <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
 
                 <!-- Content -->
                 <div class="mb-4">
                     <label class="form-label fw-semibold">Content</label>
                     <textarea id="editor" name="content" class="form-control rounded-3"
-                        rows="7">{{ old('content', $blog->content) }}</textarea>
+                        rows="7">{!! old('content', $blog->content) !!}</textarea>
+                    @error('content')
+                    <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
 
                 <!-- Main Image -->
@@ -67,12 +84,15 @@
                     </div>
 
                     <input type="file" name="main_image" class="form-control rounded-3">
-
+                    @error('main_image')
+                    <small class="text-danger">{{ $message }}</small>
+                    @enderror
                     @if($blog->main_image)
                     <div class="mt-3">
                         <p class="text-muted mb-1">Current Image:</p>
                         <img src="{{ asset('storage/' . $blog->main_image) }}" class="rounded" width="200"
                             alt="{{ $blog->image_alt }}">
+
                     </div>
                     @endif
                 </div>

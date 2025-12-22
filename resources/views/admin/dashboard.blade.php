@@ -138,14 +138,14 @@
      <div class="row g-4 mb-4">
        <div class="col-md-6">
          <div class="card card-rounded shadow-soft stats-card p-4">
-           <h5>Total Bookings</h5>
+           <h5>Total Contacts</h5>
            <div class="display-6 fw-bold text-success">{{ $contacts->count() }}</div>
          </div>
        </div>
 
        <div class="col-md-6">
          <div class="card card-rounded shadow-soft stats-card p-4">
-           <h5>Total Users</h5>
+           <h5>Total Newsletters</h5>
            <div class="display-6 fw-bold text-info">{{ $newsLetters->count() }}</div>
          </div>
        </div>

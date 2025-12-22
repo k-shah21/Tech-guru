@@ -139,18 +139,12 @@
 
         <!-- LEFT CONTENT -->
         <div class="order-1 text-white text-start">
-            <p class="text-[#4FA0FF] tracking-wider flex items-center gap-2">
-                <span class="w-2 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#79b0f0]"></span>
-                Get In Touch
-                <span class="w-8 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#6daef8]"></span>
-            </p>
-
-            <h2 class="text-4xl font-medium my-6">
+            <x-section-heading subtitle="Get In Touch" align="left">
                 Conversation
-                <span class="text-[#edc458] font-marcellus block">
+                <span class="text-[#edc458] font-normal">
                     Reach Out Anytime
                 </span>
-            </h2>
+            </x-section-heading>
 
             <p class="text-[#c5c8cd] max-w-lg mb-10 text-xl">
                 We're here to listen! Whether you have questions, feedback,

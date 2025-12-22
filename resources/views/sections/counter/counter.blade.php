@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="flex flex-col text-left">
-                    <span class="text-6xl font-bold count" data-end="120">120+</span>
+                    <span class="text-6xl font-semibold count" data-end="120">120+</span>
                     <p class="text-gray-300 text-md">Creative Plus award</p>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="flex flex-col text-left">
-                    <span class="text-6xl font-bold count" data-end="300">300+</span>
+                    <span class="text-6xl font-semibold count" data-end="300">300+</span>
                     <p class="text-gray-300 text-md">Expert Team Members</p>
                 </div>
             </div>
@@ -67,7 +67,7 @@
                 </div>
 
                 <div class="flex flex-col text-left">
-                    <span class="text-6xl font-bold count" data-end="20">20M</span>
+                    <span class="text-6xl font-semibold count" data-end="20">20M</span>
                     <p class="text-gray-300 text-md">Happy Clients Review</p>
                 </div>
             </div>
@@ -87,7 +87,7 @@
                 </div>
 
                 <div class="flex flex-col text-left">
-                    <span class="text-6xl font-bold count" data-end="1">1.5K</span>
+                    <span class="text-6xl font-semibold count" data-end="1">1.5K</span>
                     <p class="text-gray-300 text-md">Project Completed</p>
                 </div>
             </div>

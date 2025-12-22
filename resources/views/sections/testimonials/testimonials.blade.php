@@ -125,16 +125,10 @@
 <section class="relative w-full py-28">
 
     <div class="max-w-6xl mx-auto text-center mb-16 px-4">
-        <p class="text-[#4FA0FF] tracking-wider text-md font-medium flex items-center justify-center gap-2">
-            <span class="w-2 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#79b0f0] rounded-full"></span>
-            Testimonials
-            <span class="w-8 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#6daef8] rounded-full"></span>
-        </p>
-
-        <h2 class="text-xl lg:text-4xl font-semibold text-white mt-6">
+        <x-section-heading subtitle="Testimonials" align="center">
             Customer Experiences <br /> That
             <span class="text-[#edc458] font-marcellus font-medium tracking-wider">Speak Volumes</span>
-        </h2>
+        </x-section-heading>
     </div>
 
 

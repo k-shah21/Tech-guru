@@ -10,15 +10,9 @@
 
             <!-- Left Heading -->
             <div>
-                <p class="mb-4 text-[#4FA0FF] tracking-wider text-sm font-medium flex items-center gap-2">
-                    <span class="w-2 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#79b0f0] rounded-full"></span>
-                    Upcoming Events
-                    <span class="w-8 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#6daef8] rounded-full"></span>
-                </p>
-
-                <h2 class="text-2xl md:text-[40px] lg:text-4xl font-medium tracking-wide mb-6">
-                    Exciting Events<span class="text-[#edc458] font-normal"> on the Horizon</span>
-                </h2>
+                <x-section-heading subtitle="Upcoming Events" align="left">
+                    Exciting Events<span class="text-[#edc458] font-marcellus font-normal"> on the Horizon</span>
+                </x-section-heading>
             </div>
 
             <!-- Contact Button -->
@@ -35,15 +29,15 @@
             <!-- LEFT IMAGE / VIDEO -->
             <div class="flex justify-center  md:max-w-[660px] xl:w-full mx-auto col-span-1 xl:col-span-5 ">
                 <div class="relative w-full md:w-[480px] lg:!w-[620px] overflow-hidden rounded-3xl shadow-xl">
-                    <img src="images/resources/event-one-img-1.jpg" class="w-full h-full object-cover rounded-3xl" />
+                    <img src="{{ asset('images/resources/event-one-img-1.jpg') }}" class="w-full h-full object-cover rounded-3xl" />
 
                     <!-- Play Button -->
-                    <div class="absolute inset-0 flex justify-center items-center">
+                    <div class="absolute inset-0 flex justify-center items-center group cursor-pointer">
 
                         <div class="w-20 h-20 rounded-full flex justify-center items-center relative z-10">
 
                             <div
-                                class="relative w-18 h-18 rounded-full flex justify-center items-center border border-white/30  p-4">
+                                class="relative w-24 h-24 rounded-full flex justify-center items-center border border-white/30  p-4">
 
                                 <span class="absolute inset-0 -z-10">
                                     <span
@@ -51,8 +45,8 @@
                                 </span>
 
                                 <!-- Play icon -->
-                                <div class="w-10 h-10 bg-[#4FA0FF] rounded-full flex justify-center items-center">
-                                    <i class="ri-play-fill text-white text-3xl"></i>
+                                <div class="w-16 h-16 bg-[#4FA0FF] group-hover:bg-[#edc458] group-hover:text-black transition-colors duration-500 rounded-full flex justify-center items-center">
+                                    <i class="ri-play-fill text-white text-4xl group-hover:text-black"></i>
                                 </div>
 
                             </div>

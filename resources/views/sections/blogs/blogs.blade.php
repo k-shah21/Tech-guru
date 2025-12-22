@@ -147,16 +147,10 @@
         <div class="xl:w-1/2 w-full p-4 flex flex-col gap-5 xl:pe-10">
 
             <div>
-                <p class="text-[#4FA0FF] tracking-wider text-md font-medium flex items-center gap-2 mb-6">
-                    <span class="w-2 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#79b0f0] rounded-full"></span>
-                    Our Blogs
-                    <span class="w-8 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#6daef8] rounded-full"></span>
-                </p>
-
-                <h2 class="text-2xl md:text-[40px] lg:text-4xl font-medium tracking-wide mb-4 leading-snug">
+                <x-section-heading subtitle="Our Blogs" align="left">
                     Explore Our Latest<span class="text-[#edc458] font-normal !font-marcellus"> Blogs for Expert
                         Insights</span>
-                </h2>
+                </x-section-heading>
 
                 <p class="text-[#c5c8cd] text-lg mb-5">
                     Dive into our collection of blogs where we share expert insights, helpful tips, and the latest

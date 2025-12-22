@@ -8,6 +8,7 @@
     .about-two__left {
         margin-top: 15px;
         margin-right: 5px;
+        padding-right: 123px;
         display: block;
         position: relative;
     }
@@ -98,41 +99,50 @@
     }
 
     .about-two__client-img-list {
-        justify-content: center;
-        align-items: center;
         display: flex;
-        position: relative;
-    }
-
-    .about-two__client-img-list {
-        justify-content: center;
         align-items: center;
-        display: flex;
-        position: relative;
+        justify-content: center;
     }
 
     .about-two__client-img-list li {
-        display: block;
         position: relative;
+    }
+
+    .about-two__client-img-list li:not(:first-child) {
+        margin-left: -20px;
     }
 
     .about-two__client-img {
-        width: 100%;
         max-width: 40px;
-        display: block;
-        position: relative;
     }
 
     .about-two__client-img img {
-        border: 2px solid #08111f;
-        border-radius: 50%;
         width: 100%;
+        border-radius: 50%;
+        border: 2px solid #08111f;
+        background: #08111f;
     }
 
     .about-two__client-text {
         color: #fff;
         margin-top: 12px;
     }
+
+    .plus-icon {
+        width: 40px;
+        height: 40px;
+        background: #edc458;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: 700;
+        color: #08111f;
+        border: 2px solid #08111f;
+        cursor: pointer;
+    }
+
 
     @media only screen and (min-width: 360px) and (max-width: 768px) {
 
@@ -191,10 +201,60 @@
         }
 
     }
+
+    .about-two__call-icon {
+        position: relative;
+        border-radius: 50%;
+        background: #08111f;
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        z-index: 0;
+    }
+
+    /* Gradient ring */
+    .about-two__call-icon::before {
+        content: "";
+        -webkit-mask-composite: xor;
+        z-index: -1;
+        background: linear-gradient(90deg, #3d72fc, #5cb0e9) border-box;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        -webkit-mask-image: linear-gradient(#fff 0, #fff 0), linear-gradient(#fff 0, #fff 0);
+        -webkit-mask-position: 0 0, 0 0;
+        -webkit-mask-size: auto, auto;
+        -webkit-mask-repeat: repeat, repeat;
+        -webkit-mask-clip: padding-box, border-box;
+        -webkit-mask-origin: padding-box, border-box;
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        -webkit-mask-source-type: auto, auto;
+        mask-mode: match-source, match-source;
+    }
+
+    .about-two__call-icon:after {
+        content: "";
+        filter: blur(16.5px);
+        z-index: -1;
+        background: linear-gradient(270deg, #fa5674 0%, #6065d4 100%);
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
 </style>
 
 <!-- ABOUT SECTION -->
-<section class="relative bg-[#0a1a2f] py-12 xl:py-6  overflow-hidden">
+<section class="relative bg-[#0a1a2f] py-12 xl:py-[140px]  overflow-hidden">
 
     <!-- CENTRAL GLOW BACKGROUND -->
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -205,11 +265,12 @@
     </div>
 
     <div
-        class="relative z-10 max-w-[1500px] [@media(min-width:1200px)]:grid-cols-2 mx-auto grid lg:gap-7  gap-y-4 gap-x-10  px-4 items-center">
+        class="relative z-10 max-w-[1400px]  [@media(min-width:1200px)]:grid-cols-2 mx-auto grid lg:gap-7  gap-y-4 gap-x-16  px-4 items-center justify-start">
 
 
 
-        <div class="about-two__left">
+        <!-- Left CONTENT -->
+        <div class="about-two__left ">
             <div class="about-two__img-box">
                 <div class="about-two__img">
                     <img src="images/resources/about-two-img-1.jpg" width="495" height="474" alt="">
@@ -228,17 +289,17 @@
                     </li>
                     <li>
                         <div class="about-two__client-img">
-                            <img src="images/resources/about-four-client-img-1-1.jpg" alt="" width="36" height="35">
+                            <img src="images/resources/about-four-client-img-1-2.jpg" alt="" width="36" height="35">
                         </div>
                     </li>
                     <li>
                         <div class="about-two__client-img">
-                            <img src="images/resources/about-four-client-img-1-1.jpg" alt="" width="36" height="35">
+                            <img src="images/resources/about-four-client-img-1-3.jpg" alt="" width="36" height="35">
                         </div>
                     </li>
-                    <li>
-                        <div class="about-two__client-img">
-                            <img src="images/resources/about-four-client-img-1-1.jpg" alt="" width="36" height="35">
+                    <li class="client-plus">
+                        <div class="about-two__client-img plus-icon">
+                            <i class="ri-add-line"></i>
                         </div>
                     </li>
 
@@ -247,23 +308,26 @@
                     120K Satisfied Client
                 </p>
             </div>
-
         </div>
 
         <!-- RIGHT CONTENT -->
-        <div class="text-white md:mt-6 lg:mt-0 text-left flex flex-col items-center">
+        <div class="text-white md:mt-6 lg:mt-0 text-left flex flex-col items-center max-w-[617px]">
 
-            <div class="mx-auto md:max-w-[80%] lg:max-w-[70%]  xl:max-w-[100%]">
+            <div class="mx-auto md:max-w-[80%] lg:max-w-[70%]  xl:max-w-full">
 
-                <p class="text-blue-400 mb-2 tracking-wide">— About Us</p>
+                <p class="text-[#4FA0FF] tracking-wider text-sm font-medium flex items-center justify-start gap-2">
+                    <span class="w-2 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#79b0f0] rounded-full"></span>
+                    About Us
+                    <span class="w-8 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#6daef8] rounded-full"></span>
+                </p>
 
-                <h2 class="text-4xl md:text-[40px] lg:text-4xl font-medium tracking-wide mb-6">
+                <h2 class="text-4xl md:text-[40px] font-medium tracking-wide mb-6 !mt-4">
                     Unlock Your Business <span class="text-[#edc458] font-normal">Potential
-                        with Our Cutting-Edge </span>
+                        with Our Best Cutting-Edge </span>
                     Solutions to Grow
                 </h2>
 
-                <p class="text-gray-300 max-w-lg mb-10 text-xl">
+                <p class="text-gray-300 max-w-lg mb-10 !mt-4 text-xl">
                     Transform your business with our innovative IT solutions, tailored to address your unique
                     challenges and drive growth in today’s digital landscape.
                 </p>
@@ -288,14 +352,15 @@
                 <div class="flex flex-wrap items-center gap-4 md:gap- mt-2 md:mt-8 lg:mt-4">
 
                     <div class="flex justify-center items-center md:border-r">
-                        <h3 class="text-4xl font-bold text-yellow-400">25+</h3>
+                        <h3 class="text-4xl font-bold text-[#edc458]">25+</h3>
                         <p class="text-gray-300 text-sm w-1/2">Years of Experience</p>
                     </div>
 
                     <div class="flex items-center gap-4 md:border-r pe-5">
-                        <div class="w-12 h-12 rounded-full bg-blue-900 flex items-center justify-center text-xl">
+                        <div class="about-two__call-icon w-12 h-12 flex items-center justify-center text-xl overflow-hidden">
                             <i class="ri-customer-service-2-line"></i>
                         </div>
+
                         <div>
                             <p class="text-blue-400 text-sm">Call Us For Inquiry</p>
                             <p class="text-white font-semibold text-lg">+00 (123) 456767</p>

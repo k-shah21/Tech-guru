@@ -13,7 +13,6 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
 
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Space+Grotesk:wght@300..700&display=swap"
         rel="stylesheet">
@@ -57,16 +56,6 @@
         }
     </script>
 
-    <style>
-        .preview-img {
-            clip-path: inset(0 100% 0 0);
-            transition: clip-path 0.6s ease-out;
-        }
-
-        .preview-img.reveal {
-            clip-path: inset(0 0 0 0);
-        }
-    </style>
 
     <title>Tech Guru</title>
 </head>

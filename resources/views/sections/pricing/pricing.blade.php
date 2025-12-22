@@ -20,35 +20,23 @@
 
 
 <section
-    class="min-h-[700px] lg:py-24 py-6 relative overflow-hidden md:gap-6 flex justify-center flex-col items-center px-5 lg:gap-8">
+    class="py-6 lg:py-24 relative overflow-hidden flex justify-center flex-col items-center px-5 xl:px-0 lg:gap-8">
 
     <!-- Header Section -->
-    <div class="relative w-full text-center flex flex-col items-center justify-center px-4 md:px-0 lg:mb-12">
-        <p class="text-[#4FA0FF] tracking-wider text-sm font-medium flex items-center justify-center gap-2">
-            <span class="w-2 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#79b0f0] rounded-full"></span>
-            Pricing & Plan
-            <span class="w-8 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#6daef8] rounded-full"></span>
-        </p>
-
-        <h2 class="text-2xl sm:text-5xl tracking-wider my-8 font-bold md:leading-32  md:w-4/5">
-            Select the Perfect <span class="text-[#edc458] font-marcellus font-normal tracking-tight">Plan for Your
+    <div class="relative w-full text-center flex flex-col items-center justify-center px-4 md:px-0 max-w-[1320px] mx-auto">
+        <x-section-heading subtitle="Pricing & Plan" align="center">
+            Select the Perfect <span class="text-[#edc458] ">Plan for Your
                 Needs That Fits You
             </span>
-        </h2>
+        </x-section-heading> 
+      
     </div>
 
-    <div class="absolute inset-0 flex items-center justify-start pointer-events-none z-[2]">
-        <div
-            class="w-[700px] h-[700px] lg:w-[900px] lg:h-[900px]
-        translate-x-20 rounded-full blur-[100px] opacity-100 bg-[radial-gradient(circle,_rgba(67,123,205,0.4),_rgba(0,0,0,0))]">
-        </div>
-    </div>
-
-
-    <div class="w-[1240px] max-w-full px-5 z-30 flex justify-center items-center flex-col ">
+  <!-- Pricing Cards -->
+    <div class="w-[1320px] mx-auto px-5 z-30 flex justify-center items-center flex-col ">
 
         {{-- PLAN SWITCHER --}}
-        <div class="flex justify-center mb-10 relative">
+        <div class="flex justify-center !mb-20 relative">
 
             <div class="inline-flex px-2 flex-col md:flex-row rounded-full md:border md:border-[#7350F5]">
                 <button onclick="changePlan('monthly')" id="btn-monthly"
@@ -86,7 +74,7 @@
                     class="absolute -bottom-10 right-4 z-10 opacity-5 rotate-[28deg]">
 
                 <h3 class="text-center mb-4 text-[#edc458] font-marcellus text-xl">PERSONAL</h3>
-                <h1 id="price-personal" class="text-center text-6xl font-bold">${{ $pricing['monthly']['personal'] }}
+                <h1 id="price-personal" class="text-center text-[60px] font-bold ">${{ $pricing['monthly']['personal'] }}
                 </h1>
 
                 <p class="text-center mt-4 opacity-90 text-xl">Will Get Free 3 Months Solutions Support</p>
@@ -121,7 +109,7 @@
                     class="absolute -bottom-10 right-4 z-10 opacity-5 rotate-[28deg]">
 
                 <h3 class="text-center text-lg mb-4 text-[#edc458] font-marcellus text-xl">PREMIUM</h3>
-                <h1 id="price-premium" class="text-center text-5xl font-bold">${{ $pricing['monthly']['premium'] }}</h1>
+                <h1 id="price-premium" class="text-center text-[60px] font-bold">${{ $pricing['monthly']['premium'] }}</h1>
 
                 <p class="text-center mt-4 opacity-90 text-xl">Will Get Free 5 Months Solutions Support</p>
 
@@ -158,7 +146,7 @@
                     class="absolute -bottom-10 right-4 z-10 opacity-5 rotate-[28deg]">
 
                 <h3 class="text-center mb-4 text-[#edc458] font-marcellus text-xl">BUSINESS</h3>
-                <h1 id="price-business" class="text-center text-5xl font-bold">${{ $pricing['monthly']['business'] }}
+                <h1 id="price-business" class="text-center text-[60px] font-bold">${{ $pricing['monthly']['business'] }}
                 </h1>
 
                 <p class="text-center mt-4 opacity-90 text-xl">Will Get Free Lifetime Solutions Support</p>
@@ -181,6 +169,14 @@
             </div>
         </div>
 
+    </div>
+
+    <!-- Backgorund Gredient -->
+    <div class="absolute inset-0 flex items-center justify-start pointer-events-none z-[2]">
+        <div
+            class="w-[700px] h-[700px] lg:w-[900px] lg:h-[900px]
+        translate-x-20 rounded-full blur-[100px] opacity-100 bg-[radial-gradient(circle,_rgba(67,123,205,0.4),_rgba(0,0,0,0))]">
+        </div>
     </div>
 
 </section>

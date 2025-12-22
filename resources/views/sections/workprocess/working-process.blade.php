@@ -45,7 +45,7 @@
 
 
 <section
-    class="relative h-auto overflow-hidden flex flex-col justify-center items-center text-center py-12 md:py-28 gap-4  lg:gap-36 md:px-0">
+    class="relative overflow-hidden flex flex-col justify-center items-center text-center py-12 md:py-28 xl:py-[148px] gap-4 lg:!gap-20 md:px-0">
 
     <img src="images/backgrounds/process-two-bg.jpg" class="absolute inset-0 w-full h-full object-cover opacity-20 z-0">
 
@@ -55,24 +55,18 @@
     </div>
 
     <!-- CONTENT -->
-    <div class="relative z-30 w-full text-center flex flex-col items-center gap-2 px-4 md:px-0 mb-12 z-10">
+    <div class="relative z-30 w-full text-center flex flex-col items-center gap-2 px-4 md:px-0 mb-12 max-w-[1320px] mx-auto xl:mb-[78px]">
 
-        <p class="text-[#4FA0FF] tracking-wider text-xs sm:text-sm font-medium flex items-center justify-center gap-2">
-            <span class="w-2 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#79b0f0] rounded-full"></span>
-            Working Process
-            <span class="w-8 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#6daef8] rounded-full"></span>
-        </p>
-
-        <h2 class="text-3xl sm:text-5xl tracking-wider my-8 font-bold leading-snug lg:w-1/2">
-            Our Seamless Process<span class="text-[#edc458] font-marcellus font-normal tracking-tight">
+        <x-section-heading subtitle="Working Process" align="center">
+            Our Seamless Process <br><span class="text-[#edc458] font-marcellus font-normal tracking-tight">
                 From Concept to Creation
             </span>
-        </h2>
+        </x-section-heading>
     </div>
 
     <!-- PROCESS WRAPPER -->
     <div
-        class="flex flex-col lg:flex-row max-w-6xl gap-8 lg:gap-32 lg:gap-x-12 mx-auto justify-center items-center !px-6 md:px-0 z-40">
+        class="flex flex-col lg:flex-row gap-8 lg:gap-32 lg:gap-x-12 justify-center max-w-[1320px] mx-auto items-center !px-6 md:px-0 z-40 xl:px-0">
 
         <!-- Block 01 -->
         <div class="text-center z-40 relative">

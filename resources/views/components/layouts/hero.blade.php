@@ -9,14 +9,15 @@
         style="background-image: url('{{ $bg ?? '/images/default-bg.jpg' }}');">
     </div>
 
+
     <!-- GRADIENT OVERLAY -->
     <div
         class="absolute inset-0 bg-gradient-to-r
-               from-black via-black/80 via-[60%] to-transparent z-[1] ">
+               from-black via-black/70 via-[40%] to-transparent z-[1] ">
     </div>
 
     <!-- HEADER -->
-    <x-header.header />
+    <!-- HEADER (Moved to layout/home) -->
 
     <!-- MAIN HERO CONTENT -->
     <div class="relative z-10">
