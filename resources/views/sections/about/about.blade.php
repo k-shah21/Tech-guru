@@ -8,7 +8,6 @@
     .about-two__left {
         margin-top: 15px;
         margin-right: 5px;
-        /* padding-right: 123px; */
         display: block;
         position: relative;
     }
@@ -178,7 +177,8 @@
 
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .about-two__left {
-            max-width: 620px;
+            max-width: 890px !important;
+            width: 100%;
             margin: 0 auto;
 
         }
@@ -254,7 +254,7 @@
 </style>
 
 <!-- ABOUT SECTION -->
-<section class="relative bg-[#0a1a2f] py-12 xl:py-[140px]  overflow-hidden">
+<section class="relative bg-[#0a1a2f] py-12 lg:py-[140px] overflow-hidden">
 
     <!-- CENTRAL GLOW BACKGROUND -->
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -265,7 +265,7 @@
     </div>
 
     <div
-        class="relative z-10 md:max-w-[720px] max-w-[1400px]  [@media(min-width:1200px)]:grid-cols-2 mx-auto grid lg:gap-7  gap-y-4 gap-x-16  px-4 items-center justify-start">
+        class="relative z-10 md:max-w-[720px] lg:max-w-[920px] max-w-[1400px]  [@media(min-width:1200px)]:grid-cols-2 mx-auto grid lg:gap-7  gap-y-4 gap-x-16  px-4 items-center justify-start lg:justify-center">
 
         <!-- Left CONTENT -->
         <div class="about-two__left">
@@ -309,9 +309,9 @@
         </div>
 
         <!-- RIGHT CONTENT -->
-        <div class="text-white md:mt-6 lg:mt-0 text-left flex flex-col items-center max-w-[617px] md:max-w-[720px]">
+        <div class="text-white md:mt-6 lg:mt-0 text-left flex flex-col items-center max-w-[617px] md:max-w-[720px] lg:max-w-[920px]">
 
-            <div class="mx-auto lg:max-w-[70%]  xl:max-w-full">
+            <div class="mx-auto  xl:max-w-full">
 
 
                 <x-section-heading subtitle="About Us" align="left">

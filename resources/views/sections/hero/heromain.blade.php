@@ -11,14 +11,14 @@
         class="absolute left-0 -bottom-24 opacity-5 float-horizontal">
 
     <!-- MAIN HERO CONTENT -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 items-start gap-10 min-h-[70vh] 
+    <div class="grid grid-cols-1 xl:grid-cols-2 items-start gap-10 min-h-[70vh] 
                 px-6 sm:px-10 md:px-3 2xl:pl-40 w-full py-4">
 
         <div class="flex justify-center items-center  gap-10 min-h-[70vh] 
             px-1 sm:px-2 md:px-12 xl:pl-24 3xl:pl-48 xl:w-10/12 md:w-full">
 
             <!-- TEXT SIDE -->
-            <div class="flex flex-col gap-5 xl:grow">
+            <div class="flex flex-col gap-5 xl:grow  xl:w-full">
 
                 <!-- Badge -->
                 <div id="hero-badge" class="flex items-start gap-2 bg-white/10 text-xs sm:text-sm w-fit px-3 py-1 rounded-full border border-[#edc458] animate-slide-top animate-delay-200">
@@ -26,7 +26,7 @@
                 </div>
 
                 <!-- Heading -->
-                <h1 id="hero-heading" class="mt-4 text-4xl sm:text-4xl md:text-5xl xl:text-[52px] font-medium 2xl:font-semibold text-left !leading-[56px] xl:!leading-[56px] animate-slide-top animate-delay-400 md:w-4/5 xl:w-full ">
+                <h1 id="hero-heading" class="mt-4 text-4xl sm:text-4xl md:text-5xl xl:text-[52px] font-medium 2xl:font-semibold text-left !leading-[56px] xl:!leading-[56px] animate-slide-top animate-delay-400 md:w-4/5 lg:w-4/5 xl:w-full ">
                     Techguru - Smart Solutions for a Connected world
                 </h1>
 

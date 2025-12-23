@@ -44,7 +44,7 @@
         clip-path: inset(0 0 0 0);
     }
 </style>
-<section class="max-w-[720px] xl:max-w-[1400px] mx-auto relative py-20  z-10">
+<section class="max-w-[720px] lg:max-w-[960px] xl:max-w-[1400px] mx-auto relative py-20  z-10">
 
 
 
@@ -180,7 +180,7 @@
                     data-image="{{ $service['image'] }}">
 
                     <div
-                        class="col-span-12 lg:col-span- [@media(min-width:1440px)]:col-span-4 flex items-center justify-start md:justify-center lg:justify-start gap-4 ">
+                        class="col-span-12 lg:col-span-4 [@media(min-width:1440px)]:col-span-4 flex items-center justify-start md:justify-center lg:justify-start gap-4 ">
                         <div class="w-10 h-10 rounded-full border border-[#FF7AC4] text-[#FF7AC4]
                             flex items-center justify-center font-semibold p-2">{{ $service['id'] }}</div>
                         <h3
