@@ -13,15 +13,18 @@ class ContactController extends Controller
         $validated = $request->validate([
             'full_name' => 'required|string|max:255',
             'email' => 'required|email',
-            'phone' => 'nullable|string|max:20',
+            'phone' => 'required|string|max:20',
             'subject' => 'required|string|max:255',
             'message' => 'required|string',
         ]);
 
+
         Contact::create($validated);
 
-        return redirect()->back()->with('success', 'Your message has been submitted successfully!');
-
+        return response()->json([
+            'success' => true,
+            'message' => 'Your message has been submitted successfully!',
+        ]);
     }
 
     public function index()

@@ -25,9 +25,7 @@ $pricing = [
     <!-- Header Section -->
     <div class="relative w-full text-center flex flex-col items-center justify-center px-4 md:px-0 max-w-[1320px] mx-auto">
         <x-section-heading subtitle="Pricing & Plan" align="center" class="w-1/2">
-            Select the Perfect <span class="text-[#edc458] font-normal">Plan for Your
-                Needs That Fits You
-            </span>
+            Select the Perfect <span class="text-[#edc458] font-normal">Plan for Your Needs That Fits You</span>
         </x-section-heading>
 
     </div>

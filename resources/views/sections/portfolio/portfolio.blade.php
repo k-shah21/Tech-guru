@@ -63,15 +63,11 @@
     <!-- Header Section -->
     <div class="relative max-w-[1320px] mx-auto w-full text-center flex flex-col items-center justify-center px-4 md:px-0 mb-12 z-50">
         <x-section-heading subtitle="Portfolio" align="center">
-            Explore Our Creative
-            <span class="font-medium mt-2 text-[#F2C65A] font-marcellus ">
-                Journey <br class="hidden md:block" />
-                Crafting Success Through
-            </span>
+            Explore Our Creative<span class="font-medium mt-2 text-[#F2C65A] font-marcellus"> Journey <br class="hidden md:block" />Crafting Success Through</span>
         </x-section-heading>
     </div>
 
-   
+
     <!-- Cards Container -->
     <div class="mt-10 max-w-[1400px] mx-auto px-4 relative z-30">
         <div class="responsive">
@@ -414,7 +410,7 @@
     </div>
 
 
-     <!-- GLOW BACKGROUND -->
+    <!-- GLOW BACKGROUND -->
     <div class="absolute inset-0 flex items-center justify-start pointer-events-none z-[2]">
         <div
             class="w-[700px] h-[700px] lg:w-[900px] lg:h-[900px] translate-x-20 rounded-full blur-[100px] opacity-100 bg-[radial-gradient(circle,_rgba(66,44,72,0.9),_rgba(0,0,0,0))]">

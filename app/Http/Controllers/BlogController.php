@@ -157,12 +157,9 @@ class BlogController
 
     public function showBlogDetails($slug)
     {
-        $blog = Blog::where('slug', $slug)
-            ->where('status', 'published')
-            ->firstOrFail();
+        $blog = Blog::where('slug', $slug)->firstOrFail();
 
-        $recentBlog = Blog::where('status', 'published')
-            ->where('id', '!=',  $blog->id)
+        $recentBlog = Blog::where('id', '!=',  $blog->id)
             ->latest()
             ->take(3)
             ->get();

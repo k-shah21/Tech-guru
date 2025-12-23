@@ -59,11 +59,7 @@
         <div class="mb-16 flex justify-between items-center">
             <div class="w-7/12">
                 <x-section-heading subtitle="Our Services" align="left">
-                    Your Business with Cutting-Edge IT
-                    Solutions
-                    <img src="images/services/section-title-img.jpg" class="inline rounded-3xl" />
-                    <span class="text-[#F5C156] font-normal">Innovative IT Services Tailored for Your
-                        Success</span>
+                    Your Business with Cutting-Edge IT Solutions <img src="images/services/section-title-img.jpg" class="inline rounded-3xl" /> <span class="text-[#F5C156] font-normal">Innovative IT Services Tailored for Your Success</span>
                 </x-section-heading>
             </div>
             <div class="flex justify-end">

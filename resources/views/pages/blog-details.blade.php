@@ -99,7 +99,7 @@
             </div>
 
             {{-- jodit Content --}}
-            <div class="relative mt-2.5">
+            <div class="jodit-content relative mt-2.5">
                 {!! $blog->content !!}
             </div>
 
@@ -142,102 +142,9 @@
             </div>
 
 
-            <form action="{{ route('contact.store') }}" method="POST"
-                class="w-full bg-[#243042] p-5 rounded-2xl">
-
-                <h2 class="mt-5 text-[30px] font-bold leading-10">How Can We Help You</h2>
-                @csrf
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Full Name -->
-                    <div>
-                        <p class="text-[#c5c8cd]/80">Full Name</p>
-                        <div class="relative w-full">
-                            <input type="text" name="full_name" placeholder="Thomas Alison"
-                                class="w-full bg-transparent border border-[#2a3b59] text-white rounded-xl px-5 py-4 pr-12 focus:outline-none" />
-                            <span class="contact-one__input-icon absolute right-4 top-5 text-gray-400">
-                                <i class="ri-user-line"></i>
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Email -->
-                    <div>
-                        <p class="text-[#c5c8cd]/80">Email Address</p>
-                        <div class="relative w-full">
-                            <input type="email" name="email" placeholder="thomas@domain.com"
-                                class="w-full bg-transparent border border-[#2a3b59] text-white rounded-xl px-5 py-4 pr-12 focus:outline-none" />
-                            <span class="contact-one__input-icon absolute right-4 top-5 text-gray-400">
-                                <i class="ri-mail-line"></i>
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Phone -->
-                    <div>
-                        <p class="text-[#c5c8cd]/80">Phone Number</p>
-                        <div class="relative w-full">
-                            <input type="text" name="phone" placeholder="+12 (00) 123 4567 890"
-                                class="w-full bg-transparent border border-[#2a3b59] text-white rounded-xl px-5 py-4 pr-12 focus:outline-none" />
-                            <span class="contact-one__input-icon absolute right-4 top-5 text-gray-400">
-                                <i class="ri-phone-line"></i>
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Subject -->
-                    <div>
-                        <p class="text-[#c5c8cd]/80">Subject</p>
-                        <div class="relative w-full">
-                            <select name="subject"
-                                class="w-full bg-transparent border border-[#2a3b59] text-gray-400 rounded-xl px-5 py-4 pr-12 focus:outline-none appearance-none cursor-pointer">
-                                <option value="">Select a Service</option>
-                                <option value="Web Development">Web Development</option>
-                                <option value="App Development">App Development</option>
-                                <option value="UI/UX Design">UI/UX Design</option>
-                            </select>
-                            <span class="absolute right-4 top-5 text-gray-400 pointer-events-none">
-                                <i class="ri-arrow-down-s-line text-xl"></i>
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Message -->
-                    <div class="md:col-span-2">
-                        <p class="text-[#c5c8cd]/80">Inquiry about</p>
-                        <div class="relative w-full">
-                            <textarea name="message" rows="6" placeholder="Write your message"
-                                class="w-full bg-transparent border border-[#2a3b59] text-white rounded-xl px-5 py-4 pr-12 focus:outline-none"></textarea>
-                            <span class="contact-one__input-icon absolute right-4 top-5 text-gray-400">
-                                <i class="ri-edit-box-line"></i>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Submit Button -->
-                <div class="mt-8 text-left">
-                    <button type="submit"
-                        class="thm-btn"> Submit Now →
-                    </button>
-
-
-                </div>
-
-                {{-- Toast Message --}}
-                @if(session('success'))
-                <div x-data="{ show: true }" x-show="show" x-transition:enter="transition ease-out duration-300"
-                    x-transition:enter-start="opacity-0 translate-y-[-20px]"
-                    x-transition:enter-end="opacity-100 translate-y-0"
-                    x-transition:leave="transition ease-in duration-300"
-                    x-transition:leave-start="opacity-100 translate-y-0"
-                    x-transition:leave-end="opacity-0 translate-y-[-20px]" x-init="setTimeout(() => show = false, 5000)"
-                    class="fixed top-5 right-5 p-4 bg-[#0B192C] text-white rounded-lg flex items-center justify-between shadow-lg z-50">
-                    <span>{{ session('success') }}</span>
-                    <button @click="show = false" class="ml-4 font-bold text-xl leading-none">✕</button>
-                </div>
-                @endif
-            </form>
+            <div class="contact-two__right">
+                <x-contact-form />
+            </div>
 
         </div>
 
@@ -404,6 +311,78 @@
 
 
 <style>
+    /* Scoped styles for Jodit content only */
+    .jodit-content h1 {
+        color: #ffffff;
+        margin: 35px 0 25px;
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 50px;
+    }
+
+    .jodit-content h2 {
+        color: #ffffff;
+        margin: 30px 0 20px;
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 45px;
+    }
+
+    .jodit-content h3 {
+        color: #ffffff;
+        margin: 25px 0 15px;
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 40px;
+    }
+
+    .jodit-content h4 {
+        color: #ffffff;
+        margin: 20px 0 10px;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 35px;
+    }
+
+    .jodit-content h5 {
+        color: #ffffff;
+        margin: 15px 0 8px;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 30px;
+    }
+
+    .jodit-content p {
+        color: #c5c8cd;
+        font-size: 18px;
+        /* 1.125rem */
+        font-weight: 500;
+        line-height: 28px;
+        /* 1.75rem */
+        margin-bottom: 20px;
+    }
+
+    /* Optional: Style links, bold, italic inside Jodit content */
+    .jodit-content p a {
+        color: #4f90ff;
+        text-decoration: underline;
+    }
+
+    .jodit-content p strong {
+        font-weight: 600;
+    }
+
+    .jodit-content p em {
+        font-style: italic;
+    }
+
+    /* Optional spacing for sections inside Jodit content */
+    .jodit-content section {
+        margin-bottom: 50px;
+    }
+
+
+
     .search__input {
         position: relative;
         width: 100%;
@@ -543,5 +522,14 @@
 
     .keyword-list li:hover>a {
         color: #fff;
+    }
+
+    /* Form Container */
+    .contact-two__right {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 35px;
+        position: relative;
+        text-align: start;
     }
 </style>

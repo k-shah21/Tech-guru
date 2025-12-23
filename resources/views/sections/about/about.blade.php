@@ -315,17 +315,10 @@
 
             <div class="mx-auto md:max-w-[80%] lg:max-w-[70%]  xl:max-w-full">
 
-                <p class="text-[#4FA0FF] tracking-wider text-sm font-medium flex items-center justify-start gap-2">
-                    <span class="w-2 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#79b0f0] rounded-full"></span>
-                    About Us
-                    <span class="w-8 h-[2px] bg-gradient-to-r from-[#4FA0FF] to-[#6daef8] rounded-full"></span>
-                </p>
 
-                <h2 class="text-4xl md:text-[40px] font-medium tracking-wide mb-6 !mt-4">
-                    Unlock Your Business <span class="text-[#edc458] font-normal">Potential
-                        with Our Best Cutting-Edge </span>
-                    Solutions to Grow
-                </h2>
+                <x-section-heading subtitle="About Us" align="left">
+                    Unlock Your Business <span class="text-[#edc458] font-normal">Potential with Our Best Cutting-Edge </span> Solutions to Grow
+                </x-section-heading>
 
                 <p class="text-gray-300 max-w-lg mb-10 !mt-4 text-xl">
                     Transform your business with our innovative IT solutions, tailored to address your unique

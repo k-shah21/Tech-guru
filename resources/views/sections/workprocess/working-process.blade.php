@@ -58,9 +58,7 @@
     <div class="relative z-30 w-full text-center flex flex-col items-center gap-2 px-4 md:px-0 mb-12 max-w-[1320px] mx-auto xl:mb-[78px]">
 
         <x-section-heading subtitle="Working Process" align="center">
-            Our Seamless Process <br><span class="text-[#edc458] font-marcellus font-normal tracking-tight">
-                From Concept to Creation
-            </span>
+            Our Seamless Process <br><span class="text-[#edc458] font-marcellus font-normal tracking-tight"> From Concept to Creation</span>
         </x-section-heading>
     </div>
 

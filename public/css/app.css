@@ -26,6 +26,13 @@ body {
     color: white;
     overflow-x: hidden !important;
 }
+h1 {
+    color: #ffffff;
+    margin: 35px 0 25px;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 40px;
+}
 
 h2 {
     color: #ffffff;

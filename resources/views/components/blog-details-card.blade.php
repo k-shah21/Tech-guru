@@ -14,10 +14,8 @@
         position: absolute;
         left: -22px;
         bottom: -9px;
-
         width: 333px;
         height: 1px;
-
         background: linear-gradient(90deg,
                 #3d72fc 0%,
                 rgba(92, 176, 233, 0) 100%);

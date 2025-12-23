@@ -31,119 +31,13 @@
 
         <!-- FORM -->
         <div class="contact-two__right order-2 w-full xl:w-[610px]">
-            <form action="{{ route('contact.store') }}" method="POST" class="contact-one__form">
-                @csrf
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-                    <!-- Full Name -->
-                    <div>
-                        <h4 class="contact-one__input-title">Full Name</h4>
-                        <div class="relative">
-                            <input
-                                type="text"
-                                name="full_name"
-                                placeholder="Thomas Alison"
-                                class="w-full bg-transparent border border-[#2a3b59] text-white rounded-xl px-5 py-4 pr-12 focus:outline-none">
-                            <span class="contact-one__input-icon">
-                                <i class="ri-user-line"></i>
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Email -->
-                    <div>
-                        <h4 class="contact-one__input-title">Email Address</h4>
-                        <div class="relative">
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder="thomas@domain.com"
-                                class="w-full bg-transparent border border-[#2a3b59] text-white rounded-xl px-5 py-4 pr-12 focus:outline-none">
-                            <span class="contact-one__input-icon">
-                                <i class="ri-mail-line"></i>
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Phone -->
-                    <div>
-                        <h4 class="contact-one__input-title">Phone Number</h4>
-                        <div class="relative">
-                            <input
-                                type="text"
-                                name="phone"
-                                placeholder="+12 (00) 123 4567 890"
-                                class="w-full bg-transparent border border-[#2a3b59] text-white rounded-xl px-5 py-4 pr-12 focus:outline-none">
-                            <span class="contact-one__input-icon">
-                                <i class="ri-phone-line"></i>
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Subject -->
-                    <div>
-                        <h4 class="contact-one__input-title">Subject</h4>
-                        <div class="relative">
-                            <select
-                                name="subject"
-                                class="w-full bg-transparent border border-[#2a3b59] text-gray-400 rounded-xl px-5 py-4 pr-12 focus:outline-none appearance-none cursor-pointer">
-                                <option value="">Select a Service</option>
-                                <option>Web Development</option>
-                                <option>App Development</option>
-                                <option>UI/UX Design</option>
-                            </select>
-                            <span class="absolute right-4 top-5 text-gray-400 pointer-events-none">
-                                <i class="ri-arrow-down-s-line text-xl"></i>
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Message -->
-                    <div class="md:col-span-2">
-                        <h4 class="contact-one__input-title">Inquiry about</h4>
-                        <div class="relative">
-                            <textarea
-                                name="message"
-                                rows="6"
-                                placeholder="Write your message"
-                                class="w-full bg-transparent border border-[#2a3b59] text-white rounded-xl px-5 py-4 pr-12 focus:outline-none"></textarea>
-                            <span class="contact-one__input-icon">
-                                <i class="ri-edit-box-line"></i>
-                            </span>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- SUBMIT -->
-                <div class="mt-8 text-left">
-                    <button type="submit" class="thm-btn">
-                        Submit Now →
-                    </button>
-                </div>
-
-                <!-- TOAST -->
-                @if(session('success'))
-                <div
-                    x-data="{ show: true }"
-                    x-show="show"
-                    x-init="setTimeout(() => show = false, 5000)"
-                    class="fixed top-5 right-5 p-4 bg-green-500 text-white rounded-lg shadow-lg z-50">
-                    {{ session('success') }}
-                </div>
-                @endif
-
-            </form>
+            <x-contact-form />
         </div>
 
         <!-- LEFT CONTENT -->
         <div class="order-1 text-white text-start">
             <x-section-heading subtitle="Get In Touch" align="left">
-                Conversation
-                <span class="text-[#edc458] font-normal">
-                    Reach Out Anytime
-                </span>
+                Conversation<span class="text-[#edc458] font-normal"> Reach Out Anytime</span>
             </x-section-heading>
 
             <p class="text-[#c5c8cd] max-w-lg mb-10 text-xl">
@@ -398,6 +292,15 @@
         margin-bottom: 7px;
         font-size: 16px;
         font-weight: 700;
+        text-align: start;
+    }
+
+    /* Form Container */
+    .contact-two__right {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 35px;
+        position: relative;
         text-align: start;
     }
 </style>
