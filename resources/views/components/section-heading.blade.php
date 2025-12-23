@@ -9,7 +9,7 @@
     </p>
     @endif
 
-    <h2 class="text-4xl md:text-[40px] font-bold my-6 font-marcellus text-white"
+    <h2 class="text-[25px] md:text-[40px] font-bold my-6 font-marcellus text-white"
         x-data="{
             init() {
                 const root = this.$el;

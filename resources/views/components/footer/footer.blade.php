@@ -203,7 +203,7 @@
         </div>
 
         <!-- Portfolio Column -->
-        <div class="footer-widget font-semibold md:col-span-5 xl:col-span-2 pl-8">
+        <div class="footer-widget font-semibold md:col-span-5 xl:col-span-2 md:pl-8">
             <p class="text-[#4FA0FF] tracking-wider text-2xl font-medium mb-6">
                 Portfolio
             </p>

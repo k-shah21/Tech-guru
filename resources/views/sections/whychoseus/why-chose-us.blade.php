@@ -63,10 +63,7 @@
 
 
             <x-section-heading subtitle="Why choose us" align="left">
-                Elevate Growth <span class="text-[#edc458] font-marcellus font-normal tracking-tight">
-                    with Our Best Cutting-Edge IT
-                </span>
-                Solutions for Success
+                Elevate Growth <span class="text-[#edc458] font-marcellus font-normal tracking-tight">with Our Best Cutting-Edge IT</span> Solutions for Success
             </x-section-heading>
 
             <p class="text-gray-300 max-w-lg mb-10 text-lg sm:text-xl">
@@ -200,6 +197,7 @@
     @media (min-width: 992px) and (max-width: 1199px) {
         .why-choose-custom {
             max-width: 600px;
+            width: 100%;
             margin-left: auto;
             margin-right: auto;
         }

@@ -4,6 +4,7 @@
         font-size: 40px;
         font-weight: 500;
         line-height: 40px;
+      
         background: linear-gradient(270deg, rgb(250, 86, 116) 0%, rgb(96, 101, 212) 100%) text;
     }
 
@@ -104,16 +105,13 @@
         opacity: 1;
     }
 </style>
+
 <section class="flex justify-center items-center bg-[#131C30]  py-8 px-4 md:py-14 w-full overflow-hidden relative">
     <div
         class="flex flex-col xl:flex-row justify-center md:justify-between items-center text-center max-w-7xl w-full mx-auto gap-10">
         {{-- Left --}}
         <div class="">
-            <div class=" [&_.flex-col]:!items-start [&_p]:!justify-start [&_h2]:!text-start">
-                <x-section-heading subtitle="" align="left">
-                    <span class="newsletter-two__title">Subscribe to Our Newsletter</span>
-                </x-section-heading>
-            </div>
+            <h2 class="newsletter-two__title font-marcellus">Subscribe to Our Newsletter</h2>
             <p class="tracking-wide">Get the latest SEO tips and software insights straight to your inbox.</p>
         </div>
 

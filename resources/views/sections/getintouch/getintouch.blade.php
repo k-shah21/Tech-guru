@@ -1,5 +1,5 @@
 <section
-    class="relative overflow-hidden flex flex-col justify-center items-center text-center py-28 gap-36 md:px-0">
+    class="relative overflow-hidden flex flex-col justify-center items-center text-center py-28 xl:gap-36 gap-16 px-4 sm:px-6 lg:px-8 md:px-0">
 
     <!-- BG RADIAL GLOW -->
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -27,15 +27,10 @@
 
     <!-- CONTENT GRID -->
     <div
-        class="relative z-10 mx-auto px-6 grid xl:grid-cols-2 gap-x-10 gap-5 items-center max-w-5xl">
+        class="relative z-10 mx-auto grid xl:grid-cols-2 gap-x-4 gap-10 items-center max-w-5xl">
 
-        <!-- FORM -->
-        <div class="contact-two__right order-2 w-full xl:w-[610px]">
-            <x-contact-form />
-        </div>
-
-        <!-- LEFT CONTENT -->
-        <div class="order-1 text-white text-start">
+         <!-- LEFT CONTENT -->
+        <div class="text-white text-start">
             <x-section-heading subtitle="Get In Touch" align="left">
                 Conversation<span class="text-[#edc458] font-normal"> Reach Out Anytime</span>
             </x-section-heading>
@@ -60,6 +55,13 @@
                 </li>
             </ul>
         </div>
+
+        <!-- FORM -->
+        <div class="contact-two__right w-full xl:w-[610px]">
+            <x-contact-form />
+        </div>
+
+       
     </div>
 
     <img

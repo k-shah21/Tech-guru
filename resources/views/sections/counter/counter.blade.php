@@ -10,7 +10,7 @@
 
     <div class="relative max-w-[1400px] mx-auto px-6">
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 items-center gap-12 text-white">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 items-center gap-6 md:gap-12 text-white font-sans">
 
             <!-- 1: TROPHY -->
             <div class="flex items-center gap-4">

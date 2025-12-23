@@ -8,7 +8,7 @@
     .about-two__left {
         margin-top: 15px;
         margin-right: 5px;
-        padding-right: 123px;
+        /* padding-right: 123px; */
         display: block;
         position: relative;
     }
@@ -267,10 +267,8 @@
     <div
         class="relative z-10 max-w-[1400px]  [@media(min-width:1200px)]:grid-cols-2 mx-auto grid lg:gap-7  gap-y-4 gap-x-16  px-4 items-center justify-start">
 
-
-
         <!-- Left CONTENT -->
-        <div class="about-two__left ">
+        <div class="about-two__left">
             <div class="about-two__img-box">
                 <div class="about-two__img">
                     <img src="images/resources/about-two-img-1.jpg" width="495" height="474" alt="">
