@@ -23,15 +23,15 @@ $pricing = [
     class="py-6 lg:py-24 relative flex justify-center flex-col items-center px-5 xl:px-0 lg:gap-8">
 
     <!-- Header Section -->
-    <div class="relative w-full text-center flex flex-col items-center justify-center px-4 md:px-0 max-w-[1320px] mx-auto">
-        <x-section-heading subtitle="Pricing & Plan" align="center" class="md:w-1/2">
+    <div class="relative w-full text-center flex flex-col items-center justify-center px-4 md:px-0 max-w-[720px] xl:max-w-[1320px] mx-auto">
+        <x-section-heading subtitle="Pricing & Plan" align="center" class="">
             Select the Perfect <span class="text-[#edc458] font-normal">Plan for Your Needs That Fits You</span>
         </x-section-heading>
 
     </div>
 
     <!-- Pricing Cards -->
-    <div class="max-w-[520px] xl:max-w-[1320px] mx-auto w-full z-30 flex justify-center items-center !flex-col ">
+    <div class="max-w-[720px] xl:max-w-[1320px] mx-auto w-full z-30 flex justify-center items-center !flex-col ">
 
         {{-- PLAN SWITCHER --}}
         <div class="flex justify-center md:!mb-20 relative">
@@ -57,7 +57,7 @@ $pricing = [
         <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 
            [@media(min-width:1440px)]:grid-cols-3 
            gap-6 [@media(min-width:1440px)]:gap-0 
-           items-center w-full">
+           items-center w-full md:w-[630px]">
 
             {{-- PERSONAL --}}
             <div class="!bg-[#1D253F] !w-full rounded-2xl lg:rounded-r-none relative p-10 text-white 

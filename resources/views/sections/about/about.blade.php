@@ -265,7 +265,7 @@
     </div>
 
     <div
-        class="relative z-10 max-w-[1400px]  [@media(min-width:1200px)]:grid-cols-2 mx-auto grid lg:gap-7  gap-y-4 gap-x-16  px-4 items-center justify-start">
+        class="relative z-10 md:max-w-[720px] max-w-[1400px]  [@media(min-width:1200px)]:grid-cols-2 mx-auto grid lg:gap-7  gap-y-4 gap-x-16  px-4 items-center justify-start">
 
         <!-- Left CONTENT -->
         <div class="about-two__left">
@@ -309,9 +309,9 @@
         </div>
 
         <!-- RIGHT CONTENT -->
-        <div class="text-white md:mt-6 lg:mt-0 text-left flex flex-col items-center max-w-[617px]">
+        <div class="text-white md:mt-6 lg:mt-0 text-left flex flex-col items-center max-w-[617px] md:max-w-[720px]">
 
-            <div class="mx-auto md:max-w-[80%] lg:max-w-[70%]  xl:max-w-full">
+            <div class="mx-auto lg:max-w-[70%]  xl:max-w-full">
 
 
                 <x-section-heading subtitle="About Us" align="left">

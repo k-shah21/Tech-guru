@@ -3,7 +3,7 @@
 </style>
 
 <section class="relative bg-[#172537] py-24 px-6 lg:px-0 overflow-hidden">
-    <div class="max-w-7xl mx-auto z-20 relative">
+    <div class="max-w-[720px]  xl:max-w-7xl mx-auto z-20 relative">
 
         <!-- TOP HEADING + BUTTON -->
         <div class="flex justify-between flex-col xl:flex-row gap-4 items-start mb-16">
@@ -27,8 +27,8 @@
         <div class="grid grid-cols-1 xl:grid-cols-12 gap-24 xl:gap-28">
 
             <!-- LEFT IMAGE / VIDEO -->
-            <div class="flex justify-center  md:max-w-[660px] xl:w-full mx-auto col-span-1 xl:col-span-5 ">
-                <div class="relative w-full md:w-[480px] lg:!w-[620px] overflow-hidden rounded-3xl shadow-xl">
+            <div class="flex justify-center xl:w-full mx-auto col-span-1 xl:col-span-5 md:w-full px-4">
+                <div class="relative w-full lg:!w-[620px] overflow-hidden rounded-3xl shadow-xl">
                     <img src="{{ asset('images/resources/event-one-img-1.jpg') }}" class="w-full h-full object-cover rounded-3xl" />
 
                     <!-- Play Button -->
@@ -60,7 +60,7 @@
 
 
             <!-- RIGHT EVENTS LIST -->
-            <div class="flex flex-col gap-6 md:max-w-[660px] xl:w-full mx-auto col-span-1 xl:col-span-7 ">
+            <div class="flex flex-col gap-6 xl:w-full mx-auto col-span-1 xl:col-span-7 md:w-full md:px-4">
 
                 <!-- EVENT CARD -->
                 <div class="bg-[#2D384E] lg:!w-[689px] rounded-3xl border border-white/5 relative overflow-hidden">

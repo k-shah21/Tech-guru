@@ -164,7 +164,7 @@
 </style>
 
 
-<footer class="text-gray-600 body-font relative overflow-hidden">
+<footer class="text-gray-600 body-font relative overflow-hidden px-4">
     <div
         class="container relative z-30 max-w-7xl px-3 py-12 mx-auto grid grid-cols-1 md:grid-cols-10 gap-8 items-center">
         <div class="md:col-span-5 xl:col-span-4">

@@ -2,7 +2,7 @@
     .newsletter-two__title {
         -webkit-text-fill-color: transparent;
         font-size: 40px;
-        font-weight: 500;
+        font-weight: 600;
         line-height: 40px;
       
         background: linear-gradient(270deg, rgb(250, 86, 116) 0%, rgb(96, 101, 212) 100%) text;

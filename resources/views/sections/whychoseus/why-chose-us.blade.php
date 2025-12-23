@@ -1,5 +1,5 @@
 <!-- Why CHOOSE us -->
-<section class="relative bg-[#0a1a2f] py-12 xl:py-[148px] overflow-hidden ">
+<section class="relative bg-[#0a1a2f] py-12 md:py-[148px] overflow-hidden ">
 
     <!-- Gredient BACKGROUND -->
     <div class="absolute inset-0 flex items-center justify-start pointer-events-none">
@@ -28,12 +28,12 @@
 
 
 
-    <div class="relative z-10 max-w-[1400px] mx-auto 
+    <div class="relative z-10 max-w-[720px] xl:max-w-[1400px] mx-auto 
             px-4 sm:px-6 lg:px-8 
             grid gap-y-16  xl:grid-cols-12 gap-x-20 xl:gap-x-28 items-center">
 
         <!-- LEFT IMAGE BLOCK -->
-        <div class="relative flex justify-center order-2 md:w-[670px] mx-auto col-span-7">
+        <div class="relative flex justify-center order-2  mx-auto col-span-7">
 
             <!-- Main Image -->
             <img src="images/resources/about-one-img-1.jpg" alt="Why choose us" class="scale-100" width="670"
@@ -59,7 +59,7 @@
 
 
         <!-- RIGHT CONTENT -->
-        <div class="text-white order-1 why-choose-custom md:mx-20 xl:mx-0 col-span-5">
+        <div class="text-white order-1 why-choose-custom xl:mx-0 col-span-5 md:col-span-7">
 
 
             <x-section-heading subtitle="Why choose us" align="left">

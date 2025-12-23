@@ -44,7 +44,7 @@
         clip-path: inset(0 0 0 0);
     }
 </style>
-<section class="max-w-[1400px] mx-auto relative py-20  z-10">
+<section class="max-w-[720px] xl:max-w-[1400px] mx-auto relative py-20  z-10">
 
 
 
@@ -56,8 +56,8 @@
     <div class="px-6 relative z-10">
 
         <!-- TOP HEADING -->
-        <div class="mb-16 flex flex-col justify-between">
-            <div class="md:w-7/12">
+        <div class="mb-16 flex flex-col md:flex-row justify-between md:items-center">
+            <div class="md:max-w-[720px]">
                 <x-section-heading subtitle="Our Services" align="left">
                     Your Business with Cutting-Edge IT Solutions <img src="images/services/section-title-img.jpg" class="inline rounded-3xl" /> <span class="text-[#F5C156] font-normal">Innovative IT Services Tailored for Your Success</span>
                 </x-section-heading>
@@ -114,7 +114,7 @@
         </div>
 
         <!-- SERVICES LIST -->
-        <div class="space-y-10">
+        <div class="">
 
             @php
                 $services = [
@@ -180,7 +180,7 @@
                     data-image="{{ $service['image'] }}">
 
                     <div
-                        class="col-span-12 lg:col-span- [@media(min-width:1440px)]:col-span-4 flex items-center justify-start lg:justify-start gap-4 ">
+                        class="col-span-12 lg:col-span- [@media(min-width:1440px)]:col-span-4 flex items-center justify-start md:justify-center lg:justify-start gap-4 ">
                         <div class="w-10 h-10 rounded-full border border-[#FF7AC4] text-[#FF7AC4]
                             flex items-center justify-center font-semibold p-2">{{ $service['id'] }}</div>
                         <h3

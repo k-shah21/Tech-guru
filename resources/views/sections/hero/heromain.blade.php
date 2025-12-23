@@ -15,7 +15,7 @@
                 px-6 sm:px-10 md:px-3 2xl:pl-40 w-full py-4">
 
         <div class="flex justify-center items-center  gap-10 min-h-[70vh] 
-            px-1 sm:px-2 md:px-12 xl:pl-24 3xl:pl-48 xl:w-10/12">
+            px-1 sm:px-2 md:px-12 xl:pl-24 3xl:pl-48 xl:w-10/12 md:w-full">
 
             <!-- TEXT SIDE -->
             <div class="flex flex-col gap-5 xl:grow">
@@ -26,7 +26,7 @@
                 </div>
 
                 <!-- Heading -->
-                <h1 id="hero-heading" class="mt-4 text-4xl sm:text-4xl md:text-5xl xl:text-[52px] font-medium 2xl:font-semibold text-left !leading-[56px] xl:!leading-[56px] animate-slide-top animate-delay-400 md:w-3/5 xl:w-full ">
+                <h1 id="hero-heading" class="mt-4 text-4xl sm:text-4xl md:text-5xl xl:text-[52px] font-medium 2xl:font-semibold text-left !leading-[56px] xl:!leading-[56px] animate-slide-top animate-delay-400 md:w-4/5 xl:w-full ">
                     Techguru - Smart Solutions for a Connected world
                 </h1>
 

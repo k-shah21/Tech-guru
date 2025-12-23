@@ -124,11 +124,6 @@
 
 <section class="relative w-full py-28">
 
-    <x-section-heading subtitle="Testimonials" align="center" class="!leading-[75px]">
-        Customer Experiences <br /> That
-        <span class="text-[#edc458] font-marcellus font-medium tracking-wider">Speak Volumes</span>
-    </x-section-heading>
-
 
     {{-- BackGround Gredient --}}
     <div class="absolute -left-44 top-0 pointer-events-none z-[1]">
@@ -144,6 +139,10 @@
                 bg-[radial-gradient(circle,_rgba(66,44,72,0.9),_rgba(0,0,0,0))]">
         </div>
     </div>
+
+    <x-section-heading subtitle="Testimonials" align="center" class="!leading-[75px]">
+        Customer Experiences That<span class="text-[#edc458] font-marcellus font-medium tracking-wider">Speak Volumes</span>
+    </x-section-heading>
 
     <!--  Container -->
     <div class="testimonialSwiper max-w-6xl mx-auto px-4 ">
