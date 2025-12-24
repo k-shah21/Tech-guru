@@ -50,31 +50,11 @@
         <!-- TOP HEADING -->
         <div
             class="flex flex-col items-center gap-4 mb-10
-                   xl:w-1/2 xl:mx-auto">
-            <p
-                class="mb-4 text-[#4FA0FF] tracking-wider text-sm font-medium
-                       flex items-center justify-center gap-2">
-                <span
-                    class="w-2 h-[2px] bg-gradient-to-r
-                           from-[#4FA0FF] to-[#79b0f0] rounded-full"></span>
-
-                News & Blog
-
-                <span
-                    class="w-8 h-[2px] bg-gradient-to-r
-                           from-[#4FA0FF] to-[#6daef8] rounded-full"></span>
-            </p>
-
-            <h2
-                class="text-2xl text-center md:text-[40px]
-                       lg:text-[40px] lg:leading-10
-                       font-medium tracking-wide mt-10">
-                How We've
-                <span class="text-[#edc458] font-normal font-marcellus">
-                    Empowered Businesses with Innovative
-                </span>
-                Tech Solutions
-            </h2>
+                   xl:w-2/3 xl:mx-auto">
+           
+             <x-section-heading subtitle="News & Blog" align="center">
+                    How We've <span class="text-[#edc458] font-normal !font-marcellus">Empowered Businesses with Innovative</span> Tech Solutions
+                </x-section-heading>
         </div>
 
         <!-- BLOG GRID -->
@@ -146,10 +126,43 @@
             @endforeach
         </div>
 
-        <!-- PAGINATION -->
-        <div class="mt-12 flex justify-center">
-            {{ $blogs->links() }}
+        <!-- CUSTOM PAGINATION -->
+        @if ($blogs->hasPages())
+        <div class="mt-16 flex justify-center items-center gap-3">
+            {{-- Previous Button --}}
+            @if ($blogs->onFirstPage())
+                <button disabled class="pagination-btn pagination-arrow opacity-50 cursor-not-allowed">
+                    <i class="ri-arrow-left-line"></i>
+                </button>
+            @else
+                <a href="{{ $blogs->previousPageUrl() }}" class="pagination-btn pagination-arrow">
+                    <i class="ri-arrow-left-line"></i>
+                </a>
+            @endif
+
+            {{-- Page Numbers --}}
+            @foreach ($blogs->getUrlRange(1, $blogs->lastPage()) as $page => $url)
+                @if ($page == $blogs->currentPage())
+                    <button class="pagination-btn pagination-active">0{{ $page }}</button>
+                @elseif ($page == 1 || $page == $blogs->lastPage() || abs($page - $blogs->currentPage()) <= 1)
+                    <a href="{{ $url }}" class="pagination-btn">0{{ $page }}</a>
+                @elseif ($page == $blogs->currentPage() - 2 || $page == $blogs->currentPage() + 2)
+                    <span class="pagination-dots">...</span>
+                @endif
+            @endforeach
+
+            {{-- Next Button --}}
+            @if ($blogs->hasMorePages())
+                <a href="{{ $blogs->nextPageUrl() }}" class="pagination-btn pagination-arrow">
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            @else
+                <button disabled class="pagination-btn pagination-arrow opacity-50 cursor-not-allowed flex justify-center items-center">
+                    <i class="ri-arrow-right-line"></i>
+                </button>
+            @endif
         </div>
+        @endif
     </div>
 
     @include('sections.newsletter.newsletter')
@@ -258,5 +271,84 @@
         border-radius: 999px;
         background: linear-gradient(270deg, #5cb0e9 0%, #3d72fc 100%);
         white-space: nowrap;
+    }
+
+    /* Pagination Styles */
+    .pagination-btn {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border: none;
+        background: transparent;
+        color: #fff;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+    }
+
+    .pagination-btn::before {
+        content: "";
+        visibility: visible;
+        opacity: 1;
+        z-index: -1;
+        background: linear-gradient(90deg, #3d72fc, #5cb0e9) border-box;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        transition: all 0.5s;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+    }
+
+    .pagination-btn::after {
+        content: "";
+        opacity: 0;
+        z-index: -1;
+        background: linear-gradient(270deg, #5cb0e9 0%, #3d72fc 100%);
+        border-radius: 50%;
+        transition: all 0.5s;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .pagination-btn:hover:not(.pagination-active):not(:disabled)::after {
+        opacity: 1;
+    }
+
+    .pagination-btn:hover:not(.pagination-active):not(:disabled) {
+        transform: scale(1.05);
+    }
+
+    .pagination-active {
+        background: linear-gradient(135deg, #6065d4, #5cb0e9);
+        border-color: transparent;
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .pagination-active::before,
+    .pagination-active::after {
+        display: none;
+    }
+
+    .pagination-dots {
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 0 8px;
     }
 </style>
