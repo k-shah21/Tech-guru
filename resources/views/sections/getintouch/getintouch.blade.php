@@ -23,6 +23,7 @@
     <div
         class="contact-two__bg hidden 2xl:block"
         style="background-image:url('images/backgrounds/contact-two-bg.jpg');">
+
     </div>
 
     <!-- CONTENT GRID -->
@@ -66,7 +67,7 @@
 
     <img
         src="images/shapes/contact-two-shape-1.png"
-        class="hidden 2xl:block absolute right-0 -bottom-10 float-vertical"
+        class="hidden 2xl:block absolute right-0 -bottom-10 float-vertical mix-blend-lighten"
         alt="contact-two-shape" />
 
 </section>

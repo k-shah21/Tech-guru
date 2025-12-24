@@ -10,53 +10,57 @@
 <style>
     .tags {
         display: flex;
-        gap: 8px;
         flex-wrap: wrap;
-        align-items: center;
         gap: 8px;
-        display: flex;
-        position: relative;
-    }
-
-    .tags span:before {
-        content: "";
-        -webkit-mask-composite: xor;
-        -o-transition: all .5s ease;
-        visibility: visible;
-        opacity: 1;
-        z-index: -1;
-        background: linear-gradient(90deg, #3d72fc, #5cb0e9) border-box;
-        border: 1px solid transparent;
-        border-radius: 8px;
-        transition: all .5s;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        -webkit-mask-image: linear-gradient(#fff 0, #fff 0), linear-gradient(#fff 0, #fff 0);
-        -webkit-mask-position: 0 0, 0 0;
-        -webkit-mask-size: auto, auto;
-        -webkit-mask-repeat: repeat, repeat;
-        -webkit-mask-clip: padding-box, border-box;
-        -webkit-mask-origin: padding-box, border-box;
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-        -webkit-mask-source-type: auto, auto;
-        mask-mode: match-source, match-source;
     }
 
     .tags span {
-        text-align: center;
-        z-index: 1;
-        border-radius: 14px;
-        justify-content: center;
+        position: relative;
+        display: inline-flex;
         align-items: center;
+        justify-content: center;
         padding: 10px 18px;
         font-size: 14px;
         font-weight: 500;
-        line-height: 14px;
-        display: flex;
-        position: relative;
+        line-height: 1;
+        border-radius: 10px;
+        z-index: 0;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+    .tags span::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        padding: 1px;
+        border-radius: inherit;
+        background: linear-gradient(90deg, #5cb0e9, #3d72fc);
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        z-index: -1;
+    }
+
+    .tags span::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(270deg, #5cb0e9, #3d72fc);
+        border-radius: inherit;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        z-index: -2;
+    }
+
+    /* HOVER EFFECT */
+    .tags span:hover::after {
+        opacity: 1;
+    }
+
+    .tags span:hover {
+        color: #fff;
     }
 </style>

@@ -5,9 +5,8 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+
 @theme {
-    --font-space-grotesk: "Space Grotesk", ui-sans-serif, system-ui, sans-serif !important;
-    --font-marcellus: "Marcellus", serif;
     --color-primary: #edc458;
     --text-secondary: black;
 }
@@ -15,11 +14,18 @@
 .orange-color {
     color: #edc458;
 }
+
 .font-space-grotesk {
     font-family: var(--font-space-grotesk);
 }
-.font-marcellus {
+
+:root {
+    --font-space-grotesk: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
     --font-marcellus: "Marcellus", serif;
+}
+
+.font-marcellus {
+    font-family: var(--font-marcellus);
 }
 
 html,
@@ -28,6 +34,7 @@ body {
     color: white;
     overflow-x: hidden !important;
 }
+
 h1 {
     color: #ffffff;
     margin: 35px 0 25px;
@@ -43,6 +50,7 @@ h2 {
     font-weight: 500;
     line-height: 40px;
 }
+
 h3 {
     color: #ffffff;
     margin: 35px 0 25px;
@@ -50,6 +58,7 @@ h3 {
     font-weight: 500;
     line-height: 40px;
 }
+
 p {
     color: #c5c8cd;
     font-family: var(--font-space-grotesk);
@@ -62,6 +71,7 @@ p {
 .underline {
     position: relative;
 }
+
 .underline::after {
     content: "";
     position: absolute;
@@ -72,6 +82,7 @@ p {
     background-color: #edc458;
     transition: width 0.3s ease, right 0.3s ease;
 }
+
 .underline:hover::after {
     width: 100%;
     right: 0;
@@ -88,6 +99,7 @@ p {
 
 .thm-btn {
     vertical-align: middle;
+    font-family: "Space Grotesk", sans-serif !important;
     -webkit-appearance: none;
     color: #fff;
     text-transform: capitalize;
@@ -109,10 +121,12 @@ p {
     cursor: pointer !important;
     position: relative;
 }
+
 .thm-btn span {
     position: relative;
     z-index: 1;
 }
+
 .thm-btn::before {
     content: "";
     background-color: #ffd25d;
@@ -129,6 +143,7 @@ p {
     visibility: hidden;
     cursor: pointer !important;
 }
+
 .thm-btn::after {
     background-color: #ffd25d;
     content: "";
@@ -144,16 +159,19 @@ p {
     visibility: hidden;
     cursor: pointer !important;
 }
+
 .thm-btn:hover::before {
     height: 100%;
     opacity: 1;
     visibility: visible;
 }
+
 .thm-btn:hover::after {
     height: 100%;
     opacity: 1;
     visibility: visible;
 }
+
 .thm-btn:hover {
     color: #333;
 }
@@ -172,6 +190,7 @@ p {
     position: relative;
     overflow: hidden;
 }
+
 .event-one__btn::before {
     content: "";
     position: absolute;
@@ -188,6 +207,7 @@ p {
 
     transition: all 0.5s ease;
 }
+
 .event-one__btn::after {
     content: "";
     position: absolute;
@@ -202,6 +222,7 @@ p {
     visibility: hidden;
     transition: all 0.4s ease-in-out;
 }
+
 .event-one__btn:hover::after {
     height: 100%;
     width: 100%;
@@ -215,6 +236,7 @@ p {
         linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
 }
+
 .btn--header {
     background: linear-gradient(270deg, #5cb0e9 0%, #3d72fc 100%);
 }
@@ -236,6 +258,7 @@ p {
         transform: translateX(0);
     }
 }
+
 .header-sticky {
     position: sticky !important;
     top: 0 !important;
@@ -263,6 +286,7 @@ p {
 }
 
 @keyframes step-scroll {
+
     0%,
     20% {
         transform: translateX(0);

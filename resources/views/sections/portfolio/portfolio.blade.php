@@ -56,14 +56,23 @@
         flex: 0 0 200px !important;
 
     }
+
+    .portfolio {
+        line-height: 58px;
+    }
+
+    .bg-image{
+        mix-blend-mode: darken;
+    }
 </style>
+
 
 <section class="py-12 xl:py-[148px] relative overflow-hidden">
 
     <!-- Header Section -->
     <div class="relative max-w-[1320px] mx-auto w-full text-center flex flex-col items-center justify-center px-4 md:px-0 mb-12 z-50">
         <x-section-heading subtitle="Portfolio" align="center">
-            Explore Our Creative<span class="font-medium mt-2 text-[#F2C65A] font-marcellus"> Journey <br class="hidden md:block" />Crafting Success Through</span>
+            Explore Our Creative<span class="font-medium mt-2 text-[#F2C65A] font-marcellus portfolio"> Journey <br class="hidden md:block" />Crafting Success Through</span>
         </x-section-heading>
     </div>
 
@@ -418,7 +427,7 @@
 
         {{-- background images --}}
         <img src="images/shapes/portfolio-two-shape-1.png" alt=""
-            class="absolute z-1 sca pointer-events-none float-vertical opacity-10">
+            class="absolute z-1 sca pointer-events-none float-vertical opacity-10 mix-blend-lighten">
     </div>
 
     <!-- GLOW BACKGROUND -->

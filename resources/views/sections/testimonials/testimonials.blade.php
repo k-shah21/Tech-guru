@@ -6,7 +6,6 @@
         border: 2px solid rgba(255, 255, 255, .1);
         border-radius: 40px;
         margin-left: 30px;
-        padding: 0 0 30px 30px;
         transition: all .5s;
         display: block;
         position: relative;
@@ -69,10 +68,7 @@
         right: -40px;
     }
 
-    .testimonialSwiper {
-        padding: 60px 0 80px 0;
-    }
-
+    
     .testimonial-two__single {
         z-index: 1000;
         border: 1px solid rgba(255, 255, 255, 0.1);
@@ -140,19 +136,19 @@
         </div>
     </div>
 
-    <x-section-heading subtitle="Testimonials" align="center" class="!leading-[75px] !z-10">
-        Customer Experiences That<span class="text-[#edc458] font-marcellus font-medium tracking-wider"> Speak Volumes</span>
+    <x-section-heading subtitle="Testimonials" align="center" class="!leading-[65px] !z-10 mb-[58px]">
+        Customer Experiences <br/> That<span class="text-[#edc458] font-marcellus font-medium tracking-wider"> Speak Volumes</span>
     </x-section-heading>
 
     <!--  Container -->
-    <div class="testimonialSwiper max-w-6xl mx-auto px-4 ">
+    <div class="testimonialSwiper max-w-[1320px] mx-auto px-4">
 
         <div class="flex justify-center flex-row gap-10">
 
             <!-- SLIDE 1 -->
-            <div class="relative z-30 !w-[400px] ">
+            <div class="relative z-30 !w-[400px]">
 
-                <div class="bg-[#202944] border testimonial-two__single  !p-8 relative w-full">
+                <div class="bg-[#202944] border testimonial-two__single !p-8 relative w-full">
 
                     <div class="testimonial-two__single-inner overflow-hidden absolute inset-0 "></div>
                     <div class="flex gap-1 mb-4">
@@ -168,7 +164,7 @@
                         that perfectly met our needs.
                     </p>
 
-                    <div class="flex items-center gap-8 mt-6 overflow-visible">
+                    <div class="flex items-center gap-8  overflow-visible">
                         <img src="images/testimonial/testimonial-1-1.jpg"
                             class="w-14 h-14 rounded-full border border-white absolute -left-8" alt="">
                         <div class="ms-4">

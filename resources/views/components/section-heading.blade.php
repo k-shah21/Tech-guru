@@ -9,7 +9,7 @@
     </p>
     @endif
 
-    <h2 class="text-[25px] md:text-[40px] font-bold my-6 font-marcellus text-white z-[10]"
+    <h2 class="text-[25px] md:text-[40px] font-bold my-6 font-marcellus text-white z-[10] heading"
         x-data="{
             init() {
                 const root = this.$el;
@@ -65,3 +65,9 @@
         {{ $slot }}
     </h2>
 </div>
+
+<style>
+    .heading{
+        line-height: 58px;
+    }
+</style>

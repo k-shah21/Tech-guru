@@ -265,7 +265,7 @@
                             {{ $blog->created_at->format('M d, Y') }}
                         </div>
 
-                        <a href="{{ url('/blog/' . $blog->slug) }}"
+                        <a href="{{ url('/blog-details/' . $blog->slug) }}"
                             class="mt-6 inline-block !px-6 !py-3 !rounded-full thm-btn">
                             Read More →
                         </a>

@@ -16,28 +16,32 @@
         <x-header />
 
         <!-- Hero Content -->
-        <div class="relative z-10 w-full h-full flex justify-center items-start ">
-            <div class="max-w-[1300px] mx-auto w-full px-6 flex flex-col items-start justify-center  mt-[203px] text-white">
-
+        <div class="relative z-10 w-full md:max-w-[960px] lg:max-w-[1300px] mx-auto h-full flex justify-center items-start">
+            <div
+                class="max-w-[960px] lg:max-w-[1300px] mx-auto w-full px-6
+                       flex flex-col items-start justify-center text-white mt-[133px] xl:mt-[68px] md:mt-[233px]">
                 <h2
-                    class="capitalize text-[30px] xl:!text-[60px] leading-[70px] font-medium xl:mb-[15px] font-sans text-[#ffffff]">
-                    Blogs Details
+                    class="xl:mt-36 capitalize text-[30px] md:!text-[60px]
+                           leading-[70px] font-medium xl:mb-[15px]
+                           font-sans text-white mb-2 md:mb-5">
+                    Blog Details
                 </h2>
 
-                <!-- Breadcrumb -->
-                <nav class="flex items-center gap-2 text-sm text-gray-200  bg-white/10 p-2 rounded-lg font-bold">
-                    <a href="{{ url('/') }}" class="flex items-center gap-1 hover:text-[#edc458] transition">
+                <!-- BREADCRUMB -->
+                <nav
+                    class="flex items-center gap-2 text-sm text-gray-200
+                           bg-white/10 p-2 rounded-lg font-bold tracking-wider font-sans">
+                    <a
+                        href="{{ url('/') }}"
+                        class="flex items-center gap-1 hover:text-[#edc458] transition">
                         <i class="ri-home-4-fill text-lg"></i>
                         Home
                     </a>
 
                     <i class="ri-arrow-right-line"></i>
 
-                    <span>
-                        Blogs Details
-                    </span>
+                    <span>Blog Details</span>
                 </nav>
-
             </div>
         </div>
 

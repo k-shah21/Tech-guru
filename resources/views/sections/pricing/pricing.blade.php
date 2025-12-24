@@ -20,12 +20,12 @@ $pricing = [
 
 
 <section
-    class="py-6 lg:py-24 relative flex justify-center flex-col items-center px-5 xl:px-0 lg:gap-8">
+    class="overflow-hidden py-6 lg:py-24 relative flex justify-center flex-col items-center px-5 xl:px-0 lg:gap-8">
 
     <!-- Header Section -->
     <div class="relative w-full text-center flex flex-col items-center justify-center px-4 md:px-0 max-w-[720px] xl:max-w-[1320px] mx-auto">
         <x-section-heading subtitle="Pricing & Plan" align="center" class="">
-            Select the Perfect <span class="text-[#edc458] font-normal">Plan for Your Needs That Fits You</span>
+            Select the Perfect <span class="text-[#edc458] font-normal">Plan for Your <br>Needs That Fits You</span>
         </x-section-heading>
 
     </div>
@@ -72,7 +72,7 @@ $pricing = [
                     class="absolute -bottom-10 right-4 z-10 opacity-5 rotate-[28deg]">
 
                 <h3 class="text-center mb-4 text-[#edc458] font-marcellus text-xl">PERSONAL</h3>
-                <h1 id="price-personal" class="text-center text-[60px] font-bold ">${{ $pricing['monthly']['personal'] }}
+                <h1 id="price-personal" class="text-center text-[60px] font-bold font-space-grotesk">${{ $pricing['monthly']['personal'] }}
                 </h1>
 
                 <p class="text-center mt-4 opacity-90 text-xl">Will Get Free 3 Months Solutions Support</p>
@@ -107,7 +107,7 @@ $pricing = [
                     class="absolute -bottom-10 right-4 z-10 opacity-5 rotate-[28deg]">
 
                 <h3 class="text-center text-lg mb-4 text-[#edc458] font-marcellus text-xl">PREMIUM</h3>
-                <h1 id="price-premium" class="text-center text-[60px] font-bold">${{ $pricing['monthly']['premium'] }}</h1>
+                <h1 id="price-premium" class="text-center text-[60px] font-bold font-space-grotesk">${{ $pricing['monthly']['premium'] }}</h1>
 
                 <p class="text-center mt-4 opacity-90 text-xl">Will Get Free 5 Months Solutions Support</p>
 
@@ -144,7 +144,7 @@ $pricing = [
                     class="absolute -bottom-10 right-4 z-10 opacity-5 rotate-[28deg]">
 
                 <h3 class="text-center mb-4 text-[#edc458] font-marcellus text-xl">BUSINESS</h3>
-                <h1 id="price-business" class="text-center text-[60px] font-bold">${{ $pricing['monthly']['business'] }}
+                <h1 id="price-business" class="text-center text-[60px] font-bold font-space-grotesk">${{ $pricing['monthly']['business'] }}
                 </h1>
 
                 <p class="text-center mt-4 opacity-90 text-xl">Will Get Free Lifetime Solutions Support</p>
@@ -169,11 +169,21 @@ $pricing = [
 
     </div>
 
-    <!-- Backgorund Gredient -->
+    <!-- Background Gradients -->
+    
+    <!-- Left Blue Gradient -->
     <div class="absolute inset-0 flex items-center justify-start pointer-events-none z-[2]">
         <div
             class="w-[700px] h-[700px] lg:w-[900px] lg:h-[900px]
-        translate-x-20 rounded-full blur-[100px] opacity-100 bg-[radial-gradient(circle,_rgba(67,123,205,0.4),_rgba(0,0,0,0))]">
+        -translate-x-64 rounded-full blur-[150px] opacity-100 bg-[radial-gradient(circle,_rgba(96,101,213,0.46),_rgba(7,12,20,0))]">
+        </div>
+    </div>
+
+    <!-- Bottom Right Purple Gradient -->
+    <div class="absolute inset-0 flex items-end justify-end pointer-events-none z-[2]">
+        <div
+            class="w-[700px] h-[700px] lg:w-[900px] lg:h-[900px]
+        translate-x-64 translate-y-32 rounded-full blur-[150px] opacity-80 bg-[radial-gradient(circle,_rgba(96,101,213,0.46),_rgba(7,12,20,0))]">
         </div>
     </div>
 

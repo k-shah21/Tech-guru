@@ -5,6 +5,10 @@
         position: relative;
     }
 
+    .years-counter {
+        font-family: 'space grotesk', serif !important;
+    }
+
     .about-two__left {
         margin-top: 15px;
         margin-right: 5px;
@@ -23,11 +27,15 @@
         position: absolute;
         bottom: -129px;
         right: -112px;
+        overflow: hidden;
+        border-radius: 50px;
+        padding: 4px;
     }
 
     .about-two__img-2:before {
         content: "";
         border: 4px solid #08111f;
+
         border-radius: 48px;
         position: absolute;
         top: 0;
@@ -177,21 +185,26 @@
 
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .about-two__left {
-            max-width: 890px !important;
-            width: 100%;
-            margin: 0 auto;
+            max-width: 620px !important;
+            margin: 0;
 
+        }
+        .about-two__right{
+            max-width: 620px;
+            margin: 50px auto 0;
         }
 
     }
 
     @media only screen and (min-width: 1200px) and (max-width: 2550px) {
         .about-two__left {
-            max-width: 620px;
-            margin: 30px auto 0;
+            max-width: 520px !important;
+            /* margin: 30px auto 0; */
+            
 
         }
 
+      
         .about-two__img-2 {
             width: 100%;
             max-width: 306px;
@@ -265,10 +278,10 @@
     </div>
 
     <div
-        class="relative z-10 md:max-w-[720px] lg:max-w-[920px] max-w-[1400px]  [@media(min-width:1200px)]:grid-cols-2 mx-auto grid lg:gap-7  gap-y-4 gap-x-16  px-4 items-center justify-start lg:justify-center">
+        class="relative z-10 md:max-w-[720px] lg:max-w-[1140px] xl:max-w-[1320px]  [@media(min-width:1200px)]:grid-cols-2 mx-auto grid lg:gap-7  gap-y-4 gap-x-16  px-4 lg:px-0 items-center justify-start lg:justify-center">
 
-        <!-- Left CONTENT -->
-        <div class="about-two__left">
+        <!-- Left Image -->
+        <div class="about-two__left ">
             <div class="about-two__img-box">
                 <div class="about-two__img">
                     <img src="images/resources/about-two-img-1.jpg" width="495" height="474" alt="">
@@ -278,6 +291,8 @@
                 </div>
                 <div class="about-two__shape-1"></div>
             </div>
+            
+            <!-- Client Box -->
             <div class="about-two__client-box">
                 <ul class="about-two__client-img-list">
                     <li>
@@ -309,16 +324,16 @@
         </div>
 
         <!-- RIGHT CONTENT -->
-        <div class="text-white md:mt-6 lg:mt-0 text-left flex flex-col items-center max-w-[617px] md:max-w-[720px] lg:max-w-[920px]">
+        <div class="text-white md:mt-6 lg:mt-0 text-left flex flex-col items-center max-w-[617px] md:!max-w-[620px] lg:max-w-[920px]">
 
-            <div class="mx-auto  xl:max-w-full">
+            <div class="mx-auto xl:max-w-full">
 
 
                 <x-section-heading subtitle="About Us" align="left">
-                    Unlock Your Business <span class="text-[#edc458] font-normal">Potential with Our Best Cutting-Edge </span> Solutions to Grow
+                    Unlock Your Business <span class="text-[#edc458] font-normal">Potential with Our Best Cutting-Edge </span>  IT Solutions to Grow
                 </x-section-heading>
 
-                <p class="text-gray-300 max-w-lg mb-10 !mt-4 text-xl">
+                <p class="text-gray-300  mb-10 !mt-4 text-lg">
                     Transform your business with our innovative IT solutions, tailored to address your unique
                     challenges and drive growth in today’s digital landscape.
                 </p>
@@ -326,7 +341,7 @@
                 <hr class="border-t border-dashed pt-6 border-white/30" />
 
                 <!-- Features -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-300 mb-8 text-lg w-5/6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-300 mb-8 text-lg ">
                     <div class="flex gap-3"><i class="ri-checkbox-circle-line"></i> Customized Solutions for Every
                         Business</div>
                     <div class="flex gap-3"><i class="ri-checkbox-circle-line"></i> Scalable Infrastructure for
@@ -340,25 +355,29 @@
 
                 <hr class="border-t border-dashed pt-2 border-white/30" />
 
-                <div class="flex flex-wrap items-center gap-4 md:gap- mt-2 md:mt-8 lg:mt-4">
+                <div class="flex items-center gap-4 mt-2 md:mt-8 lg:mt-4">
 
-                    <div class="flex justify-center items-center md:border-r">
-                        <h3 class="text-4xl font-bold text-[#edc458]">25+</h3>
-                        <p class="text-gray-300 text-sm w-1/2">Years of Experience</p>
+                    <div class="flex items-center gap-3 shrink-0">
+                        <h3 class="text-[48px] font-bold text-[#edc458] years-counter whitespace-nowrap">25+</h3>
+                        <p class="text-gray-300 text-sm whitespace-nowrap">Years of<br/>Experience</p>
                     </div>
-
-                    <div class="flex items-center gap-4 md:border-r pe-5">
+                    
+                    <div class="w-[1px] h-10 bg-white/30 shrink-0"></div>
+                    
+                    <div class="flex items-center gap-3 shrink-0">
                         <div class="about-two__call-icon w-12 h-12 flex items-center justify-center text-xl overflow-hidden">
                             <i class="ri-customer-service-2-line"></i>
                         </div>
-
+                        
                         <div>
-                            <p class="text-blue-400 text-sm">Call Us For Inquiry</p>
-                            <p class="text-white font-semibold text-lg">+00 (123) 456767</p>
+                            <p class="text-blue-400 text-sm whitespace-nowrap">Call Us For Inquiry</p>
+                            <p class="text-white font-semibold text-lg whitespace-nowrap">+00 (123) 456767</p>
                         </div>
                     </div>
+                    
+                    <div class="w-[1px] h-10 bg-white/30 shrink-0"></div>
 
-                    <button class="thm-btn !rounded-full">Learn More →</button>
+                    <button class="thm-btn !rounded-full shrink-0">Learn More →</button>
 
                 </div>
 

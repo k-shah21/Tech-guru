@@ -13,14 +13,14 @@
         <x-header />
 
         <!-- HEADER CONTENT -->
-        <div class="relative z-10 w-full md:max-w-[720px] mx-auto h-full flex justify-center items-start">
+        <div class="relative z-10 w-full md:max-w-[960px] lg:max-w-[1300px] mx-auto h-full flex justify-center items-start">
             <div
-                class="max-w-[1300px] mx-auto w-full px-6
-                       flex flex-col items-start justify-center text-white mt-[233px]">
+                class="max-w-[960px] lg:max-w-[1300px] mx-auto w-full px-6
+                       flex flex-col items-start justify-center text-white mt-[133px] xl:mt-[68px] md:mt-[233px]">
                 <h2
                     class="xl:mt-36 capitalize text-[30px] md:!text-[60px]
                            leading-[70px] font-medium xl:mb-[15px]
-                           font-sans text-white mb-5">
+                           font-sans text-white mb-2 md:mb-5">
                     Blogs
                 </h2>
 
@@ -137,7 +137,7 @@
                     <!-- BUTTON -->
                     <a
                         href="{{ route('blog.showBlogDetails', $blog->slug) }}"
-                        class="inline-block mt-6 px-6 py-3 rounded-full thm-btn">
+                        class="inline-block mt-6 px-6 py-4 rounded-xl thm-btn">
                         Read More →
                     </a>
                 </div>

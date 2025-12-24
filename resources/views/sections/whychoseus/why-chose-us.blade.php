@@ -1,8 +1,15 @@
-<!-- Why CHOOSE us -->
+
+<style>
+    .why-chose-us-title
+    {
+        line-height: 50px;
+    }
+</style>
+
 <section class="relative bg-[#0a1a2f] py-12 md:py-[148px] overflow-hidden ">
 
     <!-- Gredient BACKGROUND -->
-    <div class="absolute inset-0 flex items-center justify-start pointer-events-none">
+    <div class="absolute inset-0 -left-24 -top-32 flex items-center justify-start pointer-events-none">
         <div class="w-[600px] h-[600px] lg:w-[700px] lg:h-[700px]
                 -translate-x-20
                 rounded-full blur-[150px] opacity-80
@@ -10,19 +17,19 @@
         </div>
     </div>
 
+    <!-- IMAGE ON TOP -->
+    <img src="images/shapes/why-choose-one-shape-3.png"
+        class="absolute -top-40 z-10 right-0 scale-100 pointer-events-none float-vertical opacity-10" alt="">
+
     <!-- Gredient BACKGROUND -->
-    <div class="absolute inset-0 flex items-center justify-end pointer-events-none">
+    <div class="absolute inset-0 -right-40 top-60 flex items-center justify-end pointer-events-none">
 
         <!-- GLOW BACKGROUND -->
         <div class="w-[700px] h-[700px] lg:w-[900px] lg:h-[900px]
-        translate-x-20
-                rounded-full blur-[100px] opacity-100
-                bg-[radial-gradient(circle,_rgba(66,44,72,0.9),_rgba(0,0,0,0))]">
+                translate-x-20
+                rounded-full blur-[50px] opacity-100
+                bg-[radial-gradient(circle,_rgba(66,44,72,1),_rgba(0,0,0,0))]">
         </div>
-
-        <!-- IMAGE ON TOP -->
-        <img src="images/shapes/why-choose-one-shape-3.png"
-            class="absolute -top-20 z-10 sca pointer-events-none float-vertical opacity-10" alt="">
 
     </div>
 
@@ -34,7 +41,7 @@
         <div class="relative flex justify-center order-2 mx-auto col-span-7 xl:col-span-6">
 
             <!-- Main Image -->
-            <img src="images/resources/about-one-img-1.jpg" alt="Why choose us" class="scale-100" width="670"
+            <img src="images/resources/about-one-img-1.jpg" alt="Why choose us" class="scale-125" width="670"
                 height="610">
 
             <!-- Floating Badge -->
@@ -51,7 +58,7 @@
 
             <!-- Floating Shape -->
             <img src="images/shapes/why-choose-one-shape-2.png" alt=""
-                class="hidden xl:block absolute -left-36 bottom-36 float-left-right">
+                class="hidden xl:block absolute -left-44 bottom-36 float-left-right">
 
         </div>
 
@@ -61,7 +68,7 @@
 
 
             <x-section-heading subtitle="Why choose us" align="left">
-                Elevate Growth <span class="text-[#edc458] font-marcellus font-normal tracking-tight">with Our Best Cutting-Edge IT</span> Solutions for Success
+                Elevate Growth <span class="text-[#edc458] font-marcellus font-normal tracking-tight why-chose-us-title">with Our Best Cutting-Edge IT</span> Solutions for Success
             </x-section-heading>
 
             <p class="text-gray-300 max-w-lg mb-10 text-lg sm:text-xl">
@@ -83,8 +90,8 @@
 
             <div class="flex flex-col sm:flex-row items-start gap-6 mt-10">
 
-                <button class="bg-gradient-to-r from-[#3e75fc] to-[#58a8ec] text-white px-6 py-3 
-                       rounded-3xl font-medium flex items-center gap-2 hover:opacity-90 transition">
+                <button class="thm-btn btn--header
+                       rounded-3xl font-bold">
                     About us
                     <i class="ri-arrow-right-line"></i>
                 </button>

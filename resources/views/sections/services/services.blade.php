@@ -43,10 +43,26 @@
     .preview-img.reveal {
         clip-path: inset(0 0 0 0);
     }
+
+    .service-id-border {
+        position: relative;
+    }
+
+    .service-id-border::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        padding: 1px;
+        background: linear-gradient(90deg, #6065d4, #fa5674);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+    }
 </style>
+
 <section class="max-w-[720px] lg:max-w-[960px] xl:max-w-[1400px] mx-auto relative py-20  z-10">
-
-
 
     <!-- GLOW BACKGROUND -->
     <div class="services-two__shape-1">
@@ -181,13 +197,13 @@
 
                 <div
                     class="col-span-12 lg:col-span-4 [@media(min-width:1440px)]:col-span-4 flex items-center justify-start md:justify-center lg:justify-start gap-4 ">
-                    <div class="w-10 h-10 rounded-full border border-[#FF7AC4] text-[#FF7AC4]
+                    <div class="service-id-border w-10 h-10 rounded-full text-white
                             flex items-center justify-center font-semibold p-2">{{ $service['id'] }}</div>
                     <h3
                         class="font-semibold text-white text-2xl  [@media(min-width:1439px)]:w-2/3  transition-all duration-200 
             group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
             group-hover:bg-clip-text
-            group-hover:text-transparent font-marcellus">
+            group-hover:text-transparent font-marcellus pe-6">
                         {{ $service['title'] }}
                     </h3>
                 </div>

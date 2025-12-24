@@ -28,7 +28,7 @@
 
 <header x-data="{ openMenu: false, scrolled: false }"
     @scroll.window="scrolled = (window.pageYOffset > 50)"
-    :class="scrolled ? 'fixed top-0 bg-[#0B192C] shadow-lg border-transparent' : 'absolute top-0 bg-transparent border-white/20'"
+    :class="scrolled ? 'fixed top-0 bg-[#0B192C] shadow-lg border-b border-white/20' : 'absolute top-0 bg-transparent border-white/20'"
     class="z-50 w-full border-b transition-all duration-300">
     <div id="mainHeader" class="w-full py-5 px-5 md:py-6 lg:p-6">
 

@@ -110,7 +110,7 @@
     <div
         class="flex flex-col xl:flex-row justify-center md:justify-between items-center text-center max-w-7xl w-full mx-auto gap-10">
         {{-- Left --}}
-        <div class="">
+        <div class="lg:text-start">
             <h2 class="newsletter-two__title font-marcellus">Subscribe to Our Newsletter</h2>
             <p class="tracking-wide">Get the latest SEO tips and software insights straight to your inbox.</p>
         </div>

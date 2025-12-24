@@ -6,7 +6,7 @@
     <div class="max-w-[720px]  xl:max-w-7xl mx-auto z-20 relative">
 
         <!-- TOP HEADING + BUTTON -->
-        <div class="flex justify-between flex-col lg:flex-row gap-4 items-start mb-16">
+        <div class="flex justify-between flex-col lg:flex-row gap-4 items-start lg:items-center mb-16">
 
             <!-- Left Heading -->
             <div>
@@ -16,7 +16,7 @@
             </div>
 
             <!-- Contact Button -->
-            <button class="thm-btn">
+            <button class="thm-btn px-[22px] py-[16px]">
                 Contact Us →
             </button>
 
