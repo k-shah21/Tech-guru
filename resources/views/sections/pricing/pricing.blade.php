@@ -55,13 +55,13 @@ $pricing = [
         </div>
 
         {{-- PRICING CARDS --}}
-        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 
-           [@media(min-width:1440px)]:grid-cols-3 
-           gap-6 [@media(min-width:1440px)]:gap-0 
-           items-center w-full md:max-w-[630px] lg:max-w-[960px] xl:!max-w-[1320px]">
+        <div class="grid grid-cols-1 gap-6 
+           lg:grid-cols-2 
+           [@media(min-width:1440px)]:grid-cols-3 [@media(min-width:1440px)]:gap-0 
+           items-center w-full md:max-w-[630px] lg:max-w-[1000px] xl:!max-w-[1320px]">
 
             {{-- PERSONAL --}}
-            <div class="!bg-[#1D253F] !w-full rounded-2xl lg:rounded-r-none relative p-10 text-white 
+            <div class="!bg-[#1D253F] !w-full rounded-2xl [@media(min-width:1440px)]:rounded-r-none relative p-10 text-white 
                border border-[#1c2a5c] h-[590px] overflow-hidden">
 
                 <!-- BG Images -->
@@ -97,7 +97,7 @@ $pricing = [
 
             {{-- PREMIUM --}}
             <div class="bg-[#142258] rounded-2xl p-10 text-white border border-[#1c2a5c] relative overflow-hidden h-[689px]
-               lg:-translate-y-6 [@media(min-width:1440px)]:-translate-y-8">
+               lg:translate-y-0 [@media(min-width:1440px)]:-translate-y-8">
 
                 <!-- BG Images -->
                 <img src="images/shapes/pricing-two-single-shape-2.png" class="absolute top-0 -left-2 z-10 opacity-10">
@@ -134,7 +134,10 @@ $pricing = [
 
             {{-- BUSINESS --}}
             <div
-                class="bg-[#1D253F] rounded-2xl p-10 text-white relative border border-[#1c2a5c] lg:rounded-l-none h-[590px] overflow-hidden">
+                class="bg-[#1D253F] rounded-2xl p-10 text-white relative border border-[#1c2a5c] 
+                lg:col-span-2 lg:w-1/2 lg:mx-auto
+                [@media(min-width:1440px)]:col-span-1 [@media(min-width:1440px)]:w-full [@media(min-width:1440px)]:mx-0 [@media(min-width:1440px)]:rounded-l-none 
+                h-[590px] overflow-hidden">
 
                 <!-- BG Images -->
                 <img src="images/shapes/pricing-two-single-shape-1.png" class="absolute top-0 -left-2 z-10 opacity-10">

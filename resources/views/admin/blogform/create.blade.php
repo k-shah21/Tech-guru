@@ -1,119 +1,86 @@
 <x-layouts.adminlayout>
 
-
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="fw-bold">Create Blog</h2>
-        <a href="/admin/blogs" class="btn btn-outline-dark px-4">Back</a>
-    </div>
-
-
-
-    <form action=" {{ route('blog.store') }}" method="POST" enctype="multipart/form-data" class="pb-5">
-
-        @csrf
-
-        <div class="card shadow-sm border-0 rounded-4 mb-4">
-            <div class="card-header bg-light fw-bold py-3 rounded-top-4">
-                Blog Content
+    <div class="container-fluid pb-5">
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <div>
+                <h2 class="fw-bold mb-1">Create New Insight</h2>
+                <p class="text-white-50 small">Share your expert knowledge with the Tech Guru community.</p>
             </div>
+            <a href="/admin/blogs" class="btn btn-outline-light px-4 rounded-3">
+                <i class="ri-arrow-left-line me-2"></i>Back to Insights
+            </a>
+        </div>
 
-            <div class="card-body">
+        <form action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
 
-                <!-- Title -->
-                <div class="mb-4">
-                    <label class="form-label fw-semibold">Title</label>
-                    <input type="text"
-                        name="title"
-                        value="{{ old('title') }}"
-                        class="form-control form-control-lg rounded-3 @error('title') is-invalid @enderror"
-                        placeholder="Enter blog title">
+            <div class="row g-4">
+                <div class="col-xl-8">
+                    <div class="card p-4">
+                        <div class="mb-4">
+                            <label class="form-label fw-bold text-white-50">Insight Title</label>
+                            <input type="text" name="title" value="{{ old('title') }}"
+                                class="form-control form-control-lg @error('title') is-invalid @enderror"
+                                placeholder="e.g., The Future of Cloud Computing">
+                            @error('title') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                        </div>
 
-                    @error('title')
-                    <small class="text-danger">{{ $message }}</small>
-                    @enderror
-                </div>
-                <!-- Heading -->
-                <div class="mb-4">
-                    <label class="form-label fw-semibold">Heading</label>
-                    <input type="text"
-                        value="{{ old('heading') }}"
-                        name="heading" class="form-control form-control-lg rounded-3"
-                        placeholder="Enter main heading">
-                    @error('heading')
-                    <small class="text-danger">{{ $message }}</small>
-                    @enderror
-                </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-bold text-white-50">SEO Heading</label>
+                            <input type="text" name="heading" value="{{ old('heading') }}"
+                                class="form-control" placeholder="Catchy heading for search results">
+                            @error('heading') <small class="text-danger mt-1 d-block">{{ $message }}</small> @enderror
+                        </div>
 
-                <!-- Meta Description -->
-                <div class="mb-4">
-                    <label class="form-label fw-semibold">Meta Description</label>
-                    <textarea name="meta_description"
-                        value="{{ old('meta_description') }}"
-                        rows="3" class="form-control rounded-3"
-                        placeholder="Write short SEO description..."></textarea>
-                    <small class="text-muted">Recommended: 50–160 characters.</small>
-                    @error('meta_description')
-                    <small class="text-danger">{{ $message }}</small>
-                    @enderror
+                        <div class="mb-4">
+                            <label class="form-label fw-bold text-white-50">Content Body</label>
+                            <textarea id="editor" name="content">{{ old('content') }}</textarea>
+                            @error('content') <small class="text-danger mt-1 d-block">{{ $message }}</small> @enderror
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Tags -->
-                <div class="mb-4">
-                    <label class="form-label fw-semibold">Tags (Comma Seprated)</label>
-                    <input type="text"
-                        value="{{ old('tags') }}"
-                        name="tags" class="form-control rounded-3"
-                        placeholder="Type a tag and press Enter">
-                    @error('tags')
-                    <small class="text-danger">{{ $message }}</small>
-                    @enderror
-                </div>
+                <div class="col-xl-4">
+                    <div class="card p-4 mb-4">
+                        <h5 class="fw-bold mb-4" style="color: #edc458;">Media & SEO</h5>
 
-                <!-- Content -->
-                <div class="mb-4">
-                    <label class="form-label fw-semibold">Content</label>
-                    <textarea id="editor"
-                        value="{{ old('content') }}" name="content"></textarea>
-                    @error('content')
-                    <small class="text-danger">{{ $message }}</small>
-                    @enderror
-                </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-bold text-white-50 d-block">Main Visual</label>
+                            <div class="p-3 border border-white-10 rounded-3 text-center mb-3 bg-dark">
+                                <i class="ri-image-add-line fs-1 text-white-10"></i>
+                                <p class="small text-white-50 mt-2 mb-0">Recommended size: <br><strong class="text-warning">324 × 221 px</strong></p>
+                            </div>
+                            <input type="file" name="main_image" class="form-control">
+                        </div>
 
+                        <div class="mb-4">
+                            <label class="form-label fw-bold text-white-50">Alt Text (Accessibility)</label>
+                            <input type="text" name="image_alt" value="{{ old('image_alt') }}"
+                                class="form-control" placeholder="e.g., Team working on servers">
+                            @error('image_alt') <small class="text-danger mt-1 d-block">{{ $message }}</small> @enderror
+                        </div>
 
-                <!-- Main Image -->
-                <div class="mb-4">
-                    <label class="form-label fw-semibold">Main Image</label>
+                        <div class="mb-4">
+                            <label class="form-label fw-bold text-white-50">Discovery Tags</label>
+                            <input type="text" name="tags" value="{{ old('tags') }}"
+                                class="form-control" placeholder="Cloud, Tech, Strategy (comma separated)">
+                            @error('tags') <small class="text-danger mt-1 d-block">{{ $message }}</small> @enderror
+                        </div>
 
-                    <div class="mb-2 text-muted small">
-                        Required size: <strong class="text-danger">324 × 221 px</strong><br>
-                        Allowed formats: <strong>WEBP, JPG, PNG</strong><br>
-                        Recommended format: <strong>WEBP</strong> <span class="text-success"> (best for SEO & speed) </span>
+                        <div>
+                            <label class="form-label fw-bold text-white-50">Meta Summary</label>
+                            <textarea name="meta_description" rows="3" class="form-control"
+                                placeholder="Short summary for search engines...">{{ old('meta_description') }}</textarea>
+                            <small class="text-white-25 mt-1 d-block">Optimal length: 50–160 chars.</small>
+                        </div>
                     </div>
 
-                    <input type="file" name="main_image" class="form-control rounded-3">
+                    <button type="submit" class="btn btn-gradient w-100 py-3 shadow-lg">
+                        <i class="ri-save-line me-2"></i>Publish Insight
+                    </button>
                 </div>
-
-                <!-- Main Image Alt -->
-                <div class="mb-4">
-                    <label class="form-label fw-semibold">Main Image Alt</label>
-                    <input type="text" name="image_alt" value="{{ old('image_alt') }}" class="form-control rounded-3"
-                        placeholder="Describe the main image for SEO">
-                    <small class="text-muted">Maximum 50 characters allowed.</small>
-                    @error('image_alt')
-                    <small class="text-danger">{{ $message }}</small>
-                    @enderror
-                </div>
-
             </div>
-        </div>
+        </form>
+    </div>
 
-        <!-- Submit Button -->
-        <div class="text-center">
-            <button class="btn btn-dark px-5 py-2 rounded-3 fs-6" type="submit">
-                Create
-            </button>
-        </div>
-
-    </form>
-
-    </x-adminlayout>
+</x-layouts.adminlayout>

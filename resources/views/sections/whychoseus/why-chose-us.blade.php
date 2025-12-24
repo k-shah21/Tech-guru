@@ -41,11 +41,11 @@
         <div class="relative flex justify-center order-2 mx-auto col-span-7 xl:col-span-6">
 
             <!-- Main Image -->
-            <img src="images/resources/about-one-img-1.jpg" alt="Why choose us" class="scale-125" width="670"
+            <img src="images/resources/about-one-img-1.jpg" alt="Why choose us" class="xl:scale-125 scale-100 z-10" width="670"
                 height="610">
 
             <!-- Floating Badge -->
-            <div class="absolute  left-1.5 -top-12">
+            <div class="absolute  left-1.5 -top-12 z-20">
                 <div class="w-16 h-16 sm:w-[80px] sm:h-[80px] bg-[#43a872]/20 rounded-full backdrop-blur-sm shadow-lg 
                     flex items-center justify-center float-animate">
                     <div class="w-12 h-12 sm:w-[60px] sm:h-[60px] bg-[#43a872] rounded-full shadow-xl 
@@ -58,7 +58,7 @@
 
             <!-- Floating Shape -->
             <img src="images/shapes/why-choose-one-shape-2.png" alt=""
-                class="hidden xl:block absolute -left-44 bottom-36 float-left-right">
+                class="hidden xl:block absolute -left-52 bottom-36 float-left-right z-30">
 
         </div>
 
@@ -71,12 +71,12 @@
                 Elevate Growth <span class="text-[#edc458] font-marcellus font-normal tracking-tight why-chose-us-title">with Our Best Cutting-Edge IT</span> Solutions for Success
             </x-section-heading>
 
-            <p class="text-gray-300 max-w-lg mb-10 text-lg sm:text-xl">
+            <p class="text-gray-300 mb-10 text-lg">
                 Innovating and empowering businesses with tailored solutions
                 for success and growth. Innovating and empowering.
             </p>
 
-            <ul class="flex gap-8 flex-col max-w-md">
+            <ul class="flex gap-8 flex-col xl:max-w-md">
                 <li>
                     <h4 class="font-semibold">Camping Launches</h4>
                     <input type="range" max="100" value="80" disabled class="range-slider second w-full">

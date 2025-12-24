@@ -165,12 +165,12 @@
             'title' => 'Cloud Solutions Provider',
             'image' => '/images/services/services-2-3.jpg',
             'items' => [
-            'Strategy',
-            'Process Optimization',
-            'Legacy Modernization',
-            'Automation',
-            'Consulting',
-            'Training',
+            'Cloud Migration',
+            'DevOps Consulting',
+            'AWS/Azure',
+            'Security Audits',
+            'Server Management',
+            'CI/CD Pipelines',
             ],
             ],
             [
@@ -191,14 +191,15 @@
 
             @foreach ($services as $service)
             <!-- ROW -->
-            <div class="group relative grid grid-cols-1 md:grid-cols-12 items-center 
-                    border-b {{ $loop->first ? 'border-t' : '' }} border-white/10 py-10 gap-8"
+            <div class="group relative z-40 grid grid-cols-1 md:grid-cols-12 items-center 
+                    border-b {{ $loop->first ? 'border-t' : '' }} border-white/10 py-10 gap-8 group-hover:z-50"
                 data-image="{{ $service['image'] }}">
 
                 <div
                     class="col-span-12 lg:col-span-4 [@media(min-width:1440px)]:col-span-4 flex items-center justify-start md:justify-center lg:justify-start gap-4 ">
-                    <div class="service-id-border w-10 h-10 rounded-full text-white
-                            flex items-center justify-center font-semibold p-2">{{ $service['id'] }}</div>
+                    <div class="service-id-border w-10 h-10 shrink-0 rounded-full text-white flex items-center justify-center font-semibold">
+                        {{ $service['id'] }}
+                    </div>
                     <h3
                         class="font-semibold text-white text-2xl  [@media(min-width:1439px)]:w-2/3  transition-all duration-200 
             group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
@@ -209,8 +210,8 @@
                 </div>
 
                 <div
-                    class="service-preview absolute -top-10 left-1/3 lg:left-1/2 xl:left-1/3 translate-x-[calc(-50%-15px)] xl:translate-x-[calc(-50%-15px)] lg:translate-x-[-50%] pointer-events-none opacity-0 transition-all duration-300 ">
-                    <img src="" class="preview-img z-20 object-cover rounded-xl shadow-2xl w-full h-full" />
+                    class="service-preview absolute -top-10 left-1/3 lg:left-1/2 xl:left-1/3 translate-x-[calc(-50%-15px)] xl:translate-x-[calc(-50%-15px)] lg:translate-x-[-50%] pointer-events-none opacity-0 transition-all duration-300 z-50">
+                    <img src="" class="preview-img z-50 object-cover rounded-xl shadow-2xl w-full h-full" />
                 </div>
 
                 <div class="hidden xl:block xl:col-span-1"></div>

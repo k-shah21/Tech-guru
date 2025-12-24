@@ -41,6 +41,9 @@
     <link rel="stylesheet" href="{{ asset("css/app.css") }}">
 
     <style>
+        [x-cloak] {
+            display: none !important;
+        }
         p {
             font-family: 'Space Grotesk', sans-serif;
         }
@@ -69,6 +72,7 @@
     <x-footer.footer />
 
     <x-cursor />
+    <x-back-to-top />
 
 
     <script>
