@@ -100,7 +100,7 @@
         gap: 10px;
         padding: 4px 15px 4px 4px;
         position: absolute;
-        top: 65%;
+        top: 75%;
         left: 14%;
         transform: translate(-50%, -50%) rotate(90deg);
         z-index: 10;

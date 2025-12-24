@@ -4,7 +4,6 @@
         font-size: 40px;
         font-weight: 600;
         line-height: 40px;
-      
         background: linear-gradient(270deg, rgb(250, 86, 116) 0%, rgb(96, 101, 212) 100%) text;
     }
 
@@ -12,7 +11,7 @@
     /* RIGHT SIDE */
     .newsletter-two__right {
         width: 100%;
-        max-width: 520px;
+        max-width: 560px;
         position: relative;
     }
 
@@ -110,9 +109,9 @@
     <div
         class="flex flex-col xl:flex-row justify-center md:justify-between items-center text-center max-w-7xl w-full mx-auto gap-10">
         {{-- Left --}}
-        <div class="lg:text-start">
-            <h2 class="newsletter-two__title font-marcellus">Subscribe to Our Newsletter</h2>
-            <p class="tracking-wide">Get the latest SEO tips and software insights straight to your inbox.</p>
+        <div class=" lg:text-start">
+            <h2 class="newsletter-two__title font-space-grotesk tracking-wide">Subscribe to Our Newsletter</h2>
+            <p class="tracking-tight">Get the latest SEO tips and software insights straight to your inbox.</p>
         </div>
 
         <div class="newsletter-two__right">

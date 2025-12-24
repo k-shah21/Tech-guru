@@ -72,7 +72,7 @@
     <div class="px-6 relative z-10">
 
         <!-- TOP HEADING -->
-        <div class="mb-16 flex flex-col md:flex-row justify-between md:items-center">
+        <div class="mb-6 flex flex-col md:flex-row justify-between md:items-center">
             <div class="md:max-w-[720px]">
                 <x-section-heading subtitle="Our Services" align="left">
                     Your Business with Cutting-Edge IT Solutions <img src="images/services/section-title-img.jpg" class="inline rounded-3xl" /> <span class="text-[#F5C156] font-normal">Innovative IT Services Tailored for Your Success</span>

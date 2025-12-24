@@ -25,7 +25,8 @@ $pricing = [
     <!-- Header Section -->
     <div class="relative w-full text-center flex flex-col items-center justify-center px-4 md:px-0 max-w-[720px] xl:max-w-[1320px] mx-auto">
         <x-section-heading subtitle="Pricing & Plan" align="center" class="">
-            Select the Perfect <span class="text-[#edc458] font-normal">Plan for Your <br>Needs That Fits You</span>
+            
+            Select the Perfect <span class="text-[#edc458] font-normal">Plan for Your <br class="md:block hidden"/> Needs That Fits You</span>
         </x-section-heading>
 
     </div>
@@ -36,7 +37,7 @@ $pricing = [
         {{-- PLAN SWITCHER --}}
         <div class="flex justify-center md:!mb-20 relative">
 
-            <div class="plan-switcher inline-flex px-2 flex-col md:flex-row rounded-full md:border md:border-[#7350F5]">
+            <div class="plan-switcher plan-switcher-gradient inline-flex px-2 flex-col md:flex-row rounded-full">
                 <button onclick="changePlan('monthly')" id="btn-monthly"
                     class="active px-8 py-3 rounded-full text-white text-base font-medium">
                     MONTHLY
@@ -214,6 +215,25 @@ $pricing = [
     .plan-switcher>button.active::before {
         transform: scaleY(1);
         transform-origin: top;
+    }
+
+    .plan-switcher-gradient {
+        position: relative;
+    }
+
+    @media (min-width: 768px) {
+        .plan-switcher-gradient::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 9999px;
+            padding: 1px;
+            background: linear-gradient(90deg, #6065d4, #fa5674);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
     }
 </style>
 

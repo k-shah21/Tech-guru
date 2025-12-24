@@ -273,7 +273,7 @@
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div class="w-[700px] h-[700px] lg:w-[900px] lg:h-[900px]
                     rounded-full blur-[150px] opacity-40
-                    bg-[radial-gradient(circle,_rgba(80,120,255,0.65),_rgba(0,0,0,0))]">
+                    bg-[radial-gradient(circle,_rgba(80,120,255,0.5),_rgba(0,0,0,0))]">
         </div>
     </div>
 

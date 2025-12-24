@@ -70,4 +70,20 @@
     .heading{
         line-height: 58px;
     }
+
+    @media (max-width: 768px) {
+        .heading {
+            margin-top: 10px;
+            font-size: 25px;
+            line-height: 35px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .heading {
+            margin-top: 10px;
+            font-size: 40px;
+            line-height:  58px;
+        }
+    }
 </style>
