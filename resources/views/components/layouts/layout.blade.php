@@ -40,6 +40,15 @@
 
     <link rel="stylesheet" href="{{ asset("css/app.css") }}">
 
+    <style>
+        p {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: 'Marcellus', serif;
+        }
+    </style>
+
     <title>Tech Guru</title>
 </head>
 

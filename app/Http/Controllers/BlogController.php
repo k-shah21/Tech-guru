@@ -164,7 +164,10 @@ class BlogController
             ->take(3)
             ->get();
 
+        $previousBlog = Blog::where('id', '<', $blog->id)->latest('id')->first();
+        $nextBlog = Blog::where('id', '>', $blog->id)->oldest('id')->first();
+
         generatesitemap();
-        return view('pages.blog-details', compact('blog', 'recentBlog'));
+        return view('pages.blog-details', compact('blog', 'recentBlog', 'previousBlog', 'nextBlog'));
     }
 }

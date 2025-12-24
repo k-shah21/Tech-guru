@@ -1,7 +1,7 @@
 <x-layouts.layout>
 
     <!-- BG Shape -->
-    <div class="absolute -z-1 !top-[47%]">
+    <div class="absolute !-z-[1] !top-[47%]">
         <img src="{{ asset('images/shapes/blog-details-shape-1.png') }}" alt="shape" srcset="{{ asset('images/shapes/blog-details-shape-1.png') }}">
     </div>
 
@@ -104,7 +104,7 @@
 
             {{-- Main Content bottom --}}
             <div
-                class="flex justify-center md:justify-between flex-col xl:flex-row md:flex-row gap-4 items-center mt-10">
+                class="flex justify-center md:justify-between flex-col xl:flex-row md:flex-row gap-4 items-center mt-10 border-b border-[#4444a58a] pb-10">
 
                 {{-- Tags --}}
                 <div class="flex justify-center flex-col md:flex-row gap-4 items-center ">
@@ -113,6 +113,8 @@
                     <x-tags :tags="$blog->tags" />
 
                 </div>
+
+
 
                 <div class="inline-flex gap-2 flex-row md:flex-row items-center">
 
@@ -136,6 +138,66 @@
                         </a>
                     </div>
 
+                </div>
+
+            </div>
+
+
+            <div class="max-w-[520px] md:max-w-[690px] w-full mx-auto flex flex-col md:flex-row md:justify-between items-center gap-4">
+                
+                <!-- PREVIOUS BLOG -->
+                <div class="flex gap-4 justify-center items-center w-full max-w-[287px]">
+                    @if($previousBlog)
+                    <div class="max-w-20 w-full">
+                        <img
+                            src="{{ asset($previousBlog->main_image ?? 'images/blog/blog-lp-1.jpg') }}"
+                            alt="{{ $previousBlog->title }}"
+                            width="80"
+                            height="80"
+                            class="rounded-2xl object-cover h-20 w-20">
+                    </div>
+
+                    <div>
+                        <a href="{{ route('blog.showBlogDetails', $previousBlog->slug) }}" class="group">
+                            <h2 class="nav-gredient-text group-hover:opacity-80 transition-opacity !font-marcellus">
+                                <i class="ri-arrow-left-line nav-gredient-text "></i> PREV BLOG
+                            </h2>
+                            <p class="font-medium font-marcellus text-white group-hover:text-[#edc458] transition-colors line-clamp-2">
+                                {{ $previousBlog->title }}
+                            </p>
+                        </a>
+                    </div>
+                    @else
+                        <div class="w-full"></div>
+                    @endif
+                </div>
+
+
+                <!-- NEXT BLOG -->
+                <div class="flex gap-4 justify-center items-center flex-row-reverse w-full max-w-[287px]">
+                    @if($nextBlog)
+                    <div class="max-w-20 w-full">
+                        <img
+                            src="{{ asset($nextBlog->main_image ?? 'images/blog/blog-lp-1.jpg') }}"
+                            alt="{{ $nextBlog->title }}"
+                            width="80"
+                            height="80"
+                            class="rounded-2xl object-cover h-20 w-20">
+                    </div>
+
+                    <div class="text-end">
+                        <a href="{{ route('blog.showBlogDetails', $nextBlog->slug) }}" class="group">
+                            <h2 class="font-medium font-marcellus nav-gredient-text group-hover:opacity-80 transition-opacity">
+                                NEXT BLOG <i class="ri-arrow-right-line nav-gredient-text"></i>
+                            </h2>
+                            <p class="font-medium font-marcellus text-white group-hover:text-[#edc458] transition-colors line-clamp-2">
+                                {{ $nextBlog->title }}
+                            </p>
+                        </a>
+                    </div>
+                    @else
+                        <div class="w-full"></div>
+                    @endif
                 </div>
 
             </div>
@@ -312,6 +374,7 @@
 <style>
     /* Scoped styles for Jodit content only */
     .jodit-content h1 {
+        font-family: var(--font-space-grotesk) !important;
         color: #ffffff;
         margin: 35px 0 25px;
         font-size: 40px;
@@ -320,6 +383,7 @@
     }
 
     .jodit-content h2 {
+        font-family: var(--font-space-grotesk) !important;
         color: #ffffff;
         margin: 30px 0 20px;
         font-size: 32px;
@@ -328,6 +392,7 @@
     }
 
     .jodit-content h3 {
+        font-family: var(--font-space-grotesk) !important;
         color: #ffffff;
         margin: 25px 0 15px;
         font-size: 26px;
@@ -336,6 +401,7 @@
     }
 
     .jodit-content h4 {
+        font-family: var(--font-space-grotesk) !important;
         color: #ffffff;
         margin: 20px 0 10px;
         font-size: 22px;
@@ -344,6 +410,7 @@
     }
 
     .jodit-content h5 {
+        font-family: var(--font-space-grotesk) !important;
         color: #ffffff;
         margin: 15px 0 8px;
         font-size: 18px;
@@ -352,6 +419,7 @@
     }
 
     .jodit-content p {
+        font-family: var(--font-space-grotesk) !important;
         color: #c5c8cd;
         font-size: 18px;
         /* 1.125rem */
@@ -363,6 +431,7 @@
 
     /* Optional: Style links, bold, italic inside Jodit content */
     .jodit-content p a {
+        font-family: var(--font-space-grotesk) !important;
         color: #4f90ff;
         text-decoration: underline;
     }
@@ -530,5 +599,13 @@
         padding: 35px;
         position: relative;
         text-align: start;
+    }
+
+    .nav-gredient-text {
+        background: linear-gradient(270deg, #fa5674 0%, #6065d4 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
     }
 </style>
