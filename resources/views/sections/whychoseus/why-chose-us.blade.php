@@ -28,12 +28,10 @@
 
 
 
-    <div class="relative z-10 max-w-[720px] xl:max-w-[1400px] mx-auto 
-            px-4 sm:px-6 lg:px-8 
-            grid gap-y-16  xl:grid-cols-12 gap-x-20 xl:gap-x-28 items-center">
+    <div class="relative z-10 max-w-[720px] xl:max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 grid gap-y-16 xl:grid-cols-12 gap-x-20 xl:gap-x-28 items-center">
 
         <!-- LEFT IMAGE BLOCK -->
-        <div class="relative flex justify-center order-2  mx-auto col-span-7">
+        <div class="relative flex justify-center order-2 mx-auto col-span-7 xl:col-span-6">
 
             <!-- Main Image -->
             <img src="images/resources/about-one-img-1.jpg" alt="Why choose us" class="scale-100" width="670"
@@ -59,7 +57,7 @@
 
 
         <!-- RIGHT CONTENT -->
-        <div class="text-white order-1 why-choose-custom xl:mx-0 col-span-5 md:col-span-7">
+        <div class="text-white order-1 why-choose-custom xl:mx-0 col-span-5 md:col-span-7 xl:col-span-6">
 
 
             <x-section-heading subtitle="Why choose us" align="left">

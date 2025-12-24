@@ -117,108 +117,108 @@
         <div class="">
 
             @php
-                $services = [
-                    [
-                        'id' => '01',
-                        'title' => 'Software Development Solutions',
-                        'image' => '/images/services/services-2-1.jpg',
-                        'items' => [
-                            'UI/UX Design',
-                            'Web Applications',
-                            'Mobile Apps',
-                            'Custom Software',
-                            'UI/UX Design',
-                            'UI/UX Design',
-                        ],
-                    ],
-                    [
-                        'id' => '02',
-                        'title' => 'Cybersecurity Risk Management',
-                        'image' => '/images/services/services-2-2.jpg',
-                        'items' => [
-                            'Cloud Migration',
-                            'DevOps Consulting',
-                            'AWS/Azure',
-                            'Security Audits',
-                            'Server Management',
-                            'CI/CD Pipelines',
-                        ],
-                    ],
-                    [
-                        'id' => '03',
-                        'title' => 'Cloud Solutions Provider',
-                        'image' => '/images/services/services-2-3.jpg',
-                        'items' => [
-                            'Strategy',
-                            'Process Optimization',
-                            'Legacy Modernization',
-                            'Automation',
-                            'Consulting',
-                            'Training',
-                        ],
-                    ],
-                    [
-                        'id' => '04',
-                        'title' => 'Data Analytics Consultant',
-                        'image' => '/images/services/services-2-4.jpg',
-                        'items' => [
-                            'Big Data',
-                            'Machine Learning',
-                            'Business Intelligence',
-                            'Predictive Modeling',
-                            'Data Mining',
-                            'AI Solutions',
-                        ],
-                    ],
-                ];
+            $services = [
+            [
+            'id' => '01',
+            'title' => 'Software Development Solutions',
+            'image' => '/images/services/services-2-1.jpg',
+            'items' => [
+            'UI/UX Design',
+            'Web Applications',
+            'Mobile Apps',
+            'Custom Software',
+            'UI/UX Design',
+            'UI/UX Design',
+            ],
+            ],
+            [
+            'id' => '02',
+            'title' => 'Cybersecurity Risk Management',
+            'image' => '/images/services/services-2-2.jpg',
+            'items' => [
+            'Cloud Migration',
+            'DevOps Consulting',
+            'AWS/Azure',
+            'Security Audits',
+            'Server Management',
+            'CI/CD Pipelines',
+            ],
+            ],
+            [
+            'id' => '03',
+            'title' => 'Cloud Solutions Provider',
+            'image' => '/images/services/services-2-3.jpg',
+            'items' => [
+            'Strategy',
+            'Process Optimization',
+            'Legacy Modernization',
+            'Automation',
+            'Consulting',
+            'Training',
+            ],
+            ],
+            [
+            'id' => '04',
+            'title' => 'Data Analytics Consultant',
+            'image' => '/images/services/services-2-4.jpg',
+            'items' => [
+            'Big Data',
+            'Machine Learning',
+            'Business Intelligence',
+            'Predictive Modeling',
+            'Data Mining',
+            'AI Solutions',
+            ],
+            ],
+            ];
             @endphp
 
             @foreach ($services as $service)
-                <!-- ROW -->
-                <div class="group relative grid grid-cols-1 md:grid-cols-12 items-center 
+            <!-- ROW -->
+            <div class="group relative grid grid-cols-1 md:grid-cols-12 items-center 
                     border-b {{ $loop->first ? 'border-t' : '' }} border-white/10 py-10 gap-8"
-                    data-image="{{ $service['image'] }}">
+                data-image="{{ $service['image'] }}">
 
-                    <div
-                        class="col-span-12 lg:col-span-4 [@media(min-width:1440px)]:col-span-4 flex items-center justify-start md:justify-center lg:justify-start gap-4 ">
-                        <div class="w-10 h-10 rounded-full border border-[#FF7AC4] text-[#FF7AC4]
+                <div
+                    class="col-span-12 lg:col-span-4 [@media(min-width:1440px)]:col-span-4 flex items-center justify-start md:justify-center lg:justify-start gap-4 ">
+                    <div class="w-10 h-10 rounded-full border border-[#FF7AC4] text-[#FF7AC4]
                             flex items-center justify-center font-semibold p-2">{{ $service['id'] }}</div>
-                        <h3
-                            class="font-semibold text-white text-2xl  [@media(min-width:1439px)]:w-2/3  transition-all duration-200 
+                    <h3
+                        class="font-semibold text-white text-2xl  [@media(min-width:1439px)]:w-2/3  transition-all duration-200 
             group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
             group-hover:bg-clip-text
             group-hover:text-transparent font-marcellus">
-                            {{ $service['title'] }}
-                        </h3>
-                    </div>
+                        {{ $service['title'] }}
+                    </h3>
+                </div>
 
-                    <div
-                        class="service-preview absolute -top-10 left-1/3 translate-x-[calc(-50%-15px)] pointer-events-none opacity-0 transition-all duration-300 ">
-                        <img src="" class="preview-img z-20 object-cover rounded-xl shadow-2xl w-full h-full" />
-                    </div>
+                <div
+                    class="service-preview absolute -top-10 left-1/3 lg:left-1/2 xl:left-1/3 translate-x-[calc(-50%-15px)] xl:translate-x-[calc(-50%-15px)] lg:translate-x-[-50%] pointer-events-none opacity-0 transition-all duration-300 ">
+                    <img src="" class="preview-img z-20 object-cover rounded-xl shadow-2xl w-full h-full" />
+                </div>
 
-                    <div class="hidden xl:block xl:col-span-1"></div>
-                    <div
-                        class="col-span-12 lg:col-span-8 [@media(min-width:1439px)]:col-span-7 grid grid-cols-1 [@media(min-width:768px)]:grid-cols-3 gap-3 font-medium text-[#AEB5D1] items-start">
+                <div class="hidden xl:block xl:col-span-1"></div>
+                <div
+                    class="col-span-12 lg:col-span-8 [@media(min-width:1439px)]:col-span-7 grid grid-cols-1 [@media(min-width:768px)]:grid-cols-3 gap-3 font-medium text-[#AEB5D1] items-start">
 
-                        @foreach ($service['items'] as $item)
-                            <p class="transition group-hover:text-[#B86BFF] text-left">
-                                <span class="group-hover:opacity-0 transition-all duration-200">+</span>
-                                <span
-                                    class="transition-all duration-200 
+                    @foreach ($service['items'] as $item)
+                    <p class="transition group-hover:text-[#B86BFF] text-left">
+                        <span class="group-hover:opacity-0 transition-all duration-200">+</span>
+                        <span
+                            class="transition-all duration-200 
                 group-hover:bg-[linear-gradient(270deg,#fa5674_0%,#6065d4_100%)]
                 group-hover:bg-clip-text
                 group-hover:text-transparent font-marcellus">
-                                    {{ $item }}
-                                </span>
-                            </p>
-                        @endforeach
+                            {{ $item }}
+                        </span>
+                    </p>
+                    @endforeach
 
-                    </div>
                 </div>
+            </div>
             @endforeach
 
-    </div>
+        </div>
 </section>
 
 <!-- JS -->

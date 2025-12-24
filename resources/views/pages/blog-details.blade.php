@@ -5,23 +5,22 @@
         <img src="{{ asset('images/shapes/blog-details-shape-1.png') }}" alt="shape" srcset="{{ asset('images/shapes/blog-details-shape-1.png') }}">
     </div>
 
-    <div class="relative h-[349px] xl:h-[516px] bg-cover bg-center"
+    <div class="relative h-[349px] md:h-[516px] bg-cover bg-center"
         style="background-image:url('{{   asset('images/backgrounds/page-header-bg.jpg') }}')">
-
-
 
         {{-- GRADIENT OVERLAY --}}
         <div class="absolute inset-0 bg-gradient-to-r 
             from-black via-black/50 via-[60%] to-transparent z-[1]">
         </div>
+
         <x-header />
 
-        <!-- Content -->
-        <div class="relative z-10 w-full h-full flex justify-center items-start  ">
-            <div class="max-w-[1300px] mx-auto w-full px-6 flex flex-col items-start justify-center text-white">
+        <!-- Hero Content -->
+        <div class="relative z-10 w-full h-full flex justify-center items-start ">
+            <div class="max-w-[1300px] mx-auto w-full px-6 flex flex-col items-start justify-center  mt-[203px] text-white">
 
                 <h2
-                    class="xl:mt-36 capitalize text-[30px] xl:text-[60px] leading-[70px] font-medium xl:mb-[15px] font-sans text-[#ffffff]">
+                    class="capitalize text-[30px] xl:!text-[60px] leading-[70px] font-medium xl:mb-[15px] font-sans text-[#ffffff]">
                     Blogs Details
                 </h2>
 

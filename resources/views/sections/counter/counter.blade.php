@@ -6,7 +6,7 @@
     </div>
 
     <!-- BLUE GRADIENT OVERLAY -->
-    <div class="absolute inset-0 bg-gradient-to-r from-[#071A3E] via-[#0A1F47] to-[#021024] opacity-90"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-[#071A3E] via-[#15449bcc] to-[#071f41] opacity-90"></div>
 
     <div class="relative max-w-[1400px] mx-auto px-6">
 

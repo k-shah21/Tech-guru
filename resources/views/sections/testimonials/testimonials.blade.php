@@ -140,8 +140,8 @@
         </div>
     </div>
 
-    <x-section-heading subtitle="Testimonials" align="center" class="!leading-[75px]">
-        Customer Experiences That<span class="text-[#edc458] font-marcellus font-medium tracking-wider">Speak Volumes</span>
+    <x-section-heading subtitle="Testimonials" align="center" class="!leading-[75px] !z-10">
+        Customer Experiences That<span class="text-[#edc458] font-marcellus font-medium tracking-wider"> Speak Volumes</span>
     </x-section-heading>
 
     <!--  Container -->

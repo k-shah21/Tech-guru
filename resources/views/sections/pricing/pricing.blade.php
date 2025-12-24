@@ -31,7 +31,7 @@ $pricing = [
     </div>
 
     <!-- Pricing Cards -->
-    <div class="max-w-[720px] lg:max-w-[960px] xl:max-w-[1320px] mx-auto w-full z-30 flex justify-center items-center !flex-col ">
+    <div class="max-w-[720px] lg:max-w-[960px] xl:max-w-[1320px] mx-auto w-full z-30 flex justify-center items-center !flex-col">
 
         {{-- PLAN SWITCHER --}}
         <div class="flex justify-center md:!mb-20 relative">
@@ -57,7 +57,7 @@ $pricing = [
         <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 
            [@media(min-width:1440px)]:grid-cols-3 
            gap-6 [@media(min-width:1440px)]:gap-0 
-           items-center w-full md:w-[630px] lg:w-[960px]">
+           items-center w-full md:max-w-[630px] lg:max-w-[960px] xl:!max-w-[1320px]">
 
             {{-- PERSONAL --}}
             <div class="!bg-[#1D253F] !w-full rounded-2xl lg:rounded-r-none relative p-10 text-white 

@@ -2,7 +2,7 @@
 
     <!-- PAGE HEADER -->
     <div
-        class="relative h-[349px] xl:h-[516px] bg-cover bg-center"
+        class="relative h-[349px] md:h-[516px] bg-cover bg-center"
         style="background-image: url('{{ asset('images/backgrounds/page-header-bg.jpg') }}');">
         <!-- GRADIENT OVERLAY -->
         <div
@@ -13,21 +13,21 @@
         <x-header />
 
         <!-- HEADER CONTENT -->
-        <div class="relative z-10 w-full h-full flex justify-center items-start">
+        <div class="relative z-10 w-full md:max-w-[720px] mx-auto h-full flex justify-center items-start">
             <div
                 class="max-w-[1300px] mx-auto w-full px-6
-                       flex flex-col items-start justify-center text-white">
+                       flex flex-col items-start justify-center text-white mt-[233px]">
                 <h2
-                    class="xl:mt-36 capitalize text-[30px] xl:text-[60px]
+                    class="xl:mt-36 capitalize text-[30px] md:!text-[60px]
                            leading-[70px] font-medium xl:mb-[15px]
-                           font-sans text-white">
+                           font-sans text-white mb-5">
                     Blogs
                 </h2>
 
                 <!-- BREADCRUMB -->
                 <nav
                     class="flex items-center gap-2 text-sm text-gray-200
-                           bg-white/10 p-2 rounded-lg font-bold">
+                           bg-white/10 p-2 rounded-lg font-bold tracking-wider font-sans">
                     <a
                         href="{{ url('/') }}"
                         class="flex items-center gap-1 hover:text-[#edc458] transition">

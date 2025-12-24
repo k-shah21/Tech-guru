@@ -15,7 +15,9 @@
 .orange-color {
     color: #edc458;
 }
-
+.font-space-grotesk {
+    font-family: var(--font-sans);
+}
 .font-marcellus {
     --font-marcellus: "Marcellus", serif;
 }
@@ -74,6 +76,7 @@ p {
     right: 0;
     left: auto;
 }
+
 .gradient-text {
     background: linear-gradient(270deg, #fa5674 0%, #6065d4 100%);
     -webkit-background-clip: text;
@@ -125,7 +128,6 @@ p {
     visibility: hidden;
     cursor: pointer !important;
 }
-
 .thm-btn::after {
     background-color: #ffd25d;
     content: "";
@@ -141,13 +143,11 @@ p {
     visibility: hidden;
     cursor: pointer !important;
 }
-
 .thm-btn:hover::before {
     height: 100%;
     opacity: 1;
     visibility: visible;
 }
-
 .thm-btn:hover::after {
     height: 100%;
     opacity: 1;
@@ -171,7 +171,6 @@ p {
     position: relative;
     overflow: hidden;
 }
-
 .event-one__btn::before {
     content: "";
     position: absolute;
@@ -188,7 +187,6 @@ p {
 
     transition: all 0.5s ease;
 }
-
 .event-one__btn::after {
     content: "";
     position: absolute;
@@ -203,13 +201,13 @@ p {
     visibility: hidden;
     transition: all 0.4s ease-in-out;
 }
-
 .event-one__btn:hover::after {
     height: 100%;
     width: 100%;
     opacity: 1;
     visibility: visible;
 }
+
 .btn--hero {
     background: linear-gradient(90deg, #6065d4, #fa5674);
     -webkit-mask: linear-gradient(#fff 0 0) content-box,
